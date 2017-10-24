@@ -1,0 +1,104 @@
+
+  <div class="Title">
+    <p>Makkah Accommodation</p>
+  </div>
+  <div class="accommodation">
+    <div class="hotels" *ngIf="makkahhotels;else loading">
+      <div class="hotel" *ngFor="let hotel of makkahhotels" (click)="selectMakkahHotel(hotel.hotelName,hotel.currency,hotel.single,hotel.double,hotel.triple,hotel.quad)">
+        <img src="assets/imgs/{{hotel.hotelLogo}}" alt="">
+        <div class="hotelName"><p>{{hotel.hotelName|uppercase}}</p><rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating></div>
+      </div>
+    </div>
+    <ng-template #loading ><img class="loadingImg" src="assets/imgs/load.svg" alt=""></ng-template>
+  </div>
+  <div class="Title">
+    <p>Room type</p>
+  </div>
+  <div class="roomType">
+    <div class="Adults">
+      <div class="radio">
+        <label><input type="radio" name="optradio" value="Single" (click)="MakkahRoomType('Single',globalService.MakkahhotelDetails[0].single)"> Single  </label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" value="Double" (click)="MakkahRoomType('Double',globalService.MakkahhotelDetails[0].double)" name="optradio"> Double </label>
+      </div>
+      <div class="radio ">
+        <label><input type="radio" value="Triple" (click)="MakkahRoomType('Triple',globalService.MakkahhotelDetails[0].triple)" name="optradio"> Triple </label>
+      </div>
+      <div class="radio ">
+        <label><input type="radio" value="Quad" (click)="MakkahRoomType('Quad',globalService.MakkahhotelDetails[0].quad)" name="optradio"> Quad  </label>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="Error"><span *ngIf="MakkahcheckinError"> {{ErrorMassage}}</span></div>
+  <div class="CheckInOutDates">
+    <div class="form-group checkIn">
+      <label for="usr">Check in: <p> {{Makkahcheckin | date:'fullDate'}}</p></label>
+      <input type="datetime-local" [(ngModel)]="Makkahcheckin" class="form-control" id="usr" (ngModelChange)="MakkahNightCalculation(Makkahcheckin,Makkahcheckout)">
+    </div>
+    <div class="nights">
+      <p>{{globalService.MakkahNights}} <i class="fa fa-suitcase" aria-hidden="true"></i></p>
+    </div>
+    <div class="form-group checkOut">
+      <label for="usr">Check out: <p> {{Makkahcheckout | date:'fullDate'}}</p></label>
+      <input type="datetime-local" [(ngModel)]="Makkahcheckout" class="form-control" id="usr" (ngModelChange)="MakkahNightCalculation(Makkahcheckin,Makkahcheckout)">
+    </div>
+  </div>
+  <div class="Title">
+    <p>Madinah Accommodation</p>
+  </div>
+  <div class="accommodation">
+    <div class="hotels" *ngIf="madinahhotels;else loading">
+      <div class="hotel" *ngFor="let hotel of madinahhotels" (click)="selectMadinahHotel(hotel.hotelName,hotel.currency,hotel.single,hotel.double,hotel.triple,hotel.quad)">
+        <img src="assets/imgs/{{hotel.hotelLogo}}" alt="">
+        <div class="hotelName"><p>{{hotel.hotelName| uppercase}}</p><rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating></div>
+      </div>
+    </div>
+    <ng-template #loading ><img class="loadingImg" src="assets/imgs/load.svg" alt=""></ng-template>
+  </div>
+  <div class="Title">
+    <p>Room type</p>
+  </div>
+  <div class="roomType">
+    <div class="Adults">
+      <div class="radio">
+        <label><input type="radio" name="optradio" value="Single" (click)="MadinahRoomType('Single',globalService.MadinahhotelDetails[0].single)"> Single </label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" value="Double" (click)="MadinahRoomType('Double',globalService.MadinahhotelDetails[0].double)" name="optradio"> Double </label>
+      </div>
+      <div class="radio ">
+        <label><input type="radio" value="Triple" (click)="MadinahRoomType('Triple',globalService.MadinahhotelDetails[0].triple)" name="optradio"> Triple </label>
+      </div>
+      <div class="radio ">
+        <label><input type="radio" value="Quad" (click)="MadinahRoomType('Quad',globalService.MadinahhotelDetails[0].quad)" name="optradio"> Quad </label>
+      </div>
+
+    </div>
+  </div>
+  <div class="Error"><span *ngIf="MadinahcheckinError"> {{ErrorMassage}}</span></div>
+  <div class="CheckInOutDates">
+    <div class="form-group checkIn">
+      <label for="usr">Check in: <p> {{Maddinahcheckin | date:'fullDate'}}</p></label>
+      <input type="datetime-local" [(ngModel)]="Maddinahcheckin" class="form-control" id="usr" (ngModelChange)="MaddinahNightCalculation(Maddinahcheckin,Maddinahcheckout)">
+    </div>
+    <div class="nights">
+      <p>{{globalService.MadinahNights}} <i class="fa fa-suitcase" aria-hidden="true"></i></p>
+    </div>
+    <div class="form-group checkOut">
+      <label for="usr">Check out: <p> {{Maddinahcheckout | date:'fullDate'}}</p></label>
+      <input type="datetime-local" [(ngModel)]="Maddinahcheckout" class="form-control" id="usr" (ngModelChange)="MaddinahNightCalculation(Maddinahcheckin,Maddinahcheckout)">
+    </div>
+  </div>
+  <div class="Title">
+    <p>Extras</p>
+  </div>
+  <div class="extras">
+    <div class="form-group">
+      <label for="usr">Children: <i class="fa fa-arrow-down" aria-hidden="true"></i> 12 years </label>
+      <input type="number" min="0" [(ngModel)]="childrenNumber" (ngModelChange)="childCost(childrenNumber)"  class="form-control" id="usr">
+    </div>
+  </div>
+

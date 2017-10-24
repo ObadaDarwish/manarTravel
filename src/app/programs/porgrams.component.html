@@ -1,0 +1,78 @@
+<div class="programsContainer" id="scrollTop">
+  <div class="contentWrapper">
+    <div class="Title">
+      <p>Program</p>
+    </div>
+    <div class="rightSide">
+      <div class="programContent">
+        <div class="programNavigation">
+          <div class="navTab" routerLink="./content" routerLinkActive="active"><p>Content</p></div>
+          <div class="navTab" routerLink="./includes" routerLinkActive="active"><p>Extras</p></div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+
+
+    <div class="lefSide">
+      <div class="submit">
+        <div class="submitButton" (click)="submit('submit')">
+          <p>Submit</p>
+        </div>
+      </div>
+      <div class="invoice">
+        <div class="Title">
+          <p>Invoice</p>
+        </div>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Item type</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Makkah Hotel<p *ngIf="globalService.MakkahhotelDetails[0]">
+              {{globalService.MakkahhotelDetails[0].name}}</p></td>
+            <td>Accommodation <p *ngIf="globalService.MakkahNights==1"> {{globalService.MakkahNights}} night,
+              {{globalService.MakkahRoom}}</p>
+              <p *ngIf="globalService.MakkahNights>1"> {{globalService.MakkahNights}} nights,
+                {{globalService.MakkahRoom}}</p></td>
+          </tr>
+          <tr>
+            <td>Madinah Hotel<p *ngIf="globalService.MadinahhotelDetails[0]">
+              {{globalService.MadinahhotelDetails[0].name}}</p></td>
+            <td> Accommodation <p *ngIf="globalService.MadinahNights==1">{{globalService.MadinahNights}} night,
+              {{globalService.MadinahRoom}}</p>
+              <p *ngIf="globalService.MadinahNights>1">{{globalService.MadinahNights}} nights,
+                {{globalService.MadinahRoom}}</p></td>
+          </tr>
+          <tr>
+            <td>Exchange rate</td>
+            <td *ngIf="ExchangeRate">{{ExchangeRate}}</td>
+            <td *ngIf="!ExchangeRate">0</td>
+          </tr>
+          <tr class="total">
+            <td>Total</td>
+            <td *ngIf="globalService.MadinahAccommodationCoast!=0 && globalService.MakkahAccommodationCoast!=0">
+              <p>{{ ((childUnitCost*globalService.childrenNumber)+(globalService.MadinahAccommodationCoast *1) +
+                (globalService.MakkahAccommodationCoast *1) +
+                (globalService.miscSum1*1) + (globalService.miscSum2*1))| number  }} SR</p>
+              <p>{{ (((childUnitCost*globalService.childrenNumber)+(globalService.MadinahAccommodationCoast *1) +
+                (globalService.MakkahAccommodationCoast *1) +
+                (globalService.miscSum1*1) + (globalService.miscSum2*1))*ExchangeRate)|number  }} EGP</p>
+            </td>
+            <td *ngIf="globalService.MadinahAccommodationCoast==0 || globalService.MakkahAccommodationCoast==0">
+              <p>0 SR</p>
+              <p>0 EGP</p>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

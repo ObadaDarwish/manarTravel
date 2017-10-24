@@ -1,0 +1,795 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Amiri');
+
+.loadingImg {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/*----------------------  Navigation ----------------------------------*/
+.navBody {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+
+}
+
+.navigation {
+  border-radius: 0px 0px 11px 11px;
+  height: 60px;
+  background: rgba(59, 184, 197, 0.88);
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+.navigation .tab {
+  display: flex;
+  width: 33%;
+  height: inherit;
+  text-align: center;
+  border-radius: inherit;
+}
+
+.navigation .tab:hover {
+  background: #25a4b1;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.navigation .tab p {
+  width: 100%;
+  align-self: center;
+  color: #ffffff;
+  font-family: Georgia, sans-serif;
+  font-size: 18px;
+  margin: 0 !important;
+}
+
+.visit {
+  width: 100%;
+  background: #3bb8c5;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 2%;
+  padding-top: 7%;
+  padding-bottom: 2%;
+}
+
+.visitTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  margin-top: -3%;
+}
+
+.visitTitle p {
+  text-align: center;
+  margin-bottom: 0 !important;
+  background: #3bb8c5;
+  width: 100px;
+  height: 100px;
+  border-radius: 70px;
+  padding-top: 2.5%;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.visit .item {
+  width: 380px;
+  background: #ffffff;
+  display: flex;
+  flex-flow: column;
+}
+
+.visit .item img {
+  width: inherit;
+  height: 300px;
+  position: relative;
+}
+
+.visit .item .knowMore {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.knowMore p {
+  width: 150px;
+  color: #ffffff;
+  height: 35px;
+  padding-top: 2%;
+  background-color: #3bb8c5;
+}
+
+.knowMore p:hover {
+  background-color: #39a1ae;
+  cursor: pointer;
+}
+
+.visit .item .itemTitle {
+  position: relative;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.visit .item .itemDescription {
+  position: relative;
+  width: 100%;
+}
+
+.visit .item p {
+  text-align: center;
+  font-family: Georgia, sans-serif;
+  font-size: 14px;
+}
+
+.visit .item .itemTitle p {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/*------------------------  submit modal ----------------------------------*/
+
+.submitContainer {
+  width: 100%;
+}
+
+.submitContainer .InputContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.submitContainer .InputContainer input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*-------------------------------------- Landing ---------------------------------------*/
+
+.landingContainer {
+  width: 100%;
+  position: relative;
+  min-height: 700px;
+}
+
+.landingContainer img {
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  z-index: 0;
+}
+
+.landingContainer .landingMoto {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.landingMoto .motoWrapper .knowus {
+  background: rgba(255, 255, 255, 0.85) !important;
+  margin-right: 12%;
+  height: 300px;
+}
+
+.knowus p {
+  font-family: Noto Serif, sans-serif;
+  font-size: 18px !important;
+  color: #1f7e9a !important;
+}
+
+.landingContainer .motoWrapper {
+  display: flex;
+  flex-flow: row;
+  text-align: center;
+  width: 100%;
+  padding: 2%;
+  padding-top: 15%;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Standard syntax (must be last) */
+  justify-content: center;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+.landingMoto h1 {
+  color: #ffffff;
+  font-family: Noto Serif, sans-serif;
+  font-size: 90px;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 900;
+
+}
+
+.landingMoto p {
+  color: rgb(255, 255, 255);
+  font-family: Noto Serif, sans-serif;
+  font-size: 30px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.landingMoto span {
+  color: #3bb8c5;
+  font-weight: 900;
+}
+
+.landingMoto p::after {
+  content: '';
+  height: 3px;
+  width: 25%;
+  margin-left: 37.5%;
+  background-color: #3bb8c5;
+  display: block;
+}
+
+.landingMoto h1::before {
+  content: '';
+  height: 3px;
+  width: 25%;
+  margin-left: 37.5%;
+  background-color: #3bb8c5;
+  display: block;
+}
+
+.landingContainer .landingButtonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+.landingContainer .CustomiseButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 250px;
+  height: 70px;
+  border-radius: 4px;
+  background: #3b8890;
+  position: relative;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.landingContainer .CustomiseButton:hover {
+  cursor: pointer;
+  background: #285653;
+  box-shadow: 0px 0px 1px 1px #4a90ff;
+}
+
+.landingContainer .CustomiseButton p {
+  margin: 0 !important;
+}
+
+.landingContainer .mainRoutes {
+  width: 100%;
+  padding-top: 17%;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.mainRoutes .Ramadan {
+  width: 28%;
+  height: 360px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.mainRoutes .routeTitle {
+  width: 40%;
+  position: absolute;
+  z-index: 4;
+  background: #3bb8c5;
+  align-self: center;
+  height: 40px;
+}
+
+.mainRoutes .routeTitle p {
+  color: #ffffff;
+  font-family: 'Amiri', serif;
+  font-size: 20px;
+  width: 100% !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.mainRoutes .Umrah {
+  width: 28%;
+  height: 360px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  margin-right: 2%;
+  justify-content: center;
+}
+
+.mainRoutes .Zyarat {
+  width: 28%;
+  height: 360px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  margin-right: 2%;
+  justify-content: center;
+}
+
+.mainRoutes .hajj {
+  width: 28%;
+  height: 360px;
+  display: flex;
+  overflow: hidden;
+  margin-right: 2%;
+  position: relative;
+  justify-content: center;
+}
+
+.mainRoutes img {
+  width: 100%;
+  height: inherit;
+  transition: 1s;
+}
+
+.mainRoutes img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.mainRoutes div {
+  margin-bottom: 1%;
+  box-shadow: 0px 0px 6px 1px #6b6b6b;
+}
+
+/*------------------------------------ Footer ----------------------------------------------*/
+.footerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #3bb8c5;
+  position: relative;
+}
+
+.footerContainer p {
+  color: #ffffff;
+  font-family: Georgia, sans-serif;
+  font-size: 14px;
+  margin: 15px !important;
+}
+
+.footerContainer p i {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.footerContainer h4 {
+  color: #ffffff;
+  font-family: Georgia, sans-serif;
+}
+
+.footerContainer .LeftSection {
+  width: 30%;
+  margin-left: 2%;
+  margin-top: 1%;
+  margin-bottom: 0.5%;
+}
+
+.footerContainer .fa {
+  color: #ffffff !important;
+}
+
+.footerContainer .LeftSection div {
+  margin-bottom: 5%;
+}
+
+.footerContainer .RightSection {
+  width: 30%;
+  text-align: center;
+  margin-right: 2%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+
+/*---------------------------------------- Missing --------------------------------------*/
+.missingContainer {
+  min-height: 700px;
+  position: relative;
+  padding-top: 6%;
+}
+
+/*-------------------------------------- programs ----------------------------------*/
+.programNavigation {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.navTab {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgb(143, 196, 154)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgb(143, 196, 154)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgb(143, 196, 154)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(143, 196, 154)); /* Standard syntax (must be last) */
+
+}
+
+.navTab.active {
+  background: -webkit-linear-gradient(top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154));
+}
+
+.navTab:hover {
+  cursor: pointer;
+  background: -webkit-linear-gradient(top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top, rgba(59, 136, 144, 0.8), rgb(143, 196, 154));
+}
+
+.navTab p {
+  color: #ffffff;
+  font-family: Georgia, sans-serif;
+  align-self: center !important;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  height: 40px;
+}
+
+.programsContainer {
+  width: 100%;
+  min-height: 700px;
+  padding-top: 6%;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.rightSide {
+  width: 60%;
+}
+
+.lefSide {
+  width: 30%;
+}
+
+.contentWrapper .programContent {
+  width: 100%;
+  margin-bottom: 10%;
+  box-shadow: 0px -7px 4px 1px #021e4a;
+  border: 2px solid #c3c3c3;
+}
+
+.contentWrapper .submit {
+  width: 100%;
+  color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-shadow: 0px -7px 4px 1px #021e4a;
+  border: 2px solid #c3c3c3;
+  margin-bottom: 10%;
+}
+
+.submitButton {
+  width: 250px;
+  height: 40px;
+  background: #3b8890;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  margin: 8%;
+}
+
+.submitButton p {
+  align-self: center;
+  font-size: 20px;
+  font-family: Georgia, sans-serif;
+  margin: 0 !important;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  background: #285653;
+  box-shadow: 0px 0px 1px 1px #4a90ff;
+}
+
+.contentWrapper .invoice {
+  width: 100%;
+  box-shadow: 0px -7px 4px 1px #021e4a;
+  border: 2px solid #c3c3c3;
+  margin-bottom: 10%;
+}
+
+.invoice .table p {
+  margin: 0;
+  color: #285653;
+  font-size: 12px;
+}
+
+.total {
+  background: #3b8890 !important;
+  color: #ffffff !important;
+  border-right: 3px dashed #f3f3f3 !important;
+  border-left: 3px dashed #f3f3f3 !important;
+  font-weight: bold !important;
+}
+
+.total p {
+  color: #ffffff !important;
+  font-size: 14px !important;
+}
+
+.accommodation {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.accommodation .hotels {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.hotels .hotel {
+  height: 140px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1%;
+}
+
+.hotels .hotel:hover {
+  box-shadow: 0px 0px 6px 2px #8fc49a;
+  cursor: pointer;
+}
+
+.hotels .hotel img {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  z-index: 1;
+}
+
+.hotels .hotel .hotelName {
+  width: inherit;
+  position: absolute;
+  z-index: 4;
+  background: rgba(143, 196, 154, 0.8);
+  align-self: flex-end;
+  color: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.hotels .selected {
+  box-shadow: 0px 0px 6px 2px #021e4a;
+}
+
+.hotelName p {
+  margin: 3%;
+  margin-left: 10%;
+  font-size: 13px;
+}
+
+.roomType span {
+  font-size: 12px;
+  font-family: Georgia, sans-serif;
+  color: #41bb41;
+}
+
+.extras {
+  font-size: 12px;
+  font-family: Georgia, sans-serif;
+  display: flex;
+  justify-content: space-around;
+}
+
+.roomType {
+  width: 100%;
+  position: relative;
+}
+
+label {
+  font-size: 16px;
+  font-family: Georgia, sans-serif;
+  color: #1f7e9a;
+}
+
+.Adults {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin-bottom: 2%;
+}
+
+.CheckInOutDates {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.Error {
+  width: 100%;
+  text-align: center;
+}
+
+.Error span {
+  color: #e2001e;
+  font-family: Georgia, sans-serif;
+  font-size: 14px;
+}
+
+.checkIn {
+  width: 40%;
+}
+
+.CheckInOutDates input {
+  width: 100%;
+  height: 35px;
+  background: #ffffff;
+  color: #989898;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+}
+
+.checkOut {
+  width: 40%;
+}
+
+.nights p {
+  font-family: Georgia, sans-serif;
+  font-size: 20px;
+  color: #1f7e9a;
+}
+
+/*---------------------------- includes --------------------------------*/
+.includesContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+}
+
+.includesContainer .Includes {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+
+}
+
+.includesContainer .generals {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+
+}
+
+.includesContainer .listItem {
+  background: #3b8890;
+  margin-right: 4%;
+  margin-bottom: 4%;
+  max-width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  border: 2px dashed #ffffff;
+}
+
+.listItem p {
+  font-family: 'Amiri', serif;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 !important;
+  align-self: center;
+  padding: 1%;
+  padding-left: 15px;
+  width: 85%;
+}
+
+.listIcon {
+  margin-left: 10px;
+  margin-right: -3px;
+  width: 60px;
+  height: inherit;
+  border: 1px solid #8a8a8a;
+  background: white;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+.includesContainer .fa {
+  margin: 5px;
+  align-self: center;
+  color: #3b8890;
+}
+
+/*=============================== title ==============================*/
+.Title {
+  width: 100%;
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.Title p {
+  font-family: Georgia, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #1f7e9a;
+  margin: 0 !important;
+}
+
+@media screen and (max-width: 700px) {
+  .rightSide {
+    width: 100%;
+  }
+
+  .lefSide {
+    width: 100%;
+  }
+}
