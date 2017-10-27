@@ -19,15 +19,15 @@
 
     <div class="Umrah" routerLink="/programs/umrah">
       <img src="../../assets/imgs/umrah.jpg" alt="">
-      <div class="routeTitle"><p>عمرة</p></div>
+      <div class="routeTitle"><p>Umrah</p></div>
     </div>
     <div class="hajj" routerLink="/programs/hajj">
       <img src="../../assets/imgs/hajj.jpg" alt="">
-      <div class="routeTitle"><p>حج</p></div>
+      <div class="routeTitle"><p>Hajj</p></div>
     </div>
     <div class="Ramadan" routerLink="/programs/ramadan">
       <img src="../../assets/imgs/ramdan.jpg" alt="">
-      <div class="routeTitle"><p>رمضان</p></div>
+      <div class="routeTitle"><p>Ramadan</p></div>
     </div>
 
   </div>
@@ -65,7 +65,8 @@
     </div>
     <div class="second_row">
       <div class="left">
-        <div class="reliability">We don't care about the QUANTITY of trips we organize as much as we do on the QUALITY</div>
+        <div class="reliability">We don't care about the QUANTITY of trips we organize as much as we do on the QUALITY
+        </div>
         <p><i class="fa fa-3x fa-thumbs-o-up" aria-hidden="true"></i></p>
       </div>
       <div class="right">
@@ -78,5 +79,89 @@
       <p><i class="fa fa-3x fa-check-square-o" aria-hidden="true"></i></p>
       <div class="reliability">You can RELY on us to have a good story to tell about your comfortable trip</div>
     </div>
+  </div>
+  <div class="mission">
+    <div class="mission_overlay">
+    </div>
+    <img src="../../assets/imgs/mission.png">
+    <div class="mission_description">
+      <h3 style="color:#ffffff">Our Mission</h3>
+      <p style="color:#ffffff"> sdsndkjan aksd lkasndlka aklsdnlanda</p>
+    </div>
+  </div>
+  <div class="aboutus">
+    <div class="aboutus_description">
+      <h3  style="color:#3bb8c5">About Us</h3>
+      <p  style="color:#3bb8c5"> sdsndkjan aksd lkasndlka aklsdnlanda</p>
+    </div>
+    <div class="aboutus_overlay">
+    </div>
+    <img src="../../assets/imgs/aboutus.jpg">
+  </div>
+  <div class="contact_us">
+    <form [formGroup]="contact_us_form" (ngSubmit)="contactUs(contact_us_form.value , contact_us_form.valid)">
+      <div class="contact_us">
+        <div class="contact_us_title"><p>Contact us</p></div>
+        <div class="contact_us_form">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="firstname">First Name</label>
+                  <input formControlName="first_name" type="text" placeholder="Ex: Mark" class="form-control"
+                         id="firstname">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="secondname">Last Name</label>
+                  <input formControlName="last_name" type="text" placeholder="Ex: Thomson" class="form-control"
+                         id="secondname">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea formControlName="message" class="form-control" placeholder="Your message"
+                            id="message"></textarea>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input formControlName="email" type="email" placeholder="Ex: example@hotmail.com" class="form-control"
+                         id="email">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <input type="submit" class="sumbitButton" value="Submit"
+                       [ngClass]="{'disabled' : contact_us_form.invalid ||isloading , 'active' : contact_us_form.valid}"
+                       [disabled]="contact_us_form.invalid||isloading "/>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="details">
+                <div class="item">
+                  <h3>Address</h3>
+                  <p>El Sadat city Cairo-Alexandria desert road</p>
+                </div>
+                <div class="item">
+                  <h3>Open Time</h3>
+                  <p>24/7</p>
+                </div>
+                <div class="item">
+                  <h3>Phone</h3>
+                  <p>0512056105151</p>
+                </div>
+                <div class="item">
+                  <h3>Email</h3>
+                  <p>hamouda@farms.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
