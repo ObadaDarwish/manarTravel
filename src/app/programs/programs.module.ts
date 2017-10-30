@@ -9,10 +9,11 @@ import { IncludesComponent } from './includes/includes.component';
 import { RouterModule } from '@angular/router';
 import {GlobalServiceService} from '../global-service.service';
 import { ModalModule } from 'ngx-bootstrap';
-
-
+import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
 @NgModule({
   imports: [
+    MatSlideToggleModule,
+    MatRadioModule,
     CommonModule,
     FormsModule,
     RatingModule,

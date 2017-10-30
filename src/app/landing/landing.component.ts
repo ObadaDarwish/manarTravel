@@ -7,8 +7,10 @@ import {FormGroup, FormBuilder, Validators}from '@angular/forms';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
+  contact_us_form: FormGroup;
+  isloading: boolean = false;
 
-  constructor() {
+  constructor(fb: FormBuilder) {
     this.contact_us_form = fb.group({
       'first_name': ['', Validators.required],
       'email': ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15}( )*?)$')])],
@@ -16,8 +18,7 @@ export class LandingComponent implements OnInit {
       'message': ['', Validators.required],
     })
   }
-  contact_us_form: FormGroup;
-  isloading: boolean = false;
+
   ngOnInit() {
   }
 

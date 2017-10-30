@@ -35,7 +35,7 @@ export class ContentComponent implements OnInit {
   MakkahErrorMassage: string;
   MadinahcheckinError: boolean = false;
   ErrorMassage: string;
-
+  color:any;
   constructor(private globalService: GlobalServiceService, private activeRouter: ActivatedRoute, private programService: ProgramsService) {
   }
 

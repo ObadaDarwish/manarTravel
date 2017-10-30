@@ -14,9 +14,9 @@ import {IncludesComponent} from './programs/includes/includes.component';
 const MainRoute: Routes = [
   {path: '', component:LandingComponent},
   {path: 'programs/:id', component:PorgramsComponent,children:[
-    {path: '', redirectTo: 'content', pathMatch: 'full'},
-    {path: 'content', component: ContentComponent},
-    {path: 'includes', component: IncludesComponent},
+    {path: '', redirectTo: 'makkah', pathMatch: 'full'},
+    {path: 'makkah', component: ContentComponent},
+    {path: 'madinah', component: IncludesComponent},
   ]},
     /* Missing */
     {path: '**', redirectTo: '404', pathMatch: 'full'},

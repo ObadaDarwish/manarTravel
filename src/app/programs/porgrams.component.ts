@@ -21,22 +21,22 @@ export class PorgramsComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0);
     let code=this.route.snapshot.params['id'];
-    this.programService.getChildCost(code).subscribe(
-      response=> {
-        this.childUnitCost = response[0].price;
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    this.programService.getExchangeRate().subscribe(
-      response=> {
-        this.ExchangeRate = response[0];
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    // this.programService.getChildCost(code).subscribe(
+    //   response=> {
+    //     this.childUnitCost = response[0].price;
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
+    // this.programService.getExchangeRate().subscribe(
+    //   response=> {
+    //     this.ExchangeRate = response[0];
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
   }
   submit(value)
   {

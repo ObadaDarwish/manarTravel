@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +20,7 @@ import {ProgramsService} from './programs/programs.service';
 import { GlobalModalComponent } from './global-modal/global-modal.component';
 import { ModalModule} from 'ngx-bootstrap';
 import { SubmitComponent } from './global-modal/submit/submit.component';
-
+import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,9 @@ import { SubmitComponent } from './global-modal/submit/submit.component';
     SubmitComponent
   ],
   imports: [
+    MatSlideToggleModule,
+    MatRadioModule,
+    BrowserAnimationsModule,
     RouterModule,
     CommonModule,
     BrowserModule,
