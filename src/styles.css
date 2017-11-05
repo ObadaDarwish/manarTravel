@@ -986,24 +986,38 @@ body {
   width: 100%;
   position: relative;
   display: flex;
+  padding: 2%;
+  background: #eaeaea;
   justify-content: center;
+  overflow-x: scroll;
 }
 
 .accommodation .hotels {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: flex-start;
+
+}
+.accommodation::-webkit-scrollbar {
+   background: #ffffff;
+   width: 100%;
+  height: 12px;
+ }
+.accommodation::-webkit-scrollbar-button {
+  background: #52c0cc;
+}
+.accommodation::-webkit-scrollbar-thumb {
+  background: #3b8b94;
 }
 
 .hotels .hotel {
-  height: 140px;
-  width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 180px;
+  width: 250px;
   display: flex;
   margin: 1%;
   transition: box-shadow 0.5s;
+  margin-right: 19%;
 }
 
 .hotels .hotel:hover {
@@ -1202,7 +1216,7 @@ label {
   font-family: Georgia, sans-serif;
   font-size: 22px;
   font-weight: bold;
-  color: #ffffff;
+  color: #58cfdc;
   margin: 0 !important;
 }
 .Title p::after{
