@@ -13,14 +13,15 @@ import {RoutingModule} from  './app.routes';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import {PageScrollService}  from 'ng2-page-scroll';
 import {ProgramsModule} from './programs/programs.module';
-import { RatingModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import {GlobalServiceService} from './global-service.service';
 import {ProgramsService} from './programs/programs.service';
 import { GlobalModalComponent } from './global-modal/global-modal.component';
-import { ModalModule} from 'ngx-bootstrap';
+import { ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bootstrap';
 import { SubmitComponent } from './global-modal/submit/submit.component';
 import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,8 @@ import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
     SubmitComponent
   ],
   imports: [
+    ButtonsModule,
+    BsDatepickerModule.forRoot(),
     MatSlideToggleModule,
     MatRadioModule,
     BrowserAnimationsModule,
