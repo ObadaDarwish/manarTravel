@@ -169,10 +169,12 @@ body {
 .visit .see_more p {
   background: #108a96;
   color: #ffffff;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-right: 2%;
+  border-radius: 35px;
+  transition: background 0.4s;
 }
 
 .visit .item img {
@@ -681,7 +683,7 @@ body {
   margin: 0 !important;
   display: flex;
   justify-content: center;
-  padding-top: 4px;
+  padding-top: 7px;
 }
 
 .mainRoutes .Umrah {
@@ -1027,6 +1029,8 @@ body {
 .fa-bed {
   color: #ffffff;
 }
+.fa-h-square{color: #ffffff;}
+
 
 .fa-long-arrow-right {
   color: #52c0cc;
