@@ -12,10 +12,10 @@
       <div class="item_overlay"></div>
       <img src="../../assets/imgs/madinah.jpg" alt="Los Angeles" style="width:100%;">
       <div class="carousel-caption">
-          <div class="moto">
-            <h1>Manar <span>TRAVEL</span></h1>
-            <p>Let us organize your next <span>Trip</span></p>
-          </div>
+        <div class="moto">
+          <h1>Manar <span>TRAVEL</span></h1>
+          <p>Let us organize your next <span>Trip</span></p>
+        </div>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
       <div class="carousel-caption">
         <div class="moto">
           <h1>Tight <span>SCHEDULE!!</span></h1>
-          <p>Don't waste your precious time searching for the cheapest hotel rooms <span>we've got it covered</span> </p>
+          <p>Don't waste your precious time searching for the cheapest hotel rooms <span>we've got it covered</span></p>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
       <div class="carousel-caption">
         <div class="moto">
           <h1>On <span>BUDGET!!</span></h1>
-          <p>well don't worry we have the best <span>OFFERS</span> that you can get for your trips</p>
+          <p>Well don't worry we have the best <span>OFFERS</span> that you can get for your trips</p>
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@
       <p style="color:#ffffff"> sdsndkjan aksd lkasndlka aklsdnlanda</p>
     </div>
   </div>
-  <div class="aboutus">
+  <div class="aboutus" id="scrollAbout">
     <div class="aboutus_description">
       <h3 style="color:#3bb8c5">About Us</h3>
       <p style="color:#3bb8c5"> sdsndkjan aksd lkasndlka aklsdnlanda</p>
@@ -140,7 +140,7 @@
     </div>
     <img src="../../assets/imgs/aboutus.jpg">
   </div>
-  <div class="contact_us">
+  <div class="contact_us" id="scrollContact">
     <form [formGroup]="contact_us_form" (ngSubmit)="contactUs(contact_us_form.value , contact_us_form.valid)">
       <div class="contact_us">
         <div class="contact_us_title"><p>Contact us</p></div>
@@ -205,5 +205,10 @@
         </div>
       </div>
     </form>
+  </div>
+  <div class="location">
+    <agm-map [latitude]="lat" [zoom]="zoomlevel" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
   </div>
 </div>

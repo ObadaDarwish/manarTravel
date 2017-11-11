@@ -2,7 +2,12 @@
 body {
   margin: 0;
 }
-
+.loadSVG{
+  margin:20%;
+  margin-left: 45%;
+  width: 100px;
+  height: 100px;
+}
 @import url('https://fonts.googleapis.com/css?family=Amiri');
 
 .loadingImg {
@@ -27,7 +32,7 @@ body {
 .navigation {
   border-radius: 0px 0px 11px 11px;
   height: 60px;
-  background: rgba(59, 184, 197, 0.88);
+  background: rgba(59, 184, 197, 0.7);
   width: 75%;
   display: flex;
   justify-content: space-between;
@@ -723,6 +728,13 @@ body {
 .mainRoutes div {
   margin-bottom: 1%;
   box-shadow: 0px 0px 6px 1px #6b6b6b;
+}
+.location{
+  height: 400px;
+  background: #3bb8c5;
+  display: flex;
+  position: relative;
+  flex-flow: column;
 }
 
 /*------------------------------------ Footer ----------------------------------------------*/

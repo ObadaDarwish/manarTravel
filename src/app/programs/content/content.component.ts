@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {GlobalServiceService} from '../../global-service.service';
+import {GlobalService} from '../../global-service.service';
 import {ProgramsService} from '../programs.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable, BehaviorSubject} from "rxjs";
@@ -42,7 +42,7 @@ export class ContentComponent implements OnInit {
   minDate = new Date(2017, 5, 10);
   maxDate = new Date(2018, 9, 15);
 
-  constructor(private globalService: GlobalServiceService, private activeRouter: ActivatedRoute, private programService: ProgramsService) {
+  constructor(private globalService: GlobalService, private activeRouter: ActivatedRoute, private programService: ProgramsService) {
   }
 
   ngOnInit() {

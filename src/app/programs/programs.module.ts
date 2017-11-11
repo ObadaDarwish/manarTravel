@@ -7,7 +7,6 @@ import {ProgramsService} from './programs.service';
 import {ContentComponent} from './content/content.component';
 import {IncludesComponent} from './includes/includes.component';
 import {RouterModule} from '@angular/router';
-import {GlobalServiceService} from '../global-service.service';
 import {ButtonsModule ,ModalModule,BsDatepickerModule} from 'ngx-bootstrap';
 import {MatRadioModule, MatSlideToggleModule} from '@angular/material';
 
@@ -25,7 +24,7 @@ import {MatRadioModule, MatSlideToggleModule} from '@angular/material';
     ModalModule.forRoot()
   ],
   declarations: [PorgramsComponent, ContentComponent, IncludesComponent],
-  providers: [ProgramsService, GlobalServiceService],
+  providers: [ProgramsService],
   exports: [PorgramsComponent]
 })
 export class ProgramsModule {

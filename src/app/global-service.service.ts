@@ -3,7 +3,7 @@ import {hotelDetails} from './programs/hotelDetails.interface';
 @Injectable()
 
 
-export class GlobalServiceService {
+export class GlobalService {
 
   MakkahhotelDetails: Array<hotelDetails> = [];
   MadinahhotelDetails: Array<hotelDetails> = [];
@@ -18,7 +18,7 @@ export class GlobalServiceService {
   childrenNumber: number = 0;
   globalModalToggle: boolean;
   globalModalSwitch:string;
-
+  opacity: boolean = false;
   constructor() {
   }
 

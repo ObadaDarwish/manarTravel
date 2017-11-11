@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, OnChanges,ViewChild} from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
-import {GlobalServiceService} from '../global-service.service';
+import {GlobalService} from '../global-service.service';
 
 @Component({
   selector: 'app-global-modal',
@@ -12,7 +12,7 @@ export class GlobalModalComponent implements OnInit {
 
   @ViewChild('globalModal') public globalModal:ModalDirective;
   @Input() modal: any;
-  constructor(private globalService:GlobalServiceService) {
+  constructor(private globalService:GlobalService) {
   }
 
   ngOnInit() {
