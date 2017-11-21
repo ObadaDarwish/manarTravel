@@ -7,17 +7,13 @@ import {Routes, RouterModule} from "@angular/router";
 import {MissingComponent} from './missing/missing.component';
 import {LandingComponent} from './landing/landing.component';
 import {PorgramsComponent} from './programs/porgrams.component';
-import {ContentComponent} from './programs/content/content.component';
-import {IncludesComponent} from './programs/includes/includes.component';
+import {MakkahComponent} from './programs/makkah/makkah.component';
+import {MaddinahComponent} from './programs/madinah/maddinah.component';
 
 
 const MainRoute: Routes = [
   {path: '', component:LandingComponent},
-  {path: 'programs/:id', component:PorgramsComponent,children:[
-    {path: '', redirectTo: 'makkah', pathMatch: 'full'},
-    {path: 'makkah', component: ContentComponent},
-    {path: 'madinah', component: IncludesComponent},
-  ]},
+  {path: 'programs/:id', component:PorgramsComponent},
     /* Missing */
     {path: '**', redirectTo: '404', pathMatch: 'full'},
     {path: '404', component: MissingComponent},

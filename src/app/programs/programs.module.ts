@@ -2,12 +2,11 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PorgramsComponent} from './porgrams.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RatingModule} from 'ngx-bootstrap';
 import {ProgramsService} from './programs.service';
-import {ContentComponent} from './content/content.component';
-import {IncludesComponent} from './includes/includes.component';
+import {MakkahComponent} from './makkah/makkah.component';
+import {MaddinahComponent} from './madinah/maddinah.component';
 import {RouterModule} from '@angular/router';
-import {ButtonsModule ,ModalModule,BsDatepickerModule} from 'ngx-bootstrap';
+import {RatingModule,ButtonsModule ,ModalModule,BsDatepickerModule} from 'ngx-bootstrap';
 import {MatRadioModule, MatSlideToggleModule} from '@angular/material';
 
 @NgModule({
@@ -21,9 +20,10 @@ import {MatRadioModule, MatSlideToggleModule} from '@angular/material';
     RatingModule,
     ReactiveFormsModule,
     RouterModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    RatingModule.forRoot()
   ],
-  declarations: [PorgramsComponent, ContentComponent, IncludesComponent],
+  declarations: [PorgramsComponent, MakkahComponent, MaddinahComponent],
   providers: [ProgramsService],
   exports: [PorgramsComponent]
 })

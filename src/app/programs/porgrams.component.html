@@ -1,86 +1,62 @@
 <div class="programsContainer" id="scrollTop">
 
-    <!--<div class="Title">-->
-    <!--<p>Program</p>-->
-    <!--</div>-->
-    <div class="programNavbar">
-      <ul>
-        <li routerLink="./makkah" routerLinkActive="active">Makkah</li>
-        <li routerLink="./madinah" routerLinkActive="active">Madinah</li>
-      </ul>
+  <!--<div class="Title">-->
+  <!--<p>Program</p>-->
+  <!--</div>-->
+  <div class="steps">
+    <div class="step_container">
+      <div class="step_item"><i class="fa fa-2x fa-h-square" aria-hidden="true"></i></div>
+      <p>Choose Hotel</p>
     </div>
+    <div class="step_arrow"><i class="fa fa-3x fa-long-arrow-right" aria-hidden="true"></i></div>
+    <div class="step_container">
+      <div class="step_item"><i class="fa fa-2x fa-bed" aria-hidden="true"></i></div>
+      <p>Room Type</p>
+    </div>
+    <div class="step_arrow"><i class="fa fa-3x fa-long-arrow-right" aria-hidden="true"></i></div>
+    <div class="step_container">
+      <div class="step_item"><i class="fa fa-2x fa-calendar-check-o" aria-hidden="true"></i></div>
+      <p>Check In & Out dates</p>
+    </div>
+    <div class="step_arrow"><i class="fa fa-3x fa-long-arrow-right" aria-hidden="true"></i></div>
+    <div class="step_container">
+      <div class="step_item"><i class="fa fa-2x fa-calculator" aria-hidden="true"></i></div>
+      <p>Calculate your trip</p>
+    </div>
+  </div>
+  <div class="programNavbar">
+    <ul>
+      <li>MAKKAH</li>
+    </ul>
+  </div>
 
-      <router-outlet></router-outlet>
-
-    <!--<div class="rightSide">-->
-    <!--<div class="programContent">-->
-    <!--<div class="programNavigation">-->
-    <!--<div class="navTab" routerLink="./content" routerLinkActive="active"><p>Content</p></div>-->
-    <!--<div class="navTab" routerLink="./includes" routerLinkActive="active"><p>Extras</p></div>-->
-    <!--</div>-->
-    <!--<router-outlet></router-outlet>-->
-    <!--</div>-->
-
-    <!--</div>-->
-
-
-    <!--<div class="lefSide">-->
-    <!--<div class="submit">-->
-    <!--<div class="submitButton" (click)="submit('submit')">-->
-    <!--<p>Submit</p>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="invoice">-->
-    <!--<div class="Title">-->
-    <!--<p>Invoice</p>-->
-    <!--</div>-->
-    <!--<table class="table table-striped">-->
-    <!--<thead>-->
-    <!--<tr>-->
-    <!--<th>Item type</th>-->
-    <!--<th>Description</th>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody>-->
-    <!--<tr>-->
-    <!--<td>Makkah Hotel<p *ngIf="globalService.MakkahhotelDetails[0]">-->
-    <!--{{globalService.MakkahhotelDetails[0].name}}</p></td>-->
-    <!--<td>Accommodation <p *ngIf="globalService.MakkahNights==1"> {{globalService.MakkahNights}} night,-->
-    <!--{{globalService.MakkahRoom}}</p>-->
-    <!--<p *ngIf="globalService.MakkahNights>1"> {{globalService.MakkahNights}} nights,-->
-    <!--{{globalService.MakkahRoom}}</p></td>-->
-    <!--</tr>-->
-    <!--<tr>-->
-    <!--<td>Madinah Hotel<p *ngIf="globalService.MadinahhotelDetails[0]">-->
-    <!--{{globalService.MadinahhotelDetails[0].name}}</p></td>-->
-    <!--<td> Accommodation <p *ngIf="globalService.MadinahNights==1">{{globalService.MadinahNights}} night,-->
-    <!--{{globalService.MadinahRoom}}</p>-->
-    <!--<p *ngIf="globalService.MadinahNights>1">{{globalService.MadinahNights}} nights,-->
-    <!--{{globalService.MadinahRoom}}</p></td>-->
-    <!--</tr>-->
-    <!--<tr>-->
-    <!--<td>Exchange rate</td>-->
-    <!--<td *ngIf="ExchangeRate">{{ExchangeRate}}</td>-->
-    <!--<td *ngIf="!ExchangeRate">0</td>-->
-    <!--</tr>-->
-    <!--<tr class="total">-->
-    <!--<td>Total</td>-->
-    <!--<td *ngIf="globalService.MadinahAccommodationCoast!=0 && globalService.MakkahAccommodationCoast!=0">-->
-    <!--<p>{{ ((childUnitCost*globalService.childrenNumber)+(globalService.MadinahAccommodationCoast *1) +-->
-    <!--(globalService.MakkahAccommodationCoast *1) +-->
-    <!--(globalService.miscSum1*1) + (globalService.miscSum2*1))| number  }} SR</p>-->
-    <!--<p>{{ (((childUnitCost*globalService.childrenNumber)+(globalService.MadinahAccommodationCoast *1) +-->
-    <!--(globalService.MakkahAccommodationCoast *1) +-->
-    <!--(globalService.miscSum1*1) + (globalService.miscSum2*1))*ExchangeRate)|number  }} EGP</p>-->
-    <!--</td>-->
-    <!--<td *ngIf="globalService.MadinahAccommodationCoast==0 || globalService.MakkahAccommodationCoast==0">-->
-    <!--<p>0 SR</p>-->
-    <!--<p>0 EGP</p>-->
-    <!--</td>-->
-    <!--</tr>-->
-    <!--</tbody>-->
-    <!--</table>-->
-    <!--</div>-->
-    <!--</div>-->
+  <app-makkah></app-makkah>
+  <div class="programNavbar">
+    <ul>
+      <li>MADINAH</li>
+    </ul>
+  </div>
+  <app-madinah></app-madinah>
+  <div class="calculate">
+    <div class="calculate_button" (click)="CalculateProgram()" *ngIf="!ViewTotalTripCost; else viewTotal">Calculate
+    </div>
+    <ng-template #viewTotal>
+      <div class="price">
+        <!--<h1>-{{totalTrip}}- EGP</h1>-->
+        <div class="Title"><p>
+          Total Cost
+        </p></div>
+        <h1>{{totalTrip}} EGP</h1>
+        <div *ngIf="Includes">
+          <h3>Price Includes</h3>
+          <div [innerHTML]="Includes"></div>
+        </div>
+        <div *ngIf="generalConditions">
+          <h3>General Conditions</h3>
+          <div [innerHTML]="generalConditions"></div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
 
 </div>

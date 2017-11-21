@@ -6,7 +6,24 @@ import {Observable, BehaviorSubject} from "rxjs";
 
 @Injectable()
 export class ProgramsService {
+  isMakkahProgramChosen: boolean = false;
+  isMadinahProgramChosen: boolean = false;
 
+  makkahhotels: any;
+  makkahSelectedHotel: Array<boolean> = [];
+  roomType: any;
+  MakkahroomPrice: number = 0;
+  MakkahhotelIndex: number = -1;
+  MakkahbsRangeValue: any = [];
+
+  maddinahhotels: any;
+  maddinahSelectedHotel: Array<boolean> = [];
+  MaddinahroomPrice: number = 0;
+  MaddinahhotelIndex: number = -1;
+  MaddinahbsRangeValue: any = [];
+
+  miscSum1: any;
+  miscSum2: any;
   constructor(private http :Http) { }
 
 

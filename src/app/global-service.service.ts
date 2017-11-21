@@ -4,7 +4,7 @@ import {hotelDetails} from './programs/hotelDetails.interface';
 
 
 export class GlobalService {
-
+  imagePath: string = '';
   MakkahhotelDetails: Array<hotelDetails> = [];
   MadinahhotelDetails: Array<hotelDetails> = [];
   MakkahNights: number = 0;
@@ -13,12 +13,12 @@ export class GlobalService {
   MadinahRoom: string;
   MakkahAccommodationCoast: number = 0;
   MadinahAccommodationCoast: number = 0;
-  miscSum1: number;
-  miscSum2: number;
+
   childrenNumber: number = 0;
   globalModalToggle: boolean;
-  globalModalSwitch:string;
+  globalModalSwitch: string;
   opacity: boolean = false;
+
   constructor() {
   }
 

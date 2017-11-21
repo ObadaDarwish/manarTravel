@@ -79,7 +79,7 @@ body {
   justify-content: center;
   position: absolute;
   z-index: 2;
-  margin-top: -3%;
+  margin-top: -4%;
 }
 
 .valueTitle {
@@ -88,7 +88,7 @@ body {
   justify-content: center;
   position: absolute;
   z-index: 2;
-  margin-top: -3%;
+  margin-top: -4%;
 }
 
 .valueTitle p {
@@ -115,7 +115,7 @@ body {
   height: 110px;
   border-radius: 80px;
   color: #ffffff;
-  font-size: 21px;
+  font-size: 19px;
   font-weight: bold;
 }
 
@@ -254,7 +254,7 @@ body {
 }
 
 /*.values .second_row .left:after { !*  our pseudo-element *!*/
-/*content: "";*/
+/*makkah: "";*/
 /*position: absolute;*/
 /*height: 0;*/
 /*left: 23%;*/
@@ -276,7 +276,7 @@ body {
 }
 
 /*.values .second_row .right:before { !*  our pseudo-element *!*/
-/*content: "";*/
+/*makkah: "";*/
 /*position: absolute;*/
 /*height: 0;*/
 /*right: 23%;*/
@@ -307,7 +307,7 @@ body {
   align-items: center;
 }
 
-.fa-handshake-o, .fa-check-square-o, .fa-thumbs-o-up, .fa-usd {
+.fa-handshake-o, .fa-check-square-o, .fa-thumbs-o-up, .fa-usd , .fa-map-marker {
   color: #ffffff;
 }
 
@@ -323,7 +323,7 @@ body {
 }
 
 /*.integrity::after {*/
-/*content: "";*/
+/*makkah: "";*/
 /*position: absolute;*/
 /*height: 0;*/
 /*left: 49%;*/
@@ -350,7 +350,7 @@ body {
 }
 
 /*.reliability::before {*/
-/*content: "";*/
+/*makkah: "";*/
 /*position: absolute;*/
 /*height: 0;*/
 /*left: 49%;*/
@@ -869,34 +869,24 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
+  justify-content: center;
 }
 
 .programNavbar ul li {
+  font-size: 20px;
+  font-family: Georgia,sans-serif;
   list-style: none;
-  width: 100%;
+  width: 20%;
   text-align: center;
   color: #4bb0bb;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.5s, box-shadow 0.5s;
-  border: 1px solid #b9b9b9;
 }
 
-.programNavbar ul li:hover {
-  background: #52c0cc;
-  color: #ffffff;
-  cursor: pointer;
-  box-shadow: 0px 0px 2px 1px #53c2ce;
-  border: none;
-}
-.programNavbar ul li.active {
-  background: #4bb0bb;
-  color: #ffffff;
-  cursor: pointer;
-  box-shadow: 0px 0px 2px 1px #498a90;
-  border: none;
+.programNavbar ul li .fa-check-square-o {
+margin-left: 5%;
 }
 
 .customProgram {
@@ -1101,10 +1091,12 @@ body {
   z-index: 4;
   background: rgba(60, 141, 150, 0.9);
   align-self: flex-end;
-  color: #ffffff;
+  color: #ffffff !important;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
+  padding-right: 1%;
 }
 
 .accommodation .selected {
@@ -1126,7 +1118,7 @@ body {
   display: flex;
   flex-flow: column;
   margin-top: 4%;
-  margin-bottom: 4%;
+  margin-bottom: 7%;
 }
 
 .schedule .input_filed .schedule_wrapper {
@@ -1145,6 +1137,8 @@ body {
   justify-content: center;
   align-self: center;
   padding: 5%;
+  padding-top: 7%;
+  padding-bottom: 7%;
 }
 .calculate .calculate_button{
    width: 80%;
@@ -1159,6 +1153,63 @@ body {
   transition: background 0.4s;
   border-radius: 50px;
  }
+.price{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+.price h1 {
+  align-self: center;
+  background: #3bb8c5;
+  color: #fff !important;
+  padding: 1%;
+}
+.price .Title p {
+  font-size: 22px;
+}
+.price > h3{
+  color: #868686;
+  font-family: Georgia,sans-serif;
+}
+.price p{
+  color: #868686;
+  font-family: Georgia,sans-serif;
+}
+.price > h1{
+  color: #868686;
+  font-family: Georgia,sans-serif;
+}
+.price h3::after{
+   content: '';
+   display: block;
+   width: 7%;
+   height: 2px;
+   margin-top: 1%;
+   margin-bottom: 1%;
+   background: #868686;
+ }
+.price p{
+  font-size: 20px;
+}
+.price h1::after{
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 3px;
+  margin-bottom: 5%;
+  margin-left: 11px;
+  background: #fff;
+}
+.price h1::before{
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 3px;
+  margin-bottom: 5%;
+  margin-right: 11px;
+  background: #fff;
+}
 .calculate .calculate_button:hover{
   background: #498a90;
   cursor: pointer;
@@ -1252,7 +1303,7 @@ label {
   color: #1f7e9a;
 }
 
-/*---------------------------- includes --------------------------------*/
+/*---------------------------- madinah --------------------------------*/
 .includesContainer {
   width: 100%;
   display: flex;

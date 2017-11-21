@@ -7,10 +7,10 @@ import {environment} from "../environments/environment";
 export class AppSettings {
 
   public static API_ENDPOINT(): string {
-    if (!environment.production)
-      return 'http://localhost:8000';
-    else
-      return 'http://localhost:8000';
+      return environment.API;
+  }
+  public static PICTURE_ENDPOINT(): string {
+    return environment.pictures;
   }
 
   public static getRequestOptions() {

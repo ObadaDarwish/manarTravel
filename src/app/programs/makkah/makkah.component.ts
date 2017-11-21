@@ -4,91 +4,43 @@ import {ProgramsService} from '../programs.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable, BehaviorSubject} from "rxjs";
 import {FormGroup, FormBuilder} from '@angular/forms';
-
+import {AppSettings} from '../../api.settings';
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-makkah',
+  templateUrl: './makkah.component.html',
+  styleUrls: ['./makkah.component.css']
 })
-export class ContentComponent implements OnInit {
-  madinahhotels: any;
-  makkahhotels: any;
-  MakkahUnitCost: number = 0;
-  MadinahUnitCost: number = 0;
-  McheckInOut: FormGroup;
-  roomType: any;
-  public radioModel: string = '';
+export class MakkahComponent implements OnInit {
 
-  Makkahcheckin: any;
-  Makkahcheckout: any;
-  Maddinahcheckin: any;
-  Maddinahcheckout: any;
-  childrenNumber: number;
-  MakkahNightsIsChosen: boolean = false;
-  MadinahNightsIsChosen: boolean = false;
+
+
+  bsConfig: any = {containerClass: 'theme-blue'};
   public max: number = 5;
   public rate: number = 3;
   public isReadonly: boolean = true;
-  isSelected: boolean = false;
-  MakkahcheckinError: boolean = false;
-  MakkahErrorMassage: string;
-  MadinahcheckinError: boolean = false;
-  ErrorMassage: string;
-  color: any;
-  RoomType: any = 'Single';
-  bsValue: Date = new Date();
-  bsRangeValue: any = [new Date(2017, 7, 4), new Date(2017, 7, 20)];
-  bsConfig: any = {containerClass: 'theme-blue'};
-  minDate = new Date(2017, 5, 10);
-  maxDate = new Date(2018, 9, 15);
+  minDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+  maxDate = new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate());
 
-  constructor(private globalService: GlobalService, private activeRouter: ActivatedRoute, private programService: ProgramsService) {
+  constructor(public globalService: GlobalService, private activeRouter: ActivatedRoute, public programService: ProgramsService) {
   }
 
   ngOnInit() {
 
-    let code = this.activeRouter.parent.snapshot.params['id'];
-    this.programService.getMadinahHotels(code).subscribe(
-      response=> {
-        this.madinahhotels = response;
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    this.programService.getMakkahHotels(code).subscribe(
-      response=> {
-        this.makkahhotels = response;
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    this.programService.getMiscSum1(code).subscribe(
-      response=> {
-        this.globalService.miscSum1 = response[0];
 
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    this.programService.getMiscSum2(code).subscribe(
-      response=> {
-        this.globalService.miscSum2 = response[0];
-      },
-      error => {
-        console.log(error);
-      }
-    );
+
 
 
   }
 
-  selectHotel(value) {
-    console.log(value);
-    this.isSelected = true;
+  selectHotel(index) {
+    this.programService.MakkahhotelIndex = index;
+    for (let hotel = 0; hotel < this.programService.makkahSelectedHotel.length; hotel++) {
+      this.programService.makkahSelectedHotel[hotel] = false;
+    }
+    this.programService.makkahSelectedHotel[index] = true;
+
   }
+
 
   // selectMakkahHotel(name, currency, single, double, triple, quad) {
   //   this.globalService.MakkahhotelDetails = [];
