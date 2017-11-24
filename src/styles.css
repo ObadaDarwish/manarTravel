@@ -2,12 +2,14 @@
 body {
   margin: 0;
 }
-.loadSVG{
-  margin:20%;
+
+.loadSVG {
+  margin: 20%;
   margin-left: 45%;
   width: 100px;
   height: 100px;
 }
+
 @import url('https://fonts.googleapis.com/css?family=Amiri');
 
 .loadingImg {
@@ -67,28 +69,50 @@ body {
   background: #3bb8c5;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
   position: relative;
-  padding-top: 7%;
-  padding-bottom: 2%;
+  padding: 2%;
+  display: -webkit-inline-box;
+  flex-flow: nowrap;
+  justify-content: flex-start;
+  overflow-x: scroll;
+}
+
+.visit::-webkit-scrollbar {
+  background: #ffffff;
+  width: 100%;
+  height: 12px;
+}
+
+.visit::-webkit-scrollbar-button {
+  background: #52c0cc;
+}
+
+.visit::-webkit-scrollbar-thumb {
+  background: #3b8b94;
 }
 
 .visitTitle {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  position: absolute;
-  z-index: 2;
-  margin-top: -4%;
+  position: relative;
+  background: #3bb8c5;
 }
 
 .valueTitle {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  position: absolute;
-  z-index: 2;
-  margin-top: -4%;
+  position: relative;
+  background: #fff;
 }
 
 .valueTitle p {
@@ -96,54 +120,45 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 0 !important;
-  background: #ffffff;
-  width: 110px;
-  height: 110px;
-  border-radius: 80px;
+  background: #fff;
+  padding: 2%;
   color: #3bb8c5;
-  font-size: 21px;
+  font-size: 25px;
   font-weight: bold;
 }
 
 .visitTitle p {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
   margin-bottom: 0 !important;
   background: #3bb8c5;
-  width: 110px;
-  height: 110px;
-  border-radius: 80px;
+  padding: 2%;
   color: #ffffff;
-  font-size: 19px;
+  font-size: 25px;
   font-weight: bold;
 }
 
-.aboutusTitle {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  z-index: 2;
-  margin-top: -3%;
+.visitTitle p::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #ffffff;
+  width: 50%;
+  margin-left: 25%;
 }
 
-.aboutusTitle p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0 !important;
+.valueTitle p::after {
+  content: '';
+  display: block;
+  height: 2px;
   background: #3bb8c5;
-  width: 110px;
-  height: 110px;
-  border-radius: 80px;
-  color: #ffffff;
-  font-size: 21px;
-  font-weight: bold;
+  width: 50%;
+  margin-left: 25%;
 }
 
 .visit .item {
-  width: 300px;
+  margin-right: 2%;
+  width: 330px;
   background: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,19 +169,23 @@ body {
   flex-flow: column;
 }
 
-.visit .see_more {
+.see_more {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
-  margin-top: 3%;
+  background: #3bb8c5;
 }
 
-.visit .see_more p:hover {
+.see_more p:hover {
   cursor: pointer;
   background: #165f67;
 }
 
-.visit .see_more p {
+.see_more p {
   background: #108a96;
   color: #ffffff;
   padding: 12px;
@@ -307,7 +326,7 @@ body {
   align-items: center;
 }
 
-.fa-handshake-o, .fa-check-square-o, .fa-thumbs-o-up, .fa-usd , .fa-map-marker {
+.fa-handshake-o, .fa-check-square-o, .fa-thumbs-o-up, .fa-usd, .fa-map-marker {
   color: #ffffff;
 }
 
@@ -406,6 +425,29 @@ body {
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
+}
+
+.aboutusTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  margin-top: -3%;
+}
+
+.aboutusTitle p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0 !important;
+  background: #3bb8c5;
+  width: 110px;
+  height: 110px;
+  border-radius: 80px;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: bold;
 }
 
 .aboutus img {
@@ -517,6 +559,109 @@ body {
   height: 200px;
 }
 
+/*------------------------ programs  ----------------------------------*/
+.programListContainer {
+  width: 100%;
+  position: absolute;
+  padding-top: 5%;
+  background-color: #2d6f75;
+}
+
+.programList {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding-left: 3%;
+  padding-top: 2%;
+  background: #e0e0e0;
+}
+
+.programList .item {
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 300px;
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  transition: box-shadow 0.4s;
+}
+
+.programList .item:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 7px 1px black;
+}
+
+.programList .item img {
+  width: inherit;
+  height: 300px !important;
+  position: relative;
+}
+
+.programList .item .knowMore {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.programList .item .itemDate {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.programList .item .itemDate p {
+  background: #59b3bc;
+  width: 60%;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 0;
+  align-items: center;
+  padding: 2%;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.knowMore p {
+  width: 150px;
+  color: #ffffff;
+  height: 35px;
+  padding-top: 2%;
+  background-color: #3bb8c5;
+}
+
+.knowMore p:hover {
+  background-color: #39a1ae;
+  cursor: pointer;
+}
+
+.programList .item .itemTitle {
+  position: relative;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.programList .item .itemDescription {
+  position: relative;
+  width: 100%;
+}
+
+.programList .item p {
+  text-align: center;
+  font-family: Georgia, sans-serif;
+  font-size: 14px;
+}
+
+.programList .item .itemTitle p {
+  font-weight: bold;
+  font-size: 22px;
+}
+
 /*------------------------  submit modal ----------------------------------*/
 
 .submitContainer {
@@ -531,6 +676,122 @@ body {
 .submitContainer .InputContainer input {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/*------------------------------------- program profile -------------------------------------*/
+
+.profileContainer {
+  width: 100%;
+  position: absolute;
+  background: #2d6f75;
+  display: flex;
+  flex-flow: column;
+}
+
+.profileContainer .profileHeader {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  margin-top: 10%;
+  margin-bottom: 1%;
+}
+
+.profileContainer .profileHeader .img_container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.profileContainer .profileHeader .details_container {
+  width: 70%;
+  display: flex;
+  flex-flow: column;
+}
+
+.profileContainer .profileHeader .details_container h1 {
+  color: #fff;
+  font-family: Gorgia;
+  font-weight: bold;
+}
+
+.profileContainer .profileHeader .details_container p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.profileContainer .profileHeader .details_container .date {
+  margin-top: 3%;
+  display: flex;
+  flex-flow: row;
+}
+
+.profileContainer .profileHeader .details_container .date div {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.profileContainer .profileHeader .details_container .date p {
+  font-size: 16px;
+  margin-top: 10% !important;
+  margin-bottom: 10% !important;
+}
+
+.profileContainer .profileHeader .details_container .date span {
+  color: #62f0ff;
+
+}
+
+.profileContainer .profile_body {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-flow: column;
+}
+
+.profileContainer .profile_body .horizontal_line {
+  width: 90%;
+  position: relative;
+  height: 2px;
+  background: #d0d0d0;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  display: flex;
+  align-self: center;
+}
+
+.profileContainer .profile_body .rules {
+  width: 100%;
+  position: relative;
+
+}
+
+.profileContainer .profile_body .rules div {
+  display: flex;
+  flex-flow: column;
+  margin-left: 4%;
+}
+
+.profileContainer .profile_body .rules div h3 {
+  font-family: Georgia;
+  color: #757575;
+}
+.profileContainer .profile_body .rules div p {
+  font-family: Georgia;
+  color: #757575;
+}
+
+.profileContainer .profile_body .Accommodation table th {
+  color: #2d6f75;
+}
+
+.profileContainer .profileHeader .img_container img {
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  border: 5px solid #ffffff;
 }
 
 /*-------------------------------------- Landing ---------------------------------------*/
@@ -731,7 +992,8 @@ body {
   margin-bottom: 1%;
   box-shadow: 0px 0px 6px 1px #6b6b6b;
 }
-.location{
+
+.location {
   height: 400px;
   background: #3bb8c5;
   display: flex;
@@ -874,7 +1136,7 @@ body {
 
 .programNavbar ul li {
   font-size: 20px;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
   list-style: none;
   width: 20%;
   text-align: center;
@@ -886,7 +1148,7 @@ body {
 }
 
 .programNavbar ul li .fa-check-square-o {
-margin-left: 5%;
+  margin-left: 5%;
 }
 
 .customProgram {
@@ -1019,8 +1281,10 @@ margin-left: 5%;
 .fa-bed {
   color: #ffffff;
 }
-.fa-h-square{color: #ffffff;}
 
+.fa-h-square {
+  color: #ffffff;
+}
 
 .fa-long-arrow-right {
   color: #52c0cc;
@@ -1032,6 +1296,10 @@ margin-left: 5%;
 }
 
 .fa-calendar-check-o {
+  color: #ffffff;
+}
+
+.fa-plane {
   color: #ffffff;
 }
 
@@ -1074,6 +1342,7 @@ margin-left: 5%;
   box-shadow: 0px 0px 6px 2px #000000;
   cursor: pointer;
 }
+
 .accommodation .hotel.selected {
   box-shadow: 0px 0px 6px 2px #000000;
 }
@@ -1129,7 +1398,8 @@ margin-left: 5%;
 .schedule .input_filed .form-group label {
   color: #4f98a0;
 }
-.calculate{
+
+.calculate {
   position: relative;
   background: #eaeaea;
   width: 100%;
@@ -1140,59 +1410,69 @@ margin-left: 5%;
   padding-top: 7%;
   padding-bottom: 7%;
 }
-.calculate .calculate_button{
-   width: 80%;
-   height: 50px;
-   background: #4f98a0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   color: #fff;
-   font-size: 18px;
-   font-family: Georgia,sans-serif;
+
+.calculate .calculate_button {
+  width: 80%;
+  height: 50px;
+  background: #4f98a0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-family: Georgia, sans-serif;
   transition: background 0.4s;
   border-radius: 50px;
- }
-.price{
+}
+
+.price {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-flow: column;
 }
+
 .price h1 {
   align-self: center;
   background: #3bb8c5;
   color: #fff !important;
   padding: 1%;
 }
+
 .price .Title p {
   font-size: 22px;
 }
-.price > h3{
+
+.price > h3 {
   color: #868686;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
 }
-.price p{
+
+.price p {
   color: #868686;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
 }
-.price > h1{
+
+.price > h1 {
   color: #868686;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
 }
-.price h3::after{
-   content: '';
-   display: block;
-   width: 7%;
-   height: 2px;
-   margin-top: 1%;
-   margin-bottom: 1%;
-   background: #868686;
- }
-.price p{
+
+.price h3::after {
+  content: '';
+  display: block;
+  width: 7%;
+  height: 2px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  background: #868686;
+}
+
+.price p {
   font-size: 20px;
 }
-.price h1::after{
+
+.price h1::after {
   content: '';
   display: inline-block;
   width: 15px;
@@ -1201,7 +1481,8 @@ margin-left: 5%;
   margin-left: 11px;
   background: #fff;
 }
-.price h1::before{
+
+.price h1::before {
   content: '';
   display: inline-block;
   width: 15px;
@@ -1210,7 +1491,8 @@ margin-left: 5%;
   margin-right: 11px;
   background: #fff;
 }
-.calculate .calculate_button:hover{
+
+.calculate .calculate_button:hover {
   background: #498a90;
   cursor: pointer;
 }
@@ -1379,11 +1661,26 @@ label {
   margin-bottom: 3%;
 }
 
+.Title.right {
+  justify-content: flex-start;
+  margin-left: 3%;
+  width: 97%;
+
+}
+
+.Title.right.manar_program p {
+  color: #ffffff;
+}
+
+.Title.right.manar_program p::after {
+  background: #ffffff;
+}
+
 .Title p {
   font-family: Georgia, sans-serif;
   font-size: 20px;
   font-weight: bold;
-  color: #9c9cb4;
+  color: #4a8a90;
   margin: 0 !important;
 }
 
@@ -1393,7 +1690,16 @@ label {
   height: 2px;
   width: 50%;
   margin-left: 25%;
-  background: #9c9cb4;
+  background: #4a8a90;
+}
+
+.Title.right p::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 50%;
+  margin-left: 0% !important;
+  background: #4a8a90;
 }
 
 .btn-primary {

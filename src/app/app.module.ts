@@ -21,6 +21,8 @@ import { ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bo
 import { SubmitComponent } from './global-modal/submit/submit.component';
 import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
 import { AgmCoreModule } from '@agm/core';
+import { ManarProgramModule } from './manar-program/manar-program.module';
+import { ProgramProfileComponent } from './program-profile/program-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { AgmCoreModule } from '@agm/core';
     FooterComponent,
     MissingComponent,
     GlobalModalComponent,
-    SubmitComponent
+    SubmitComponent,
+    ProgramProfileComponent
   ],
   imports: [
+    ManarProgramModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDNMwX1QVNDqd5eUs6kNBKDQtWiXLRWYQA'
     }),
