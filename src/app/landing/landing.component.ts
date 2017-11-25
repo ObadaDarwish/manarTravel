@@ -1,6 +1,7 @@
 import {Component, OnInit, HostListener} from '@angular/core';
 import {FormGroup, FormBuilder, Validators}from '@angular/forms';
 import {GlobalService} from '../global-service.service';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -14,7 +15,7 @@ export class LandingComponent implements OnInit {
   lng: number = 31.259853;
   zoomlevel: number = 15;
 
-  constructor(private fb: FormBuilder, public globalService: GlobalService) {
+  constructor(private router: Router, private fb: FormBuilder, public globalService: GlobalService) {
     this.contact_us_form = fb.group({
       'first_name': ['', Validators.required],
       'email': ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15}( )*?)$')])],
@@ -34,6 +35,10 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  openProfile(code) {
+    this.router.navigateByUrl('manar-program/' + code);
   }
 
   contactUs(value, valid) {

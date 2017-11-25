@@ -15,7 +15,7 @@ const MainRoute: Routes = [
   {path: '', component:LandingComponent},
   {path: 'programs/:id', component:PorgramsComponent},
   {path:'manar-programs',component:ManarProgramComponent},
-  {path:'manar-program/:code',component:ProgramProfileComponent},
+  {path:'manar-program/:code/:id',component:ProgramProfileComponent},
     /* Missing */
     {path: '**', redirectTo: '404', pathMatch: 'full'},
     {path: '404', component: MissingComponent},

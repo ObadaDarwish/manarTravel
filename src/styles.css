@@ -133,19 +133,20 @@ body {
   margin-bottom: 0 !important;
   background: #3bb8c5;
   padding: 2%;
+  padding-bottom: 0%;
   color: #ffffff;
   font-size: 25px;
   font-weight: bold;
 }
 
-.visitTitle p::after {
-  content: '';
-  display: block;
-  height: 2px;
-  background: #ffffff;
-  width: 50%;
-  margin-left: 25%;
-}
+/*.visitTitle p::after {*/
+/*content: '';*/
+/*display: block;*/
+/*height: 2px;*/
+/*background: #ffffff;*/
+/*width: 50%;*/
+/*margin-left: 25%;*/
+/*}*/
 
 .valueTitle p::after {
   content: '';
@@ -651,6 +652,7 @@ body {
   width: 100%;
 }
 
+
 .programList .item p {
   text-align: center;
   font-family: Georgia, sans-serif;
@@ -660,6 +662,38 @@ body {
 .programList .item .itemTitle p {
   font-weight: bold;
   font-size: 22px;
+}
+
+.requestProgram {
+  position: relative;
+  background: #eaeaea;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 5%;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  align-items: center;
+}
+
+.requestButton {
+  width: 80%;
+  height: 50px;
+  background: #4f98a0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-family: Georgia, sans-serif;
+  transition: background 0.4s;
+  border-radius: 50px;
+}
+
+.requestButton:hover {
+  background: #498a90;
+  cursor: pointer;
 }
 
 /*------------------------  submit modal ----------------------------------*/
@@ -733,14 +767,9 @@ body {
 }
 
 .profileContainer .profileHeader .details_container .date p {
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 10% !important;
   margin-bottom: 10% !important;
-}
-
-.profileContainer .profileHeader .details_container .date span {
-  color: #62f0ff;
-
 }
 
 .profileContainer .profile_body {
@@ -751,7 +780,7 @@ body {
   flex-flow: column;
 }
 
-.profileContainer .profile_body .horizontal_line {
+.horizontal_line {
   width: 90%;
   position: relative;
   height: 2px;
@@ -762,36 +791,108 @@ body {
   align-self: center;
 }
 
+.horizontal_line.programHeader {
+  width: 80%;
+  position: relative;
+  height: 2px;
+  background: #398b92;
+  margin-top: 1%;
+  margin-bottom: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
 .profileContainer .profile_body .rules {
   width: 100%;
   position: relative;
-
+  padding-bottom: 2%;
 }
 
 .profileContainer .profile_body .rules div {
   display: flex;
   flex-flow: column;
-  margin-left: 4%;
+  margin-left: 3%;
 }
 
 .profileContainer .profile_body .rules div h3 {
   font-family: Georgia;
-  color: #757575;
+  color: #4a8a90;
 }
+
+.profileContainer .profile_body .rules div h3::after {
+  content: '';
+  height: 2px;
+  display: block;
+  width: 5%;
+  background: #4a8a90;
+}
+
 .profileContainer .profile_body .rules div p {
   font-family: Georgia;
   color: #757575;
 }
 
-.profileContainer .profile_body .Accommodation table th {
+.profileContainer .profile_body .AccommodationUmrah table th {
   color: #2d6f75;
+}
+
+.profileContainer .profile_body .Accommodationhajj table th {
+  color: #2d6f75;
+}
+
+.profileContainer .profile_body .AccommodationUmrah table .tr_select {
+  transition: background 0.4s;
+}
+
+.profileContainer .profile_body .AccommodationUmrah table .tr_select:hover {
+  background: #2d6f75;
+  color: #fff;
+  cursor: pointer;
+}
+
+.profileContainer .profile_body .mashaer div {
+  display: flex;
+  flex-flow: column;
+  margin-left: 3%;
+}
+
+.profileContainer .profile_body .mashaer div h3 {
+  font-family: Georgia;
+  color: #4a8a90;
 }
 
 .profileContainer .profileHeader .img_container img {
   width: 250px;
   height: 250px;
   border-radius: 250px;
-  border: 5px solid #ffffff;
+  border: 5px solid #36a2ad;
+}
+.profileContainer .hajjprice {
+  width: 100%;
+  position: relative;
+}
+.profileContainer .hajjprice table th {
+  text-align: center;
+  color: #2d6f75;
+
+}
+.profileContainer .hajjprice table td {
+  transition: background 0.4s;
+}
+.profileContainer .hajjprice table td:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background: #2d6f75;
+}
+
+.profileContainer .requestProgram {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
 }
 
 /*-------------------------------------- Landing ---------------------------------------*/

@@ -1,16 +1,17 @@
 <div class="profileContainer">
   <div class="profileHeader">
     <div class="img_container">
-      <img src="../../assets/imgs/manar_logo.jpg" alt="">
+      <img src="../../assets/imgs/manar_logo3.png" alt="">
     </div>
     <div class="details_container">
       <h1>The First Program</h1>
       <p>Umrah program</p>
+      <div class="horizontal_line programHeader"></div>
       <div class="date">
         <div><p>Cairo </p><i class="fa fa-plane" aria-hidden="true"></i>
-          <p> Madina </p><span>03/04/2017</span></div>
+          <p> Madina </p></div>
         <div><p>Madina </p><i class="fa fa-plane" aria-hidden="true"></i>
-          <p>Cairo </p><span>03/04/2017</span></div>
+          <p>Cairo </p></div>
       </div>
     </div>
   </div>
@@ -18,50 +19,115 @@
     <div class="Title right">
       <p>Accommodation</p>
     </div>
-    <div class="Accommodation">
+    <!--umrah accommodotion-->
+    <div class="AccommodationUmrah" *ngIf="programType=='umrah';else  hajjProgram">
       <table class="table table-striped">
         <thead>
         <tr>
-          <th>Hotel Name</th>
-          <th>Location</th>
-          <th>Single Room Price</th>
-          <th>Double Room Price</th>
-          <th>Triple Room Price</th>
-          <th>Quad Room Price</th>
+          <th>Trip Date</th>
+          <th>Hotel Makkah</th>
+          <th>Hotel Maddinah</th>
+          <th>Single Room</th>
+          <th>Double Room</th>
+          <th>Triple Room</th>
+          <th>Quad Room</th>
           <th>Child <i class="fa fa-arrow-down"></i> 12 Years</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr class="tr_select">
+          <td>04/05/2017</td>
           <td>GRAND ZAMZAM</td>
-          <td>Makkah</td>
-          <td>john@example.com</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-          <td>john@example.com</td>
+          <td>Hilton</td>
+          <td>0</td>
+          <td>24500 EGP</td>
+          <td>22500 EGP</td>
+          <td>20500 EGP</td>
+          <td>6000 EGP</td>
         </tr>
-        <tr>
+        <tr class="tr_select">
+          <td>04/08/2017</td>
           <td>ILLAF EL MASHAER</td>
-          <td>Makkah</td>
-          <td>mary@example.com</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-          <td>john@example.com</td>
+          <td>Al Ayman Royal</td>
+          <td>0</td>
+          <td>24500 EGP</td>
+          <td>22500 EGP</td>
+          <td>20500 EGP</td>
+          <td>6000 EGP</td>
         </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-          <td>john@example.com</td>
+        <tr class="tr_select">
+          <td>04/10/2017</td>
+          <td>Al Ayman grand</td>
+          <td>Al Ayman teba</td>
+          <td>0</td>
+          <td>24500 EGP</td>
+          <td>22500 EGP</td>
+          <td>20500 EGP</td>
+          <td>6000 EGP</td>
         </tr>
         </tbody>
       </table>
     </div>
+    <!--hajj accommodation-->
+
+    <ng-template #hajjProgram>
+      <div class="Accommodationhajj">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Hotel Name</th>
+            <th>Location</th>
+            <th>From</th>
+            <th>To</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="tr_select">
+            <td>GRAND ZAMZAM</td>
+            <td>Makkah</td>
+            <td>04/12/2017</td>
+            <td>010/12/2017</td>
+
+          </tr>
+          <tr class="tr_select">
+            <td>ILLAF EL MASHAER</td>
+            <td>Makkah</td>
+            <td>04/01/2018</td>
+            <td>010/01/2018</td>
+          </tr>
+          <tr class="tr_select">
+            <td>ILLAF EL MASHAER</td>
+            <td>Maddinah</td>
+            <td>04/01/2018</td>
+            <td>010/01/2018</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="Title right">
+        <p>Masha'er</p>
+      </div>
+      <div class="mashaer">
+        <div>
+          <h3>Arafa</h3>
+          <p>sds</p>
+          <p>asda</p>
+          <p>asdas</p>
+          <p>asd</p>
+        </div>
+        <div>
+          <h3>Menah</h3>
+          <p>sds</p>
+          <p>asda</p>
+          <p>asdas</p>
+          <p>asd</p>
+        </div>
+
+      </div>
+    </ng-template>
+
     <div class="horizontal_line"></div>
     <div class="rules">
       <div>
@@ -80,6 +146,32 @@
       </div>
 
     </div>
-  </div>
+    <div *ngIf="programType!='umrah'" class="hajjprice">
+      <div class="Title right">
+        <p>Prices</p>
+      </div>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Single</th>
+          <th>Double</th>
+          <th>Triple</th>
+          <th>Quad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr >
+          <td>1500</td>
+          <td>200</td>
+          <td>600</td>
+          <td>48484</td>
 
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div  class="requestProgram">
+    <div class="requestButton">Request Program</div>
+  </div>
 </div>

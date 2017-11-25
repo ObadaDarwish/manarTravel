@@ -13,7 +13,7 @@ export class ManarProgramComponent implements OnInit {
   ngOnInit() {
   }
 
-  openProgram() {
-    this.route.navigateByUrl('/manar-program/sdsakds');
+  openProgram(code) {
+    this.route.navigateByUrl('/manar-program/'+code+'/15');
   }
 }
