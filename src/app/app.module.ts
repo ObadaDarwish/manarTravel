@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
 import {GlobalService} from './global-service.service';
 import {ProgramsService} from './programs/programs.service';
 import { GlobalModalComponent } from './global-modal/global-modal.component';
-import { ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bootstrap';
+import { TooltipModule,ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bootstrap';
 import { SubmitComponent } from './global-modal/submit/submit.component';
 import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
 import { AgmCoreModule } from '@agm/core';
@@ -36,6 +36,7 @@ import { ProgramProfileComponent } from './program-profile/program-profile.compo
     ProgramProfileComponent
   ],
   imports: [
+    TooltipModule.forRoot(),
     ManarProgramModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDNMwX1QVNDqd5eUs6kNBKDQtWiXLRWYQA'

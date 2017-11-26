@@ -13,6 +13,8 @@ export class ProgramProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
     console.log(this.activeRoute.snapshot.params['id']);
   }
 

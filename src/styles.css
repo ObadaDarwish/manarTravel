@@ -652,7 +652,6 @@ body {
   width: 100%;
 }
 
-
 .programList .item p {
   text-align: center;
   font-family: Georgia, sans-serif;
@@ -766,6 +765,58 @@ body {
   margin-right: 5%;
 }
 
+.profileContainer .profileHeader .details_container .TripDate {
+  width: 100%;
+  display: flex;
+  flex-flow: column !important;
+  justify-content: center;
+}
+.profileContainer .profileHeader .details_container .TripDate .timeline
+{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 100%;
+}
+.profileContainer .profileHeader .details_container .TripDate .timelineData
+{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+}
+.profileContainer .profileHeader .details_container .TripDate .timelineData p{
+  margin: 0!important;
+}
+.tooltip-top {
+  width: 170px;
+}
+
+
+.profileContainer .profileHeader .details_container .TripDate  .circle {
+  height: 30px;
+  width: 30px;
+  background: #36a2ad;
+  border-radius: 40px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileContainer .profileHeader .details_container .TripDate .horizontalLine {
+  height: 2px;
+  width: 50%;
+  background: #36a2ad;
+  margin: 0;
+}
+
 .profileContainer .profileHeader .details_container .date p {
   font-size: 18px;
   margin-top: 10% !important;
@@ -843,16 +894,6 @@ body {
   color: #2d6f75;
 }
 
-.profileContainer .profile_body .AccommodationUmrah table .tr_select {
-  transition: background 0.4s;
-}
-
-.profileContainer .profile_body .AccommodationUmrah table .tr_select:hover {
-  background: #2d6f75;
-  color: #fff;
-  cursor: pointer;
-}
-
 .profileContainer .profile_body .mashaer div {
   display: flex;
   flex-flow: column;
@@ -870,18 +911,22 @@ body {
   border-radius: 250px;
   border: 5px solid #36a2ad;
 }
+
 .profileContainer .hajjprice {
   width: 100%;
   position: relative;
 }
+
 .profileContainer .hajjprice table th {
   text-align: center;
   color: #2d6f75;
 
 }
+
 .profileContainer .hajjprice table td {
   transition: background 0.4s;
 }
+
 .profileContainer .hajjprice table td:hover {
   cursor: pointer;
   color: #ffffff;
@@ -1404,6 +1449,9 @@ body {
   color: #ffffff;
 }
 
+.fa-suitcase{
+  color: #ffffff;
+}
 .accommodation {
   width: 100%;
   position: relative;
