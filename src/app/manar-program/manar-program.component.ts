@@ -9,11 +9,10 @@ export class ManarProgramComponent implements OnInit {
 
   constructor(private route: Router) {
   }
-
   ngOnInit() {
   }
 
   openProgram(code) {
-    this.route.navigateByUrl('/manar-program/'+code+'/15');
+    this.route.navigateByUrl('/manar-program/'+code+'/2');
   }
 }

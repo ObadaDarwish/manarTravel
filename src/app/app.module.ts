@@ -23,7 +23,7 @@ import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
 import { AgmCoreModule } from '@agm/core';
 import { ManarProgramModule } from './manar-program/manar-program.module';
 import { ProgramProfileComponent } from './program-profile/program-profile.component';
-
+import {ProgramProfileService} from './program-profile/program-profile.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +58,7 @@ import { ProgramProfileComponent } from './program-profile/program-profile.compo
     RatingModule,
     ReactiveFormsModule
   ],
-  providers: [PageScrollService,ProgramsService,GlobalService],
+  providers: [ProgramProfileService,PageScrollService,ProgramsService,GlobalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
