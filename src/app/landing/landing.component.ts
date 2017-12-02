@@ -14,7 +14,7 @@ export class LandingComponent implements OnInit {
   lat: number = 29.956359;
   lng: number = 31.259853;
   zoomlevel: number = 15;
-
+  programs: any;
   constructor(private router: Router, private fb: FormBuilder, public globalService: GlobalService) {
     this.contact_us_form = fb.group({
       'first_name': ['', Validators.required],
@@ -34,11 +34,13 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.globalService.getAllManarPrograms().subscribe(data=> {
+      this.programs = data;
+    });
   }
 
-  openProfile(code) {
-    this.router.navigateByUrl('manar-program/' + code);
+  openProfile(type,id) {
+    this.router.navigateByUrl('manar-program/' + type+'/'+id);
   }
 
   contactUs(value, valid) {

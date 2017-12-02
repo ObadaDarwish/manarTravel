@@ -8,19 +8,32 @@ import {ProgramProfileService} from './program-profile.service';
 })
 export class ProgramProfileComponent implements OnInit {
   programType: any;
-
   programProfile: any;
+  arrivalDate: any;
+  departureDate: any;
 
   constructor(private profileService: ProgramProfileService, private activeRoute: ActivatedRoute) {
     this.programType = this.activeRoute.snapshot.params['code'];
   }
 
   ngOnInit() {
+    if (this.programType == 'umrah') {
+      this.profileService.getUmrahProgram(this.activeRoute.snapshot.params['id']).subscribe(data=> {
 
-    this.profileService.getUmrahProgram(this.activeRoute.snapshot.params['id']).subscribe(data=> {
-      console.log(data);
-      this.programProfile = data[0];
-    })
+        this.programProfile = data[0];
+        this.arrivalDate = new Date(this.programProfile.arrivalDate);
+        this.departureDate = new Date(this.programProfile.departureDate);
+
+      })
+    }
+    else {
+      this.profileService.getHajjProgram(this.activeRoute.snapshot.params['id']).subscribe(data=> {
+        this.programProfile = data[0];
+        this.arrivalDate = new Date(this.programProfile.arrivalDate);
+        this.departureDate = new Date(this.programProfile.departureDate);
+      })
+    }
+
 
   }
 

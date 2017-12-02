@@ -13,8 +13,8 @@
             Days</p>
         </div>
         <div class="TripDate">
-          <div><p><i class="fa fa-suitcase"></i> Departure: {{programProfile?.departureDate}}</p></div>
-          <div><p><i class="fa fa-suitcase"></i> Arrival: {{programProfile?.arrivalDate}}</p></div>
+          <div><p><i class="fa fa-suitcase"></i> Departure: {{departureDate | date:'fullDate'}}</p></div>
+          <div><p><i class="fa fa-suitcase"></i> Arrival: {{ arrivalDate| date:'fullDate'}}</p></div>
         </div>
       </div>
     </div>
@@ -65,23 +65,23 @@
           </thead>
           <tbody>
           <tr class="tr_select">
-            <td>GRAND ZAMZAM</td>
+            <td>{{programProfile?.MakkahHotel}}</td>
             <td>Makkah</td>
-            <td>04/12/2017</td>
-            <td>010/12/2017</td>
+            <td>{{programProfile?.makkah_from1}}</td>
+            <td>{{programProfile?.makkah_to1}}</td>
 
           </tr>
           <tr class="tr_select">
-            <td>ILLAF EL MASHAER</td>
+            <td>{{programProfile?.MakkahHotel}}</td>
             <td>Makkah</td>
-            <td>04/01/2018</td>
-            <td>010/01/2018</td>
+            <td>{{programProfile?.makkah_from2}}</td>
+            <td>{{programProfile?.makkah_to2}}</td>
           </tr>
           <tr class="tr_select">
-            <td>ILLAF EL MASHAER</td>
+            <td>{{programProfile?.madinahHotel}}</td>
             <td>Maddinah</td>
-            <td>04/01/2018</td>
-            <td>010/01/2018</td>
+            <td>{{programProfile?.madinah_from}}</td>
+            <td>{{programProfile?.madinah_to}}</td>
           </tr>
           </tbody>
         </table>
@@ -94,17 +94,11 @@
       <div class="mashaer">
         <div>
           <h3>Arafa</h3>
-          <p>sds</p>
-          <p>asda</p>
-          <p>asdas</p>
-          <p>asd</p>
+        <div [innerHTML]="programProfile?.arafa"></div>
         </div>
         <div>
           <h3>Menah</h3>
-          <p>sds</p>
-          <p>asda</p>
-          <p>asdas</p>
-          <p>asd</p>
+          <div [innerHTML]="programProfile?.mena"></div>
         </div>
 
       </div>

@@ -3,44 +3,13 @@
   <p>Manar Programs</p>
 </div>
   <div class="programList">
-    <div class="item" (click)="openProgram('umrah')">
-      <img src="../../assets/imgs/madinamosque.jpg" alt="">
-      <div class="itemTitle"><p>Masged El Madinah</p></div>
-      <div class="itemDescription"><p>sdasd DBAJSBDA KSBDA JDBJS ABDjsdjbdjs ndsjdn</p></div>
-      <div class="itemDate">
-        <p>2017-05-54</p>
+    <div class="item" (click)="openProfile(program.programType,program.id)" *ngFor="let program of programs">
+      <img [src]="globalService.imagePath+'/'+program.picture" alt="">
+      <div class="itemTitle"><p>{{program.name}}</p></div>
+      <div class="itemDescription"><p>{{program.programType.toUpperCase()}} Program</p>
       </div>
-    </div>
-    <div class="item" (click)="openProgram('hajj')">
-      <img src="../../assets/imgs/madinamosque.jpg" alt="">
-      <div class="itemTitle"><p>Masged El Madinah</p></div>
-      <div class="itemDescription"><p>sdasd DBAJSBDA KSBDA JDBJS ABDjsdjbdjs ndsjdn</p></div>
       <div class="itemDate">
-        <p>2017-05-54</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="../../assets/imgs/madinamosque.jpg" alt="">
-      <div class="itemTitle"><p>Masged El Madinah</p></div>
-      <div class="itemDescription"><p>sdasd DBAJSBDA KSBDA JDBJS ABDjsdjbdjs ndsjdn</p></div>
-      <div class="itemDate">
-        <p>2017-05-54</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="../../assets/imgs/madinamosque.jpg" alt="">
-      <div class="itemTitle"><p>Masged El Madinah</p></div>
-      <div class="itemDescription"><p>sdasd DBAJSBDA KSBDA JDBJS ABDjsdjbdjs ndsjdn</p></div>
-      <div class="itemDate">
-        <p>2017-05-54</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="../../assets/imgs/madinamosque.jpg" alt="">
-      <div class="itemTitle"><p>Masged El Madinah</p></div>
-      <div class="itemDescription"><p>sdasd DBAJSBDA KSBDA JDBJS ABDjsdjbdjs ndsjdn</p></div>
-      <div class="itemDate">
-        <p>2017-05-54</p>
+        <p><i class="fa fa-suitcase"></i> Departure: {{program.departureDate | date:'fullDate'}}</p>
       </div>
     </div>
   </div>

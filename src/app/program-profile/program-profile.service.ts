@@ -18,4 +18,11 @@ export class ProgramProfileService {
     })
 
   }
+  getHajjProgram(code): Observable<any>{
+
+    return this.http.get(`${AppSettings.API_ENDPOINT()}/getManarHajjProgram/${code}`) .map(response => {
+      return response.json();
+    })
+
+  }
 }
