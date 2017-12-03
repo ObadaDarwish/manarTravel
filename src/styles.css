@@ -502,7 +502,8 @@ body {
   width: 80%;
   border-radius: 20px;
   height: 40px;
-  margin-top: 7%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   margin-left: 10%;
   border: none;
 }
@@ -530,6 +531,7 @@ body {
 
 .contact_us .contact_us_form .row {
   width: 100% !important;
+  margin: 0;
 }
 
 .contact_us .contact_us_form .details {
@@ -701,21 +703,13 @@ body {
   cursor: pointer;
 }
 
-/*------------------------  submit modal ----------------------------------*/
+/*------------------------  request-program modal ----------------------------------*/
 
 .submitContainer {
   width: 100%;
 }
 
-.submitContainer .InputContainer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
-.submitContainer .InputContainer input {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
 /*------------------------------------- program profile -------------------------------------*/
 

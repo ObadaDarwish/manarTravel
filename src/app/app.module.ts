@@ -18,12 +18,13 @@ import {GlobalService} from './global-service.service';
 import {ProgramsService} from './programs/programs.service';
 import { GlobalModalComponent } from './global-modal/global-modal.component';
 import { TooltipModule,ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bootstrap';
-import { SubmitComponent } from './global-modal/submit/submit.component';
+import { requestProgram } from './global-modal/request-program/request-program';
 import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
 import { AgmCoreModule } from '@agm/core';
 import { ManarProgramModule } from './manar-program/manar-program.module';
 import { ProgramProfileComponent } from './program-profile/program-profile.component';
 import {ProgramProfileService} from './program-profile/program-profile.service';
+import {SimpleNotificationsModule  } from 'angular2-notifications/src/simple-notifications.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +33,11 @@ import {ProgramProfileService} from './program-profile/program-profile.service';
     FooterComponent,
     MissingComponent,
     GlobalModalComponent,
-    SubmitComponent,
+    requestProgram,
     ProgramProfileComponent
   ],
   imports: [
+    SimpleNotificationsModule.forRoot(),
     TooltipModule.forRoot(),
     ManarProgramModule,
     AgmCoreModule.forRoot({

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-submit',
-  templateUrl: './submit.component.html',
-  styleUrls: ['./submit.component.css']
+  templateUrl: './request-program.html',
+  styleUrls: ['./request-program.css']
 })
-export class SubmitComponent implements OnInit {
+export class requestProgram implements OnInit {
 
   constructor() { }
 

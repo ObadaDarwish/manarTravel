@@ -13,6 +13,12 @@ export class AppComponent {
     this.globalService.imagePath = AppSettings.PICTURE_ENDPOINT();
   }
 
+  public options = {
+    position: ["bottom", "right"],
+    timeOut: 5000,
+    lastOnBottom: true
+  };
+
   ngOnInit() {
 
   }

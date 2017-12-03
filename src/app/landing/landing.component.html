@@ -158,33 +158,40 @@
             <div class="col-lg-8">
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="firstname">First Name</label>
+                  <label for="firstname">First Name *</label>
                   <input formControlName="first_name" type="text" placeholder="Ex: Mark" class="form-control"
                          id="firstname">
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="secondname">Last Name</label>
+                  <label for="secondname">Last Name *</label>
                   <input formControlName="last_name" type="text" placeholder="Ex: Thomson" class="form-control"
                          id="secondname">
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="form-group">
-                  <label for="message">Message</label>
+                  <label for="message">Message *</label>
                   <textarea formControlName="message" class="form-control" placeholder="Your message"
                             id="message"></textarea>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="email">Email *</label>
                   <input formControlName="email" type="email" placeholder="Ex: example@hotmail.com" class="form-control"
                          id="email">
                 </div>
               </div>
               <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="mobile">mobile *</label>
+                  <input formControlName="mobile" type="number" placeholder="Ex: 01XXXXXXXXX" class="form-control"
+                         id="mobile">
+                </div>
+              </div>
+              <div class="col-lg-12">
                 <input type="submit" class="sumbitButton" value="Submit"
                        [ngClass]="{'disabled' : contact_us_form.invalid ||isloading , 'active' : contact_us_form.valid}"
                        [disabled]="contact_us_form.invalid||isloading "/>

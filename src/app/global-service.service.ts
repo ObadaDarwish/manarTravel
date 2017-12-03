@@ -32,4 +32,18 @@ export class GlobalService {
       return response.json();
     })
   }
+
+  postContactUs(value, date) {
+    let body = JSON.stringify({
+      first_name: value.first_name,
+      last_name: value.last_name,
+      message: value.message,
+      email: value.email,
+      mobile: value.mobile,
+      created_at: date
+    });
+    return this.http.post(`${AppSettings.API_ENDPOINT()}/contactUS`, body, AppSettings.getRequestOptions()) .map(response => {
+        return response;
+      });
+  }
 }

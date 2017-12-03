@@ -1,11 +1,14 @@
 <div class="modal fade" bsModal #globalModal="bs-modal"
-     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" (onHide)="onHide()" aria-hidden="true">
   <div class="modal-dialog">
-
-      <button type="button" class="close pull-right" aria-label="Close" (click)="globalModal.hide()">
+<div class="modalControl">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="globalModal.toggle();">
         <span aria-hidden="true">&times;</span>
       </button>
+</div>
+    <div [ngSwitch]="modal">
+      <app-submit *ngSwitchCase="'submit'"></app-submit>
+    </div>
 
-        <app-submit></app-submit>
   </div>
 </div>

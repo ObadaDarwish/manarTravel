@@ -21,13 +21,11 @@ export class GlobalModalComponent implements OnInit {
   ngOnChanges(change: any) {
     if (!change.modal.isFirstChange()) {
       this.modal = this.globalService.globalModalSwitch;
-      if (change.modal.currentValue) {
-        this.globalModal.show();
-      }
-      else {
-        this.globalModal.hide();
-      }
+      this.globalModal.toggle();
     }
+  }
+
+  onHide() {
 
   }
 

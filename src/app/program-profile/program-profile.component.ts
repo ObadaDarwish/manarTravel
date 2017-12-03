@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProgramProfileService} from './program-profile.service';
+import {GlobalService} from '../global-service.service';
 @Component({
   selector: 'app-program-profile',
   templateUrl: './program-profile.component.html',
@@ -12,7 +13,7 @@ export class ProgramProfileComponent implements OnInit {
   arrivalDate: any;
   departureDate: any;
 
-  constructor(private profileService: ProgramProfileService, private activeRoute: ActivatedRoute) {
+  constructor(public globalService: GlobalService, private profileService: ProgramProfileService, private activeRoute: ActivatedRoute) {
     this.programType = this.activeRoute.snapshot.params['code'];
   }
 
@@ -37,4 +38,8 @@ export class ProgramProfileComponent implements OnInit {
 
   }
 
+  requestProgram() {
+    this.globalService.globalModalToggle = !this.globalService.globalModalToggle;
+    this.globalService.globalModalSwitch = 'submit';
+  }
 }
