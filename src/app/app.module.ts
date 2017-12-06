@@ -25,6 +25,7 @@ import { ManarProgramModule } from './manar-program/manar-program.module';
 import { ProgramProfileComponent } from './program-profile/program-profile.component';
 import {ProgramProfileService} from './program-profile/program-profile.service';
 import {SimpleNotificationsModule  } from 'angular2-notifications/src/simple-notifications.module';
+import {LoadingIndicatorModule} from './loading-indicator/loading-indicator.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +35,10 @@ import {SimpleNotificationsModule  } from 'angular2-notifications/src/simple-not
     MissingComponent,
     GlobalModalComponent,
     requestProgram,
-    ProgramProfileComponent
+    ProgramProfileComponent,
   ],
   imports: [
+    LoadingIndicatorModule,
     SimpleNotificationsModule.forRoot(),
     TooltipModule.forRoot(),
     ManarProgramModule,

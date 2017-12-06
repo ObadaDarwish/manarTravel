@@ -76,23 +76,31 @@
     </div>
 
   </div>
-  <div class="visitTitle">
-    <p>Manar Programs</p>
-  </div>
-  <div class="see_more"><p routerLink="/manar-programs">See More</p></div>
-  <div class="visit">
-    <div class="item" *ngFor="let program of programs;let index=index">
-      <div *ngIf="index<5">
-        <img [src]="globalService.imagePath+'/'+program.picture" alt="">
-        <div class="itemTitle"><p>{{program.name}}</p></div>
-        <div class="itemDescription"><p>{{program.programType.toUpperCase()}} Program</p>
-          <p><i class="fa fa-suitcase"></i> Departure: {{program.departureDate | date:'fullDate'}}</p>
+  <div *ngIf="!isgetAllProgramsLoading ;else loadPrograms">
+    <div class="visitTitle">
+      <p>Manar Programs</p>
+    </div>
+    <div class="see_more"><p routerLink="/manar-programs">See More</p></div>
+
+    <div class="visit">
+
+      <div class="item" *ngFor="let program of programs;let index=index">
+        <div *ngIf="index<5">
+          <img [src]="globalService.imagePath+'/'+program.picture" alt="">
+          <div class="itemTitle"><p>{{program.name}}</p></div>
+          <div class="itemDescription"><p>{{program.programType.toUpperCase()}} Program</p>
+            <p><i class="fa fa-suitcase"></i> Departure: {{program.departureDate | date:'fullDate'}}</p>
+          </div>
+          <div class="knowMore"><p (click)="openProfile(program.programType,program.id)">know More</p></div>
         </div>
-        <div class="knowMore"><p (click)="openProfile(program.programType,program.id)">know More</p></div>
       </div>
     </div>
-
   </div>
+  <ng-template #loadPrograms>
+    <div class="space md"></div>
+    <app-loading-indicator></app-loading-indicator>
+  </ng-template>
+
 
   <div class="valueTitle">
     <p>Values</p>
@@ -150,77 +158,83 @@
     <img src="../../assets/imgs/aboutus.jpg">
   </div>
   <div class="contact_us" id="scrollContact">
-    <form [formGroup]="contact_us_form" (ngSubmit)="contactUs(contact_us_form.value , contact_us_form.valid)">
-      <div class="contact_us">
-        <div class="contact_us_title"><p>Contact us</p></div>
-        <div class="contact_us_form">
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="firstname">First Name *</label>
-                  <input formControlName="first_name" type="text" placeholder="Ex: Mark" class="form-control"
-                         id="firstname">
+    <div *ngIf="!isContactLoading ;else loadingContact">
+      <form [formGroup]="contact_us_form" (ngSubmit)="contactUs(contact_us_form.value , contact_us_form.valid)">
+        <div class="contact_us">
+          <div class="contact_us_title"><p>Contact us</p></div>
+          <div class="contact_us_form">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="firstname">First Name *</label>
+                    <input formControlName="first_name" type="text" placeholder="Ex: Mark" class="form-control"
+                           id="firstname">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="secondname">Last Name *</label>
+                    <input formControlName="last_name" type="text" placeholder="Ex: Thomson" class="form-control"
+                           id="secondname">
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea formControlName="message" class="form-control" placeholder="Your message"
+                              id="message"></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input formControlName="email" type="email" placeholder="Ex: example@hotmail.com"
+                           class="form-control"
+                           id="email">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="mobile">mobile *</label>
+                    <input formControlName="mobile" type="number" placeholder="Ex: 01XXXXXXXXX" class="form-control"
+                           id="mobile">
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <input type="submit" class="sumbitButton" value="Submit"
+                         [ngClass]="{'disabled' : contact_us_form.invalid ||isloading , 'active' : contact_us_form.valid}"
+                         [disabled]="contact_us_form.invalid||isloading "/>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="secondname">Last Name *</label>
-                  <input formControlName="last_name" type="text" placeholder="Ex: Thomson" class="form-control"
-                         id="secondname">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <label for="message">Message *</label>
-                  <textarea formControlName="message" class="form-control" placeholder="Your message"
-                            id="message"></textarea>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="email">Email *</label>
-                  <input formControlName="email" type="email" placeholder="Ex: example@hotmail.com" class="form-control"
-                         id="email">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="mobile">mobile *</label>
-                  <input formControlName="mobile" type="number" placeholder="Ex: 01XXXXXXXXX" class="form-control"
-                         id="mobile">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <input type="submit" class="sumbitButton" value="Submit"
-                       [ngClass]="{'disabled' : contact_us_form.invalid ||isloading , 'active' : contact_us_form.valid}"
-                       [disabled]="contact_us_form.invalid||isloading "/>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="details">
-                <div class="item">
-                  <h3>Address</h3>
-                  <p>Cross roads 7 & 82,Maadi, Cairo-Egypt</p>
-                </div>
-                <div class="item">
-                  <h3>Open Time</h3>
-                  <p>9am => 5pm</p>
-                </div>
-                <div class="item">
-                  <h3>Phone</h3>
-                  <p>01001518668</p>
-                </div>
-                <div class="item">
-                  <h3>Email</h3>
-                  <p>manar@travel.com</p>
+              <div class="col-lg-4">
+                <div class="details">
+                  <div class="item">
+                    <h3>Address</h3>
+                    <p>Cross roads 7 & 82,Maadi, Cairo-Egypt</p>
+                  </div>
+                  <div class="item">
+                    <h3>Open Time</h3>
+                    <p>9am => 5pm</p>
+                  </div>
+                  <div class="item">
+                    <h3>Phone</h3>
+                    <p>01001518668</p>
+                  </div>
+                  <div class="item">
+                    <h3>Email</h3>
+                    <p>manar@travel.com</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
+    <ng-template #loadingContact>
+      <app-loading-indicator></app-loading-indicator>
+    </ng-template>
   </div>
   <div class="location">
     <agm-map [latitude]="lat" [zoom]="zoomlevel" [longitude]="lng">

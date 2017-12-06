@@ -1,3 +1,4 @@
+<div *ngIf="!isProgramsLoading;else  loadProfile">
 <div class="programListContainer">
 <div class="Title right manar_program">
   <p>Manar Programs</p>
@@ -14,3 +15,9 @@
     </div>
   </div>
 </div>
+</div>
+<ng-template #loadProfile>
+  <div class="space lg"></div>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>
+

@@ -12,19 +12,21 @@ export class ProgramProfileComponent implements OnInit {
   programProfile: any;
   arrivalDate: any;
   departureDate: any;
+  isProfileLoading: boolean = false;
 
   constructor(public globalService: GlobalService, private profileService: ProgramProfileService, private activeRoute: ActivatedRoute) {
     this.programType = this.activeRoute.snapshot.params['code'];
   }
 
   ngOnInit() {
+    this.isProfileLoading=true;
     if (this.programType == 'umrah') {
       this.profileService.getUmrahProgram(this.activeRoute.snapshot.params['id']).subscribe(data=> {
 
         this.programProfile = data[0];
         this.arrivalDate = new Date(this.programProfile.arrivalDate);
         this.departureDate = new Date(this.programProfile.departureDate);
-
+        this.isProfileLoading=false;
       })
     }
     else {
@@ -32,6 +34,7 @@ export class ProgramProfileComponent implements OnInit {
         this.programProfile = data[0];
         this.arrivalDate = new Date(this.programProfile.arrivalDate);
         this.departureDate = new Date(this.programProfile.departureDate);
+        this.isProfileLoading=false;
       })
     }
 

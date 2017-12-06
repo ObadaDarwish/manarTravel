@@ -17,7 +17,6 @@ export class PorgramsComponent implements OnInit {
   totalTrip: any;
   Includes:any;
   generalConditions:any;
-
   constructor(private route: ActivatedRoute, private programService: ProgramsService, private globalService: GlobalService) {
   }
 
@@ -25,25 +24,32 @@ export class PorgramsComponent implements OnInit {
     this.globalService.opacity = true;
     window.scroll(0, 0);
     let code = this.route.snapshot.params['id'];
+    this.programService.isMakKahAccommodationLoading=true;
+    this.programService.isMaddinahAccommodationLoading=true;
     this.programService.getMakkahHotels(code).subscribe(
       response=> {
+        this.programService.isMakKahAccommodationLoading=false;
         this.programService.makkahhotels = response;
         for (let hotel = 0; hotel < response.length; hotel++) {
           this.programService.makkahSelectedHotel.push(false);
         }
       },
       error => {
+        this.programService.isMakKahAccommodationLoading=false;
         console.log(error);
       }
     );
+
     this.programService.getMadinahHotels(code).subscribe(
       response=> {
+        this.programService.isMaddinahAccommodationLoading=false;
         this.programService.maddinahhotels = response;
         for (let hotel = 0; hotel < response.length; hotel++) {
           this.programService.maddinahSelectedHotel.push(false);
         }
       },
       error => {
+        this.programService.isMaddinahAccommodationLoading=false;
         console.log(error);
       }
     );

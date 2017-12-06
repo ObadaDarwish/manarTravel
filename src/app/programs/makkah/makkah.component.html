@@ -1,13 +1,18 @@
-
-<div class="accommodation">
- <div class="hotel" *ngFor="let hotel of programService.makkahhotels; let index = index" (click)="selectHotel(index)"
-      [ngClass]="{selected: programService.makkahSelectedHotel[index]}">
-    <img [src]="globalService.imagePath+'/'+hotel.picture" alt="">
-    <div class="hotelName"><p>{{hotel.name}}</p>
-      <rating style="font-size: 17px;" [(ngModel)]="hotel.rating" [max]="max" [readonly]="isReadonly"></rating></div>
+<div *ngIf="!programService.isMakKahAccommodationLoading;else loadMakkahHotels">
+  <div class="accommodation">
+    <div class="hotel" *ngFor="let hotel of programService.makkahhotels; let index = index" (click)="selectHotel(index)"
+         [ngClass]="{selected: programService.makkahSelectedHotel[index]}">
+      <img [src]="globalService.imagePath+'/'+hotel.picture" alt="">
+      <div class="hotelName"><p>{{hotel.name}}</p>
+        <rating style="font-size: 17px;" [(ngModel)]="hotel.rating" [max]="max" [readonly]="isReadonly"></rating>
+      </div>
+    </div>
   </div>
 </div>
-
+<ng-template #loadMakkahHotels>
+  <div class="space sm"></div>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>
 
 <div class="schedule">
 
@@ -24,7 +29,8 @@
   <div class="input_filed">
     <div class="Title"><p>Check IN & OUT</p></div>
     <div class="schedule_wrapper">
-      <input [minDate]="minDate" [bsConfig]="bsConfig" class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="programService.MakkahbsRangeValue">
+      <input [minDate]="minDate" [bsConfig]="bsConfig" class="form-control" #drp="bsDaterangepicker" bsDaterangepicker
+             [(ngModel)]="programService.MakkahbsRangeValue">
 
       <button class="btn btn-primary" (click)="drp.toggle()">Date Range Picker</button>
     </div>

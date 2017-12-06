@@ -13,7 +13,6 @@ import {AppSettings} from '../../api.settings';
 export class MakkahComponent implements OnInit {
 
 
-
   bsConfig: any = {containerClass: 'theme-blue'};
   public max: number = 5;
   public rate: number = 3;
@@ -25,9 +24,6 @@ export class MakkahComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
-
 
 
   }

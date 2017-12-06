@@ -1,4 +1,4 @@
-
+<div *ngIf="!programService.isMaddinahAccommodationLoading;else loadMadinahHotels">
 <div class="accommodation">
   <div class="hotel" *ngFor="let hotel of programService.maddinahhotels; let index = index"
        (click)="selectHotel(index)"  [ngClass]="{selected: programService.maddinahSelectedHotel[index]}">
@@ -7,7 +7,11 @@
       <rating style="font-size: 17px;" [(ngModel)]="hotel.rating" [max]="max" [readonly]="isReadonly"></rating></div>
   </div>
 </div>
-
+</div>
+<ng-template #loadMadinahHotels>
+  <div class="space sm"></div>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>
 <div class="schedule">
 
 

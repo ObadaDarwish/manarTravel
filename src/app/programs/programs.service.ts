@@ -24,6 +24,8 @@ export class ProgramsService {
 
   miscSum1: any;
   miscSum2: any;
+  isMakKahAccommodationLoading: boolean = false;
+  isMaddinahAccommodationLoading: boolean = false;
   constructor(private http :Http) { }
 
 

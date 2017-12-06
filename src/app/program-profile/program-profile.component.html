@@ -1,3 +1,4 @@
+<div *ngIf="!isProfileLoading;else  loadProfile">
 <div class="profileContainer">
   <div class="profileHeader">
     <div class="img_container">
@@ -145,3 +146,8 @@
     <div class="requestButton" (click)="requestProgram()">Request Program</div>
   </div>
 </div>
+</div>
+<ng-template #loadProfile>
+  <div class="space lg"></div>
+  <app-loading-indicator></app-loading-indicator>
+</ng-template>

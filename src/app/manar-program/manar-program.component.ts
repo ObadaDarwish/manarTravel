@@ -8,13 +8,17 @@ import {GlobalService} from '../global-service.service';
 })
 export class ManarProgramComponent implements OnInit {
   programs: any;
-
+  isProgramsLoading:boolean=false;
   constructor(private route: Router, public globalService: GlobalService) {
   }
 
   ngOnInit() {
+    this.isProgramsLoading=true;
     this.globalService.getAllManarPrograms().subscribe(data=> {
       this.programs = data;
+      this.isProgramsLoading=false;
+    },error=>{
+      this.isProgramsLoading=false;
     });
   }
 

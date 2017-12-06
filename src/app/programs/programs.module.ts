@@ -8,9 +8,10 @@ import {MaddinahComponent} from './madinah/maddinah.component';
 import {RouterModule} from '@angular/router';
 import {RatingModule,ButtonsModule ,ModalModule,BsDatepickerModule} from 'ngx-bootstrap';
 import {MatRadioModule, MatSlideToggleModule} from '@angular/material';
-
+import {LoadingIndicatorModule} from '../loading-indicator/loading-indicator.module';
 @NgModule({
   imports: [
+    LoadingIndicatorModule,
     ButtonsModule,
     BsDatepickerModule.forRoot()  ,
     MatSlideToggleModule,

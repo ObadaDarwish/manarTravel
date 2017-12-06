@@ -2,10 +2,42 @@
 body {
   margin: 0;
 }
+.space.sm{
+  height: 20px;
+}
+.space.md{
+  height: 50px;
+}
+.space.lg{
+  height: 200px;
+}
+.loadingContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingContainer .loadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+}
+
+.loadingContainer img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+.loadingWrapper .logo_img{
+  width: 85px;
+  height: 85px;
+}
 
 .loadSVG {
-  margin: 20%;
-  margin-left: 45%;
   width: 100px;
   height: 100px;
 }
@@ -203,7 +235,6 @@ body {
   position: relative;
 }
 
-
 .visit .item .itemTitle {
   position: relative;
   width: 100%;
@@ -214,21 +245,26 @@ body {
   position: relative;
   width: 100%;
 }
-.visit .item .itemDescription .fa-suitcase{
- color:  #3bb8c5 !important;
+
+.visit .item .itemDescription .fa-suitcase {
+  color: #3bb8c5 !important;
 }
+
 .visit .item p {
   text-align: center;
   font-family: Georgia, sans-serif;
   font-size: 14px;
 }
-.visit .item p{
+
+.visit .item p {
   color: #247b84;
 }
+
 .visit .item .itemTitle p {
   font-weight: bold;
   font-size: 22px;
 }
+
 .visit .item .knowMore {
   width: 100%;
   display: flex;
@@ -486,6 +522,7 @@ body {
   background: #3bb8c5;
   display: flex;
   position: relative;
+  justify-content: center;
   flex-flow: column;
 }
 
@@ -709,8 +746,6 @@ body {
   width: 100%;
 }
 
-
-
 /*------------------------------------- program profile -------------------------------------*/
 
 .profileContainer {
@@ -765,11 +800,12 @@ body {
   flex-flow: column !important;
   justify-content: flex-start;
 }
+
 .profileContainer .profileHeader .details_container .date .TripDate div {
-margin-right: 2%;
+  margin-right: 2%;
 }
-.profileContainer .profileHeader .details_container .date .tripDuration
-{
+
+.profileContainer .profileHeader .details_container .date .tripDuration {
   width: 30% !important;
   display: flex;
   flex-flow: row !important;
