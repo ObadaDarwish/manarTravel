@@ -1,16 +1,25 @@
+
+@import "./assets/css/material.css";
+
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
 }
-.space.sm{
+.mat-dialog-container{
+  background-color: #3bb8c5;
+}
+.space.sm {
   height: 20px;
 }
-.space.md{
+
+.space.md {
   height: 50px;
 }
-.space.lg{
+
+.space.lg {
   height: 200px;
 }
+
 .loadingContainer {
   width: 100%;
   position: relative;
@@ -32,7 +41,8 @@ body {
   height: 150px;
   position: absolute;
 }
-.loadingWrapper .logo_img{
+
+.loadingWrapper .logo_img {
   width: 85px;
   height: 85px;
 }
@@ -544,10 +554,20 @@ body {
   margin-left: 10%;
   border: none;
 }
+.contact_us .sumbitButton.red {
+  background: red;
+  color: #ffffff;
+}
+.contact_us .sumbitButton.red:hover {
+  background: darkred;
+  cursor: pointer;
+  color: #ffffff;
+}
 
 .contact_us .sumbitButton:hover {
-  background: #ecf2f3;
+  background: #037900;
   cursor: pointer;
+  color: #fff;
 
 }
 
@@ -1578,11 +1598,12 @@ body {
   justify-content: center;
   align-self: center;
   padding: 5%;
-  padding-top: 7%;
+  padding-top: 5%;
   padding-bottom: 7%;
 }
 
 .calculate .calculate_button {
+  margin-top: 2%;
   width: 80%;
   height: 50px;
   background: #4f98a0;
@@ -1594,6 +1615,7 @@ body {
   font-family: Georgia, sans-serif;
   transition: background 0.4s;
   border-radius: 50px;
+  align-self: center;
 }
 
 .price {
@@ -1603,12 +1625,7 @@ body {
   flex-flow: column;
 }
 
-.price h1 {
-  align-self: center;
-  background: #3bb8c5;
-  color: #fff !important;
-  padding: 1%;
-}
+
 
 .price .Title p {
   font-size: 22px;
@@ -1643,26 +1660,24 @@ body {
   font-size: 20px;
 }
 
-.price h1::after {
-  content: '';
-  display: inline-block;
-  width: 15px;
-  height: 3px;
-  margin-bottom: 5%;
-  margin-left: 11px;
-  background: #fff;
+.price .show_price {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.price h1::before {
-  content: '';
-  display: inline-block;
-  width: 15px;
-  height: 3px;
-  margin-bottom: 5%;
-  margin-right: 11px;
-  background: #fff;
+.price .show_price h1 {
+  background: #3bb8c5;
+  color: #fff !important;
+  padding-left: 1% !important;
+  padding-right: 1% !important;
+  height: 70px;
+  border-radius: 160px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border: 2px dotted #fff;
 }
-
 .calculate .calculate_button:hover {
   background: #498a90;
   cursor: pointer;

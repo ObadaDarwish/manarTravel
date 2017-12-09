@@ -25,14 +25,14 @@ export class MaddinahComponent implements OnInit {
 
   }
 
-  selectHotel(index) {
+  selectHotel(index, name) {
+    this.globalService.MadinahSelectedHotel = name;
     this.programService.MaddinahhotelIndex = index;
     for (let hotel = 0; hotel < this.programService.maddinahSelectedHotel.length; hotel++) {
       this.programService.maddinahSelectedHotel[hotel] = false;
     }
     this.programService.maddinahSelectedHotel[index] = true;
   }
-
 
 
 }

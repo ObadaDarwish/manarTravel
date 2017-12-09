@@ -1,7 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {GlobalService} from '../global-service.service';
 import {ProgramsService} from './programs.service';
 import {ActivatedRoute} from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {RequestProgramComponent} from '../dialogs/request-program/request-program.component';
+import {NotificationsService} from 'angular2-notifications/src/simple-notifications/services/notifications.service';
 
 @Component({
   selector: 'app-porgrams',
@@ -15,41 +18,44 @@ export class PorgramsComponent implements OnInit {
   ExchangeRate: any;
   ViewTotalTripCost: boolean = false;
   totalTrip: any;
-  Includes:any;
-  generalConditions:any;
-  constructor(private route: ActivatedRoute, private programService: ProgramsService, private globalService: GlobalService) {
+  Includes: any;
+  generalConditions: any;
+  noMakkahNights: number = 0;
+  noMaddinahNights: number = 0;
+
+  constructor(private notify:NotificationsService,public dialog: MatDialog, private route: ActivatedRoute, private programService: ProgramsService, private globalService: GlobalService) {
   }
 
   ngOnInit() {
     this.globalService.opacity = true;
     window.scroll(0, 0);
     let code = this.route.snapshot.params['id'];
-    this.programService.isMakKahAccommodationLoading=true;
-    this.programService.isMaddinahAccommodationLoading=true;
+    this.programService.isMakKahAccommodationLoading = true;
+    this.programService.isMaddinahAccommodationLoading = true;
     this.programService.getMakkahHotels(code).subscribe(
       response=> {
-        this.programService.isMakKahAccommodationLoading=false;
+        this.programService.isMakKahAccommodationLoading = false;
         this.programService.makkahhotels = response;
         for (let hotel = 0; hotel < response.length; hotel++) {
           this.programService.makkahSelectedHotel.push(false);
         }
       },
       error => {
-        this.programService.isMakKahAccommodationLoading=false;
+        this.programService.isMakKahAccommodationLoading = false;
         console.log(error);
       }
     );
 
     this.programService.getMadinahHotels(code).subscribe(
       response=> {
-        this.programService.isMaddinahAccommodationLoading=false;
+        this.programService.isMaddinahAccommodationLoading = false;
         this.programService.maddinahhotels = response;
         for (let hotel = 0; hotel < response.length; hotel++) {
           this.programService.maddinahSelectedHotel.push(false);
         }
       },
       error => {
-        this.programService.isMaddinahAccommodationLoading=false;
+        this.programService.isMaddinahAccommodationLoading = false;
         console.log(error);
       }
     );
@@ -90,8 +96,8 @@ export class PorgramsComponent implements OnInit {
 
     this.programService.getProgramRules(code).subscribe(response=> {
       console.log(response);
-       this.Includes = response[0].Includes.replace(/rn/g,'');
-       this.generalConditions = response[0].generalconditons.replace(/rn/g,'');
+      this.Includes = response[0].Includes.replace(/rn/g, '');
+      this.generalConditions = response[0].generalconditons.replace(/rn/g, '');
 
     });
   }
@@ -124,25 +130,60 @@ export class PorgramsComponent implements OnInit {
 
 //calculating price of nights according to the hotel chosen and the number of nights
       madinahnights = this.programService.MaddinahbsRangeValue[1].getTime() - this.programService.MaddinahbsRangeValue[0].getTime();
-
+      this.noMakkahNights = (Math.abs(Math.round(makkahnights / (1000 * 60 * 60 * 24))));
+      this.noMaddinahNights = (Math.abs(Math.round(madinahnights / (1000 * 60 * 60 * 24))));
       let makkahTotal = this.programService.MakkahroomPrice * (Math.abs(Math.round(makkahnights / (1000 * 60 * 60 * 24))));
       let maddinahTotal = this.programService.MaddinahroomPrice * (Math.abs(Math.round(madinahnights / (1000 * 60 * 60 * 24))));
       let misc1 = parseInt(this.programService.miscSum1, 10);
       let misc2 = parseInt(this.programService.miscSum2, 10);
       let TotalAccommodation = makkahTotal + maddinahTotal + misc1;
-      console.log('Total Accommodation ' + TotalAccommodation);
+      // console.log('Total Accommodation ' + TotalAccommodation);
       let TotalAfterExchangeRate = TotalAccommodation * this.ExchangeRate;
-      console.log('Total After Exchnage rate : ' + Math.round(TotalAfterExchangeRate));
+      // console.log('Total After Exchnage rate : ' + Math.round(TotalAfterExchangeRate));
       let TotalAfterMisc2 = TotalAfterExchangeRate + misc2;
-      console.log('Total trip : ' + TotalAfterMisc2);
+      // console.log('Total trip : ' + TotalAfterMisc2);
       this.totalTrip = TotalAfterMisc2;
       this.ViewTotalTripCost = true;
     }
     else {
-      console.log("All fields are required");
+      this.notify.info('Info','All fields are required');
     }
 
   }
 
+  RequestProgram() {
+    let dialogRef = this.dialog.open(RequestProgramComponent, {
+      width: '700px',
+      data: {
+        madinah_hotel: this.globalService.MadinahSelectedHotel,
+        madinah_check_in: this.programService.MaddinahbsRangeValue[1],
+        madinah_check_out: this.programService.MaddinahbsRangeValue[0],
+        makkah_hotel: this.globalService.MakkahSelectedHotel,
+        makkah_check_in: this.programService.MakkahbsRangeValue[1],
+        makkah_check_out: this.programService.MakkahbsRangeValue[0],
+        madinah_nights: this.noMaddinahNights,
+        makkah_nights: this.noMakkahNights,
+        room_type: this.programService.roomType,
+        price: this.totalTrip
+      }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result != 'Cancel') {
+        this.programService.roomType = null;
+        this.programService.maddinahSelectedHotel = [];
+        this.programService.makkahSelectedHotel = [];
+        this.programService.MaddinahbsRangeValue = [];
+        this.programService.MakkahbsRangeValue = [];
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.programService.roomType = null;
+    this.programService.maddinahSelectedHotel = [];
+    this.programService.makkahSelectedHotel = [];
+    this.programService.MaddinahbsRangeValue = [];
+    this.programService.MakkahbsRangeValue = [];
+  }
 }

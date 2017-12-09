@@ -1,7 +1,7 @@
 <div *ngIf="!programService.isMaddinahAccommodationLoading;else loadMadinahHotels">
 <div class="accommodation">
   <div class="hotel" *ngFor="let hotel of programService.maddinahhotels; let index = index"
-       (click)="selectHotel(index)"  [ngClass]="{selected: programService.maddinahSelectedHotel[index]}">
+       (click)="selectHotel(index ,hotel.name)"  [ngClass]="{selected: programService.maddinahSelectedHotel[index]}">
     <img [src]="globalService.imagePath+'/'+hotel.picture" alt="">
     <div class="hotelName"><p>{{hotel.name}}</p>
       <rating style="font-size: 17px;" [(ngModel)]="hotel.rating" [max]="max" [readonly]="isReadonly"></rating></div>

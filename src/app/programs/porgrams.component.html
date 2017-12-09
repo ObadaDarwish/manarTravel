@@ -50,7 +50,10 @@
         <div class="Title"><p>
           Total Cost
         </p></div>
-        <h1>{{totalTrip}} EGP</h1>
+        <div class="show_price">
+
+          <h1>{{totalTrip | currency:'EGP':'symbol':'3.2-2'}}</h1>
+        </div>
         <div *ngIf="Includes">
           <h3>Price Includes</h3>
           <div [innerHTML]="Includes"></div>
@@ -59,8 +62,11 @@
           <h3>General Conditions</h3>
           <div [innerHTML]="generalConditions"></div>
         </div>
+        <div class="calculate_button" (click)="RequestProgram()">Request Program
+        </div>
       </div>
     </ng-template>
+
   </div>
 
 </div>

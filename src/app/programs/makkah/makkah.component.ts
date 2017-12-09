@@ -28,7 +28,8 @@ export class MakkahComponent implements OnInit {
 
   }
 
-  selectHotel(index) {
+  selectHotel(index,name) {
+    this.globalService.MakkahSelectedHotel = name;
     this.programService.MakkahhotelIndex = index;
     for (let hotel = 0; hotel < this.programService.makkahSelectedHotel.length; hotel++) {
       this.programService.makkahSelectedHotel[hotel] = false;

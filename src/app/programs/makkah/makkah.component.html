@@ -1,6 +1,6 @@
 <div *ngIf="!programService.isMakKahAccommodationLoading;else loadMakkahHotels">
   <div class="accommodation">
-    <div class="hotel" *ngFor="let hotel of programService.makkahhotels; let index = index" (click)="selectHotel(index)"
+    <div class="hotel" *ngFor="let hotel of programService.makkahhotels; let index = index" (click)="selectHotel(index,hotel.name)"
          [ngClass]="{selected: programService.makkahSelectedHotel[index]}">
       <img [src]="globalService.imagePath+'/'+hotel.picture" alt="">
       <div class="hotelName"><p>{{hotel.name}}</p>

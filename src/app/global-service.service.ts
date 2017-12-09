@@ -22,6 +22,8 @@ export class GlobalService {
   globalModalToggle: boolean;
   globalModalSwitch: string;
   opacity: boolean = false;
+  MadinahSelectedHotel: string;
+  MakkahSelectedHotel: string;
 
   constructor(private http: Http) {
   }
@@ -43,7 +45,29 @@ export class GlobalService {
       created_at: date
     });
     return this.http.post(`${AppSettings.API_ENDPOINT()}/contactUS`, body, AppSettings.getRequestOptions()) .map(response => {
-        return response;
-      });
+      return response;
+    });
+  }
+
+  postRequestCustomProgram(value,data, date) {
+    let body = JSON.stringify({
+      full_name: value.full_name,
+      email: value.email,
+      mobile: value.mobile,
+      madinah_hotel: data.madinah_hotel,
+      madinah_check_in: data.madinah_check_in,
+      madinah_check_out: data.madinah_check_out,
+      makkah_hotel: data.makkah_hotel,
+      makkah_check_in: data.makkah_check_in,
+      makkah_check_out: data.makkah_check_out,
+      madinah_nights: data.madinah_nights,
+      makkah_nights: data.makkah_nights,
+      room_type: data.room_type,
+      price: data.price,
+      created_at: date
+    });
+    return this.http.post(`${AppSettings.API_ENDPOINT()}/requestCustomProgram`, body, AppSettings.getRequestOptions()) .map(response => {
+      return response;
+    });
   }
 }

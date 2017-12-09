@@ -9,7 +9,7 @@ import {AppSettings} from './api.settings';
 export class AppComponent {
 
 
-  constructor(private globalService: GlobalService) {
+  constructor(public globalService: GlobalService) {
     this.globalService.imagePath = AppSettings.PICTURE_ENDPOINT();
   }
 

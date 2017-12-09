@@ -1,0 +1,85 @@
+<div *ngIf="!loadRequest; else isloading">
+<form [formGroup]="request" (ngSubmit)="requestProgram(request.value , request.valid,data)">
+  <div class="contact_us">
+    <div class="contact_us_title"><p>Request Program</p></div>
+    <div class="contact_us_form">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-lg-4">
+            <div class="info_block">
+              <h4>Makkah Hotel</h4>
+              <p>{{this.data.makkah_hotel}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info_block">
+              <h4>Makkah Nights</h4>
+              <p>{{this.data.makkah_nights}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info_block">
+              <h4>Room Type</h4>
+              <p>{{this.data.room_type}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info_block">
+              <h4>Maddinah Hotel</h4>
+              <p>{{this.data.madinah_hotel}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info_block">
+              <h4>Madinah Nights</h4>
+              <p>{{this.data.madinah_nights}}</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info_block">
+              <h4>Room Type</h4>
+              <p>{{this.data.room_type}}</p>
+            </div>
+          </div>
+          <div class="horizontal_line"></div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label for="firstname">Full Name *</label>
+              <input formControlName="full_name" type="text" placeholder="Ex: Mark" class="form-control"
+                     id="firstname">
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input formControlName="email" type="email" placeholder="Ex: example@hotmail.com"
+                     class="form-control"
+                     id="email">
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label for="mobile">mobile *</label>
+              <input formControlName="mobile" type="number" placeholder="Ex: 01XXXXXXXXX" class="form-control"
+                     id="mobile">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <input type="submit" class="sumbitButton" value="Request"
+                   [ngClass]="{'disabled' : request.invalid , 'active' : request.valid}"
+                   [disabled]="request.invalid "/>
+          </div>
+          <div class="col-lg-6">
+            <button class="sumbitButton red" mat-button mat-dialog-close="Cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+<ng-template #isloading >
+  <div class="space md"></div>
+  <app-loading-indicator></app-loading-indicator>
+  <div class="space md"></div>
+</ng-template>

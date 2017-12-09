@@ -19,13 +19,16 @@ import {ProgramsService} from './programs/programs.service';
 import { GlobalModalComponent } from './global-modal/global-modal.component';
 import { TooltipModule,ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bootstrap';
 import { requestProgram } from './global-modal/request-program/request-program';
-import {MatRadioModule,MatSlideToggleModule} from '@angular/material';
+import {MatRadioModule,MatSlideToggleModule,MatDialogModule} from '@angular/material';
 import { AgmCoreModule } from '@agm/core';
 import { ManarProgramModule } from './manar-program/manar-program.module';
 import { ProgramProfileComponent } from './program-profile/program-profile.component';
 import {ProgramProfileService} from './program-profile/program-profile.service';
 import {SimpleNotificationsModule  } from 'angular2-notifications/src/simple-notifications.module';
 import {LoadingIndicatorModule} from './loading-indicator/loading-indicator.module';
+import { PipesModule } from './pipes/pipes.module';
+import { RequestProgramComponent } from './dialogs/request-program/request-program.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,8 +39,12 @@ import {LoadingIndicatorModule} from './loading-indicator/loading-indicator.modu
     GlobalModalComponent,
     requestProgram,
     ProgramProfileComponent,
+    RequestProgramComponent
   ],
+  entryComponents:[RequestProgramComponent],
   imports: [
+    MatDialogModule,
+    PipesModule,
     LoadingIndicatorModule,
     SimpleNotificationsModule.forRoot(),
     TooltipModule.forRoot(),

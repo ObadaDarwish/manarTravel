@@ -6,10 +6,10 @@ import {environment} from "../environments/environment";
 
 export class AppSettings {
 
-  public static API_ENDPOINT(): string {
+  public static API_ENDPOINT(): any {
       return environment.API;
   }
-  public static PICTURE_ENDPOINT(): string {
+  public static PICTURE_ENDPOINT(): any {
     return environment.pictures;
   }
 
