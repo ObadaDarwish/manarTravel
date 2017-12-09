@@ -22,17 +22,18 @@ export class PorgramsComponent implements OnInit {
   generalConditions: any;
   noMakkahNights: number = 0;
   noMaddinahNights: number = 0;
+  programType: string = '';
 
-  constructor(private notify:NotificationsService,public dialog: MatDialog, private route: ActivatedRoute, private programService: ProgramsService, private globalService: GlobalService) {
+  constructor(private notify: NotificationsService, public dialog: MatDialog, private route: ActivatedRoute, private programService: ProgramsService, private globalService: GlobalService) {
   }
 
   ngOnInit() {
     this.globalService.opacity = true;
     window.scroll(0, 0);
-    let code = this.route.snapshot.params['id'];
+    this.programType = this.route.snapshot.params['id'];
     this.programService.isMakKahAccommodationLoading = true;
     this.programService.isMaddinahAccommodationLoading = true;
-    this.programService.getMakkahHotels(code).subscribe(
+    this.programService.getMakkahHotels(this.programType).subscribe(
       response=> {
         this.programService.isMakKahAccommodationLoading = false;
         this.programService.makkahhotels = response;
@@ -46,7 +47,7 @@ export class PorgramsComponent implements OnInit {
       }
     );
 
-    this.programService.getMadinahHotels(code).subscribe(
+    this.programService.getMadinahHotels(this.programType).subscribe(
       response=> {
         this.programService.isMaddinahAccommodationLoading = false;
         this.programService.maddinahhotels = response;
@@ -60,7 +61,7 @@ export class PorgramsComponent implements OnInit {
       }
     );
 
-    this.programService.getMiscSum1(code).subscribe(
+    this.programService.getMiscSum1(this.programType).subscribe(
       response=> {
         this.programService.miscSum1 = response[0];
 
@@ -69,7 +70,7 @@ export class PorgramsComponent implements OnInit {
         console.log(error);
       }
     );
-    this.programService.getMiscSum2(code).subscribe(
+    this.programService.getMiscSum2(this.programType).subscribe(
       response=> {
         this.programService.miscSum2 = response[0];
       },
@@ -94,7 +95,7 @@ export class PorgramsComponent implements OnInit {
       }
     );
 
-    this.programService.getProgramRules(code).subscribe(response=> {
+    this.programService.getProgramRules(this.programType).subscribe(response=> {
       console.log(response);
       this.Includes = response[0].Includes.replace(/rn/g, '');
       this.generalConditions = response[0].generalconditons.replace(/rn/g, '');
@@ -146,7 +147,7 @@ export class PorgramsComponent implements OnInit {
       this.ViewTotalTripCost = true;
     }
     else {
-      this.notify.info('Info','All fields are required');
+      this.notify.info('Info', 'All fields are required');
     }
 
   }
@@ -155,6 +156,7 @@ export class PorgramsComponent implements OnInit {
     let dialogRef = this.dialog.open(RequestProgramComponent, {
       width: '700px',
       data: {
+        program_type:this.programType,
         madinah_hotel: this.globalService.MadinahSelectedHotel,
         madinah_check_in: this.programService.MaddinahbsRangeValue[0],
         madinah_check_out: this.programService.MaddinahbsRangeValue[1],
@@ -170,6 +172,7 @@ export class PorgramsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result != 'Cancel') {
+        this.ViewTotalTripCost= false;
         this.programService.roomType = null;
         this.programService.maddinahSelectedHotel = [];
         this.programService.makkahSelectedHotel = [];
@@ -180,6 +183,7 @@ export class PorgramsComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this.ViewTotalTripCost= false;
     this.programService.roomType = null;
     this.programService.maddinahSelectedHotel = [];
     this.programService.makkahSelectedHotel = [];

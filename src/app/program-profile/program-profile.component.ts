@@ -9,6 +9,7 @@ import {GlobalService} from '../global-service.service';
 })
 export class ProgramProfileComponent implements OnInit {
   programType: any;
+  programId: any;
   programProfile: any;
   arrivalDate: any;
   departureDate: any;
@@ -16,25 +17,26 @@ export class ProgramProfileComponent implements OnInit {
 
   constructor(public globalService: GlobalService, private profileService: ProgramProfileService, private activeRoute: ActivatedRoute) {
     this.programType = this.activeRoute.snapshot.params['code'];
+    this.programId = this.activeRoute.snapshot.params['id'];
   }
 
   ngOnInit() {
-    this.isProfileLoading=true;
+    this.isProfileLoading = true;
     if (this.programType == 'umrah') {
-      this.profileService.getUmrahProgram(this.activeRoute.snapshot.params['id']).subscribe(data=> {
+      this.profileService.getUmrahProgram(this.programId).subscribe(data=> {
 
         this.programProfile = data[0];
         this.arrivalDate = new Date(this.programProfile.arrivalDate);
         this.departureDate = new Date(this.programProfile.departureDate);
-        this.isProfileLoading=false;
+        this.isProfileLoading = false;
       })
     }
     else {
-      this.profileService.getHajjProgram(this.activeRoute.snapshot.params['id']).subscribe(data=> {
+      this.profileService.getHajjProgram(this.programId).subscribe(data=> {
         this.programProfile = data[0];
         this.arrivalDate = new Date(this.programProfile.arrivalDate);
         this.departureDate = new Date(this.programProfile.departureDate);
-        this.isProfileLoading=false;
+        this.isProfileLoading = false;
       })
     }
 
@@ -42,7 +44,11 @@ export class ProgramProfileComponent implements OnInit {
   }
 
   requestProgram() {
+    this.globalService.program_type = this.programType;
+    this.globalService.program_id = this.programId;
     this.globalService.globalModalToggle = !this.globalService.globalModalToggle;
     this.globalService.globalModalSwitch = 'submit';
+
+
   }
 }

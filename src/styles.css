@@ -5,6 +5,13 @@
 body {
   margin: 0;
 }
+.modal-dialog{
+  margin-top: 7%;
+  background-color: #3bb8c5;
+}
+.modalControl{
+  background-color: #3bb8c5;
+}
 .mat-dialog-container{
   background-color: #3bb8c5;
 }
@@ -543,7 +550,9 @@ body {
   margin-bottom: 2%;
   margin-top: 2%;
 }
-
+.contact_us .contact_us_form{
+  margin-bottom: 1%;
+}
 .contact_us .sumbitButton {
   background: white;
   width: 80%;
@@ -553,6 +562,12 @@ body {
   margin-bottom: 2%;
   margin-left: 10%;
   border: none;
+}
+.contact_us .sumbitButton.disabled {
+  background: lightgray;
+  cursor:not-allowed;
+  pointer-events: none;
+  color: #ffffff;
 }
 .contact_us .sumbitButton.red {
   background: red;
@@ -764,6 +779,7 @@ body {
 
 .submitContainer {
   width: 100%;
+  background: #3bb8c5;
 }
 
 /*------------------------------------- program profile -------------------------------------*/
@@ -834,7 +850,7 @@ body {
 }
 
 .profileContainer .profileHeader .details_container .TripDate p {
-
+  box-shadow: 0px 0px 8px 3px #225458;
   background: #2f8e98;
   border-radius: 40px;
   padding: 3%;
@@ -1624,24 +1640,44 @@ body {
   justify-content: center;
   flex-flow: column;
 }
-
-
-
-.price .Title p {
-  font-size: 22px;
+.price .price_container{
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  width: 30%;
+  align-self: center;
 }
-
-.price > h3 {
-  color: #868686;
+.price .price_container .price_header{
+  background: #4f98a0;
+}
+.price .price_container .price_header h1{
+  color: #ffffff;
   font-family: Georgia, sans-serif;
 }
 
+.price .price_container div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.price h3 {
+  color: #868686;
+  font-family: Georgia, sans-serif;
+}
 .price p {
-  color: #868686;
-  font-family: Georgia, sans-serif;
+  font-size: 25px;
+  font-family: sans-serif;
+  color: #989898;
+  margin: 3%;
 }
 
-.price > h1 {
+.price h1 {
   color: #868686;
   font-family: Georgia, sans-serif;
 }
@@ -1656,28 +1692,9 @@ body {
   background: #868686;
 }
 
-.price p {
-  font-size: 20px;
-}
 
-.price .show_price {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-.price .show_price h1 {
-  background: #3bb8c5;
-  color: #fff !important;
-  padding-left: 1% !important;
-  padding-right: 1% !important;
-  height: 70px;
-  border-radius: 160px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  border: 2px dotted #fff;
-}
+
 .calculate .calculate_button:hover {
   background: #498a90;
   cursor: pointer;

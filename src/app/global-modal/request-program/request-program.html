@@ -1,46 +1,51 @@
 <div class="submitContainer">
-  <div class="contact_us" >
-    <form  >
-      <div class="contact_us">
-        <div class="contact_us_title"><p>Request Program</p></div>
-        <div class="contact_us_form">
-          <div class="row">
-            <div class="col-lg-12">
+  <div *ngIf="!loadRequest; else isloading">
+    <div class="contact_us">
+      <form [formGroup]="request" (ngSubmit)="requestProgram(request.value , request.valid)">
+        <div class="contact_us">
+          <div class="contact_us_title"><p>Request Program</p></div>
+          <div class="contact_us_form">
+            <div class="row">
               <div class="col-lg-12">
-                <div class="form-group">
-                  <label for="firstname">First Name *</label>
-                  <input  type="text" placeholder="Ex: Mark" class="form-control"
-                         id="firstname">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" formControlName="full_name" placeholder="Ex: Mark" class="form-control"
+                           id="fullname">
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <label for="secondname">Last Name *</label>
-                  <input  type="text" placeholder="Ex: Thomson" class="form-control"
-                         id="secondname">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" formControlName="email" placeholder="Ex: example@hotmail.com"
+                           class="form-control"
+                           id="email">
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <label for="email">Email *</label>
-                  <input  type="email" placeholder="Ex: example@hotmail.com" class="form-control"
-                         id="email">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="mobile">mobile *</label>
+                    <input type="number" formControlName="mobile" placeholder="Ex: 01XXXXXXXXX" class="form-control"
+                           id="mobile">
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <label for="mobile">mobile *</label>
-                  <input  type="number" placeholder="Ex: 01XXXXXXXXX" class="form-control"
-                         id="mobile">
+                <div class="col-lg-12">
+                  <input type="submit" class="sumbitButton" value="Request"
+                         [ngClass]="{'disabled' : request.invalid , 'active' : request.valid}"
+                         [disabled]="request.invalid "/>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <input type="submit" class="sumbitButton" value="Submit"/>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
+  <ng-template #isloading>
+    <div class="space md"></div>
+    <app-loading-indicator></app-loading-indicator>
+    <div class="space md"></div>
+  </ng-template>
+
+
 </div>

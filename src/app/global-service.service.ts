@@ -9,16 +9,10 @@ import 'rxjs/add/operator/map';
 
 export class GlobalService {
   imagePath: string = '';
-  MakkahhotelDetails: Array<hotelDetails> = [];
-  MadinahhotelDetails: Array<hotelDetails> = [];
-  MakkahNights: number = 0;
-  MadinahNights: number = 0;
-  MakkahRoom: string;
-  MadinahRoom: string;
-  MakkahAccommodationCoast: number = 0;
-  MadinahAccommodationCoast: number = 0;
 
-  childrenNumber: number = 0;
+
+  program_type: any;
+  program_id: any;
   globalModalToggle: boolean;
   globalModalSwitch: string;
   opacity: boolean = false;
@@ -49,11 +43,12 @@ export class GlobalService {
     });
   }
 
-  postRequestCustomProgram(value,data, date) {
+  postRequestCustomProgram(value, data, date) {
     let body = JSON.stringify({
       full_name: value.full_name,
       email: value.email,
       mobile: value.mobile,
+      program_type: data.program_type,
       madinah_hotel: data.madinah_hotel,
       madinah_check_in: data.madinah_check_in,
       madinah_check_out: data.madinah_check_out,
@@ -67,6 +62,20 @@ export class GlobalService {
       created_at: date
     });
     return this.http.post(`${AppSettings.API_ENDPOINT()}/requestCustomProgram`, body, AppSettings.getRequestOptions()) .map(response => {
+      return response;
+    });
+  }
+
+  postRequestManarProgram(value,type,id, date) {
+    let body = JSON.stringify({
+      full_name: value.full_name,
+      email: value.email,
+      mobile: value.mobile,
+      program_type: type,
+      program_id: id,
+      created_at: date
+    });
+    return this.http.post(`${AppSettings.API_ENDPOINT()}/requestManarProgram`, body, AppSettings.getRequestOptions()) .map(response => {
       return response;
     });
   }
