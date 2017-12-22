@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  API:'http://localhost:8000',
-  pictures:'http://localhost:8000/storage'
+  API:'http://api.manartravel.dx.am',
+  pictures:'http://api.manartravel.dx.am/storage'
 };

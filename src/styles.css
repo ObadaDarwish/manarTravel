@@ -7,13 +7,13 @@ body {
 }
 .modal-dialog{
   margin-top: 7%;
-  background-color: #3bb8c5;
+  background-color: #288690;
 }
 .modalControl{
-  background-color: #3bb8c5;
+  background-color: #288690;
 }
 .mat-dialog-container{
-  background-color: #3bb8c5;
+  background-color: #288690;
 }
 .space.sm {
   height: 20px;
@@ -536,7 +536,7 @@ body {
 
 .contact_us {
   height: 550px;
-  background: #3bb8c5;
+  background: #288690;
   display: flex;
   position: relative;
   justify-content: center;
