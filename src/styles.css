@@ -1,20 +1,23 @@
-
 @import "./assets/css/material.css";
 
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
 }
-.modal-dialog{
+
+.modal-dialog {
   margin-top: 7%;
   background-color: #288690;
 }
-.modalControl{
+
+.modalControl {
   background-color: #288690;
 }
-.mat-dialog-container{
+
+.mat-dialog-container {
   background-color: #288690;
 }
+
 .space.sm {
   height: 20px;
 }
@@ -41,6 +44,10 @@ body {
   align-items: center;
   width: 150px;
   height: 150px;
+}
+
+.loadingContainer .loadingWrapper.marginTop {
+  margin-top: 15%;
 }
 
 .loadingContainer img {
@@ -550,9 +557,11 @@ body {
   margin-bottom: 2%;
   margin-top: 2%;
 }
-.contact_us .contact_us_form{
+
+.contact_us .contact_us_form {
   margin-bottom: 1%;
 }
+
 .contact_us .sumbitButton {
   background: white;
   width: 80%;
@@ -563,16 +572,19 @@ body {
   margin-left: 10%;
   border: none;
 }
+
 .contact_us .sumbitButton.disabled {
   background: lightgray;
-  cursor:not-allowed;
+  cursor: not-allowed;
   pointer-events: none;
   color: #ffffff;
 }
+
 .contact_us .sumbitButton.red {
   background: red;
   color: #ffffff;
 }
+
 .contact_us .sumbitButton.red:hover {
   background: darkred;
   cursor: pointer;
@@ -1640,7 +1652,8 @@ body {
   justify-content: center;
   flex-flow: column;
 }
-.price .price_container{
+
+.price .price_container {
   background: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1652,15 +1665,17 @@ body {
   width: 30%;
   align-self: center;
 }
-.price .price_container .price_header{
+
+.price .price_container .price_header {
   background: #4f98a0;
 }
-.price .price_container .price_header h1{
+
+.price .price_container .price_header h1 {
   color: #ffffff;
   font-family: Georgia, sans-serif;
 }
 
-.price .price_container div{
+.price .price_container div {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1670,6 +1685,7 @@ body {
   color: #868686;
   font-family: Georgia, sans-serif;
 }
+
 .price p {
   font-size: 25px;
   font-family: sans-serif;
@@ -1691,9 +1707,6 @@ body {
   margin-bottom: 1%;
   background: #868686;
 }
-
-
-
 
 .calculate .calculate_button:hover {
   background: #498a90;
