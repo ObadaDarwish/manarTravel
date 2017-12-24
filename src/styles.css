@@ -542,7 +542,6 @@ body {
 }
 
 .contact_us {
-  height: 550px;
   background: #288690;
   display: flex;
   position: relative;
@@ -791,7 +790,7 @@ body {
 
 .submitContainer {
   width: 100%;
-  background: #3bb8c5;
+  background: #288690;
 }
 
 /*------------------------------------- program profile -------------------------------------*/
@@ -1927,7 +1926,247 @@ label {
   background: #3d7177 !important;
 }
 
+.mission .mission_description p {
+  font-size: 16px;
+  color: #ffffff;
+  width: 65%;
+  text-align: center;
+}
+
+.aboutus .aboutus_description p {
+  font-size: 16px;
+  color: #3bb8c5;
+  width: 65%;
+  text-align: center;
+}
+
 @media screen and (max-width: 700px) {
+  .navigation {
+    width: 100%;
+  }
+
+  #myCarousel {
+    display: none;
+  }
+
+  .landingContainer .mainRoutes {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .mainRoutes .Umrah {
+    width: 90%;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+
+  .mainRoutes .hajj {
+    width: 90%;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+
+  .mainRoutes .Ramadan {
+    width: 90%;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+
+  .Title {
+    width: 100%;
+    margin-top: 25%;
+    background: #2a7077;
+    padding: 3%;
+  }
+
+  .visit .item {
+    width: 200px;
+  }
+
+  .valueTitle p {
+    font-size: 18px;
+  }
+
+  .visit .item img {
+    height: 200px !important;
+  }
+
+  .values .first_row {
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .values .second_row {
+    flex-flow: column;
+  }
+
+  .values .second_row .left {
+    display: flex;
+    width: 100%;
+    flex-flow: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .values .second_row .right {
+    flex-flow: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .values .third_row {
+    flex-flow: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .integrity {
+    width: 60%;
+  }
+
+  .reliability {
+    width: 60%;
+  }
+
+  .mission {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .mission .mission_description {
+    width: 100%;
+    padding: 3%;
+  }
+
+  .mission .mission_description p {
+    width: 100%;
+  }
+
+  .mission img {
+    width: 100% !important;
+    height: 270px !important;
+  }
+
+  .mission .mission_overlay {
+    display: none;
+  }
+
+  .aboutus {
+    flex-flow: column-reverse;
+  }
+
+  .aboutus .aboutus_description {
+    width: 100%;
+    padding: 3%;
+  }
+
+  .aboutus img {
+    width: 100% !important;
+    height: 270px !important;
+  }
+
+  .aboutus .aboutus_description p {
+    width: 100%;
+  }
+
+  .contact_us .contact_us_form .details {
+    align-items: center;
+  }
+
+  .contact_us .contact_us_form .details .item {
+    align-items: center;
+  }
+
+  .aboutus .aboutus_overlay {
+    display: none;
+  }
+
+  .steps {
+    margin-top: 25%;
+  }
+
+  .steps .step_item {
+    background: #52c0cc;
+    width: 60px;
+    height: 60px;
+  }
+
+  .fa-long-arrow-right {
+    color: #52c0cc;
+    font-size: 2em;
+  }
+
+  .steps .step_container p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .steps .step_container {
+    margin: 0;
+  }
+
+  .schedule {
+    flex-flow: column;
+  }
+
+  .schedule .input_filed {
+    width: 100%;
+  }
+  .btn-group{
+    margin-top: 5%;
+  }
+  .btn-group, .btn-group-vertical {
+    display: inline-flex !important;
+  }
+  .btn-group label{
+    padding: 5%;
+  }
+  .price .price_container{
+    width: 100%;
+  }
+  .info_block h4{
+    font-size: 12px !important;
+  }
+  .info_block p{
+    font-size: 12px !important;
+  }
+  .profileContainer .profileHeader{
+    flex-flow: column;
+    align-items: center;
+    padding-top:15% ;
+  }
+  .profileContainer .profileHeader .img_container img{
+    height:150px;
+    width: 150px;
+  }
+  .profileContainer .profileHeader .details_container{
+    align-items: center;
+    width: 100%;
+  }
+  .profileContainer .profileHeader .details_container .date{
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .profileContainer .profileHeader .details_container .date .tripDuration{
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .profileContainer .profileHeader .details_container .TripDate p{
+    width: 100%;
+  }
+  .profileContainer .profileHeader .details_container .date .TripDate{
+    width: 90% !important;
+  }
+  .Title p {
+    color: #fff;
+  }
+
   .rightSide {
     width: 100%;
   }
