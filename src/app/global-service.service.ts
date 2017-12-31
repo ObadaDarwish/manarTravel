@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {hotelDetails} from './programs/hotelDetails.interface';
+import {hotelDetails} from './custom-programs/hotelDetails.interface';
 import {AppSettings} from './api.settings';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';

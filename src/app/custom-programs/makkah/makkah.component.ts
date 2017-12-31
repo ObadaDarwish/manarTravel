@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GlobalService} from '../../global-service.service';
-import {ProgramsService} from '../programs.service';
+import {customProgramsService} from '../custom-programs.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable, BehaviorSubject} from "rxjs";
 import {FormGroup, FormBuilder} from '@angular/forms';
@@ -20,7 +20,7 @@ export class MakkahComponent implements OnInit {
   minDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
   maxDate = new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate());
 
-  constructor(public globalService: GlobalService, private activeRouter: ActivatedRoute, public programService: ProgramsService) {
+  constructor(public globalService: GlobalService, private activeRouter: ActivatedRoute, public programService: customProgramsService) {
   }
 
   ngOnInit() {

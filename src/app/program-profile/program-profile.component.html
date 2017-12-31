@@ -6,23 +6,23 @@
       </div>
       <div class="details_container">
         <h1>{{programProfile?.name}}</h1>
-        <p>{{programProfile?.programType}} program</p>
+        <p>{{programProfile?.programType}} {{globalService.language.program_profile_html.program}}</p>
         <div class="horizontal_line programHeader"></div>
         <div class="date">
           <div class="tripDuration">
-            <p><i class="fa fa-hourglass-half" aria-hidden="true"></i> Trip duration : {{programProfile?.tripDuration}}
-              Days</p>
+            <p><i class="fa fa-hourglass-half" aria-hidden="true"></i> {{globalService.language.program_profile_html.Trip_duration}} : {{programProfile?.tripDuration}}
+              {{globalService.language.program_profile_html.Days}}</p>
           </div>
           <div class="TripDate">
-            <div><p><i class="fa fa-suitcase"></i> Departure: {{departureDate | date:'fullDate'}}</p></div>
-            <div><p><i class="fa fa-suitcase"></i> Arrival: {{ arrivalDate| date:'fullDate'}}</p></div>
+            <div><p><i class="fa fa-suitcase"></i> {{globalService.language.program_profile_html.Departure}}: {{departureDate | date:'fullDate'}}</p></div>
+            <div><p><i class="fa fa-suitcase"></i> {{globalService.language.program_profile_html.Arrival}}: {{ arrivalDate| date:'fullDate'}}</p></div>
           </div>
         </div>
       </div>
     </div>
     <div class="profile_body">
       <div class="Title right">
-        <p>Accommodation</p>
+        <p>{{globalService.language.program_profile_html.Accommodation}}</p>
       </div>
       <!--umrah accommodotion-->
       <div class="AccommodationUmrah" *ngIf="programType=='umrah';else  hajjProgram">
@@ -31,13 +31,13 @@
             <table class="table table-striped">
               <thead>
               <tr>
-                <th>Hotel Makkah</th>
-                <th>Hotel Maddinah</th>
-                <th *ngIf="programProfile?.single!=0">Single Room</th>
-                <th>Double Room</th>
-                <th>Triple Room</th>
-                <th>Quad Room</th>
-                <th>Child <i class="fa fa-arrow-down"></i> 12 Years</th>
+                <th>{{globalService.language.program_profile_html.Hotel_Makkah}}</th>
+                <th>{{globalService.language.program_profile_html.Hotel_Maddinah}}</th>
+                <th *ngIf="programProfile?.single!=0">{{globalService.language.program_profile_html.Single_Room}}</th>
+                <th>{{globalService.language.program_profile_html.Double_Room}}</th>
+                <th>{{globalService.language.program_profile_html.Triple_Room}}</th>
+                <th>{{globalService.language.program_profile_html.Quad_Room}}</th>
+                <th>{{globalService.language.program_profile_html.Child}} <i class="fa fa-arrow-down"></i> 12 {{globalService.language.program_profile_html.Years}}</th>
               </tr>
               </thead>
               <tbody>
@@ -63,29 +63,29 @@
             <table class="table table-striped">
               <thead>
               <tr>
-                <th>Hotel Name</th>
-                <th>Location</th>
-                <th>From</th>
-                <th>To</th>
+                <th>{{globalService.language.program_profile_html.Hotel_Name}}</th>
+                <th>{{globalService.language.program_profile_html.Location}}</th>
+                <th>{{globalService.language.program_profile_html.From}}</th>
+                <th>{{globalService.language.program_profile_html.To}}</th>
               </tr>
               </thead>
               <tbody>
               <tr class="tr_select">
                 <td>{{programProfile?.MakkahHotel}}</td>
-                <td>Makkah</td>
+                <td>{{globalService.language.program_profile_html.Makkah}}</td>
                 <td>{{programProfile?.makkah_from1}}</td>
                 <td>{{programProfile?.makkah_to1}}</td>
 
               </tr>
               <tr class="tr_select">
                 <td>{{programProfile?.MakkahHotel}}</td>
-                <td>Makkah</td>
+                <td>{{globalService.language.program_profile_html.Makkah}}</td>
                 <td>{{programProfile?.makkah_from2}}</td>
                 <td>{{programProfile?.makkah_to2}}</td>
               </tr>
               <tr class="tr_select">
                 <td>{{programProfile?.madinahHotel}}</td>
-                <td>Maddinah</td>
+                <td>{{globalService.language.program_profile_html.Maddinah}}</td>
                 <td>{{programProfile?.madinah_from}}</td>
                 <td>{{programProfile?.madinah_to}}</td>
               </tr>
@@ -96,15 +96,15 @@
 
 
         <div class="Title right">
-          <p>Masha'er</p>
+          <p>{{globalService.language.program_profile_html.Mashaer}}</p>
         </div>
         <div class="mashaer">
           <div>
-            <h3>Arafa</h3>
+            <h3>{{globalService.language.program_profile_html.Arafa}}</h3>
             <div [innerHTML]="programProfile?.arafa"></div>
           </div>
           <div>
-            <h3>Menah</h3>
+            <h3>{{globalService.language.program_profile_html.Menah}}</h3>
             <div [innerHTML]="programProfile?.mena"></div>
           </div>
 
@@ -114,26 +114,26 @@
       <div class="horizontal_line"></div>
       <div class="rules">
         <div>
-          <h3>Includes</h3>
+          <h3>{{globalService.language.program_profile_html.Includes}}</h3>
           <div [innerHTML]="programProfile?.includes"></div>
         </div>
         <div>
-          <h3>General Conditions</h3>
+          <h3>{{globalService.language.program_profile_html.General_Conditions}}</h3>
           <div [innerHTML]="programProfile?.generalConditions"></div>
         </div>
 
       </div>
       <div *ngIf="programType!='umrah'" class="hajjprice">
         <div class="Title right">
-          <p>Prices</p>
+          <p>{{globalService.language.program_profile_html.Prices}}</p>
         </div>
         <table class="table table-striped">
           <thead>
           <tr>
-            <th>Single</th>
-            <th>Double</th>
-            <th>Triple</th>
-            <th>Quad</th>
+            <th>{{globalService.language.program_profile_html.Single}}</th>
+            <th>{{globalService.language.program_profile_html.Double}}</th>
+            <th>{{globalService.language.program_profile_html.Triple}}</th>
+            <th>{{globalService.language.program_profile_html.Quad}}</th>
           </tr>
           </thead>
           <tbody>
@@ -149,7 +149,7 @@
       </div>
     </div>
     <div class="requestProgram">
-      <div class="requestButton" (click)="requestProgram()">Request Program</div>
+      <div class="requestButton" (click)="requestProgram()">{{globalService.language.program_profile_html.Request_Program}}</div>
     </div>
   </div>
 </div>

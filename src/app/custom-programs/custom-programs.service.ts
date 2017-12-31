@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import {Observable, BehaviorSubject} from "rxjs";
 
 @Injectable()
-export class ProgramsService {
+export class customProgramsService {
   isMakkahProgramChosen: boolean = false;
   isMadinahProgramChosen: boolean = false;
 

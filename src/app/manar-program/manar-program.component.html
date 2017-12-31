@@ -1,16 +1,16 @@
 <div *ngIf="!isProgramsLoading;else  loadProfile">
   <div class="programListContainer">
     <div class="Title right manar_program">
-      <p>Manar Programs</p>
+      <p>{{globalService.language.Manar_Programs_html.Manar_Programs}}</p>
     </div>
     <div class="programList">
       <div class="item" (click)="openProfile(program.programType,program.id)" *ngFor="let program of programs">
         <img [src]="globalService.imagePath+'/'+program.picture" alt="">
         <div class="itemTitle"><p>{{program.name}}</p></div>
-        <div class="itemDescription"><p>{{program.programType.toUpperCase()}} Program</p>
+        <div class="itemDescription"><p>{{program.programType.toUpperCase()}} {{globalService.language.Manar_Programs_html.Program}} </p>
         </div>
         <div class="itemDate">
-          <p><i class="fa fa-suitcase"></i> Departure: {{program.departureDate | date:'fullDate'}}</p>
+          <p><i class="fa fa-suitcase"></i>{{globalService.language.Manar_Programs_html.Departure}} {{program.departureDate | date:'fullDate'}}</p>
         </div>
       </div>
     </div>

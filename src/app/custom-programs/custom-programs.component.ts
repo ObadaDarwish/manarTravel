@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {GlobalService} from '../global-service.service';
-import {ProgramsService} from './programs.service';
+import {customProgramsService} from './custom-programs.service';
 import {ActivatedRoute} from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {RequestProgramComponent} from '../dialogs/request-program/request-program.component';
@@ -8,12 +8,12 @@ import {NotificationsService} from 'angular2-notifications/src/simple-notificati
 
 @Component({
   selector: 'app-porgrams',
-  templateUrl: './porgrams.component.html',
-  styleUrls: ['./porgrams.component.css']
+  templateUrl: './custom-programs.component.html',
+  styleUrls: ['./custom-programs.component.css']
 })
 
 
-export class PorgramsComponent implements OnInit {
+export class customPorgramsComponent implements OnInit {
 
   ExchangeRate: any;
   ViewTotalTripCost: boolean = false;
@@ -24,7 +24,7 @@ export class PorgramsComponent implements OnInit {
   noMaddinahNights: number = 0;
   programType: string = '';
 
-  constructor(private notify: NotificationsService, public dialog: MatDialog, private route: ActivatedRoute, private programService: ProgramsService, private globalService: GlobalService) {
+  constructor(private notify: NotificationsService, public dialog: MatDialog, private route: ActivatedRoute, private programService: customProgramsService, public globalService: GlobalService) {
   }
 
   ngOnInit() {

@@ -10,39 +10,39 @@
   <div class="steps">
     <div class="step_container">
       <div class="step_item"><i class="fa fa-2x fa-h-square" aria-hidden="true"></i></div>
-      <p>Choose Hotel</p>
+      <p>{{globalService.language.custom_programs_html.Choose_Hotel}}</p>
     </div>
     <div class="step_arrow"><i class="fa fa-3x fa-long-arrow-right" aria-hidden="true"></i></div>
     <div class="step_container">
       <div class="step_item"><i class="fa fa-2x fa-bed" aria-hidden="true"></i></div>
-      <p>Room Type</p>
+      <p>{{globalService.language.custom_programs_html.Room_Type}}</p>
     </div>
     <div class="step_arrow"><i class="fa fa-3x fa-long-arrow-right" aria-hidden="true"></i></div>
     <div class="step_container">
       <div class="step_item"><i class="fa fa-2x fa-calendar-check-o" aria-hidden="true"></i></div>
-      <p>Check In & Out dates</p>
+      <p>{{globalService.language.custom_programs_html.Check_In_Out}}</p>
     </div>
     <div class="step_arrow"><i class="fa fa-3x fa-long-arrow-right" aria-hidden="true"></i></div>
     <div class="step_container">
       <div class="step_item"><i class="fa fa-2x fa-calculator" aria-hidden="true"></i></div>
-      <p>Calculate your trip</p>
+      <p>{{globalService.language.custom_programs_html.Calculate_your_trip}}</p>
     </div>
   </div>
   <div class="programNavbar">
     <ul>
-      <li>MAKKAH</li>
+      <li>{{globalService.language.custom_programs_html.MAKKAH}}</li>
     </ul>
   </div>
 
   <app-makkah></app-makkah>
   <div class="programNavbar">
     <ul>
-      <li>MADINAH</li>
+      <li>{{globalService.language.custom_programs_html.MADINAH}}</li>
     </ul>
   </div>
   <app-madinah></app-madinah>
   <div class="calculate">
-    <div class="calculate_button" (click)="CalculateProgram()" *ngIf="!ViewTotalTripCost; else viewTotal">Calculate
+    <div class="calculate_button" (click)="CalculateProgram()" *ngIf="!ViewTotalTripCost; else viewTotal">{{globalService.language.custom_programs_html.Calculate}}
     </div>
     <ng-template #viewTotal>
       <div class="price">
@@ -50,7 +50,7 @@
 
         <div class="price_container" >
           <div class="price_header">
-            <h1>Total Cost</h1>
+            <h1>{{globalService.language.custom_programs_html.Total_Cost}}</h1>
           </div>
           <div class="price_view">
             <p>{{totalTrip | currency:'EGP':'symbol':'3.2-2'}}</p>
@@ -58,15 +58,15 @@
 
         </div>
         <div *ngIf="Includes">
-          <h3>Price Includes</h3>
+          <h3>{{globalService.language.custom_programs_html.Price_Includes}}</h3>
           <div [innerHTML]="Includes"></div>
         </div>
         <div *ngIf="generalConditions">
-          <h3>General Conditions</h3>
+          <h3>{{globalService.language.custom_programs_html.General_Conditions}}</h3>
           <div [innerHTML]="generalConditions"></div>
         </div>
 
-        <div class="calculate_button" (click)="RequestProgram()">Request Program
+        <div class="calculate_button" (click)="RequestProgram()">{{globalService.language.custom_programs_html.Request_Program}}
         </div>
       </div>
     </ng-template>

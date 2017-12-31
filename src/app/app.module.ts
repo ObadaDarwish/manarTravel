@@ -12,9 +12,9 @@ import { MissingComponent } from './missing/missing.component';
 import {RoutingModule} from  './app.routes';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import {PageScrollService}  from 'ng2-page-scroll';
-import {ProgramsModule} from './programs/programs.module';
+import {customProgramsModule} from './custom-programs/custom-programs.module';
 import {GlobalService} from './global-service.service';
-import {ProgramsService} from './programs/programs.service';
+import {customProgramsService} from './custom-programs/custom-programs.service';
 import { GlobalModalComponent } from './global-modal/global-modal.component';
 import { TooltipModule,ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bootstrap';
 import { requestProgram } from './global-modal/request-program/request-program';
@@ -62,13 +62,13 @@ import { RequestProgramComponent } from './dialogs/request-program/request-progr
     FormsModule,
     HttpModule,
     RoutingModule,
-    ProgramsModule,
+    customProgramsModule,
     Ng2PageScrollModule.forRoot(),
     ModalModule.forRoot(),
     RatingModule,
     ReactiveFormsModule
   ],
-  providers: [ProgramProfileService,PageScrollService,ProgramsService,GlobalService],
+  providers: [ProgramProfileService,PageScrollService,customProgramsService,GlobalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

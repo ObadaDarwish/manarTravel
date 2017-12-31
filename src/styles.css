@@ -668,7 +668,7 @@ body {
   height: 200px;
 }
 
-/*------------------------ programs  ----------------------------------*/
+/*------------------------ custom-programs  ----------------------------------*/
 .programListContainer {
   width: 100%;
   position: absolute;
@@ -1289,7 +1289,7 @@ body {
   padding-top: 6%;
 }
 
-/*-------------------------------------- programs ----------------------------------*/
+/*-------------------------------------- custom-programs ----------------------------------*/
 .programNavigation {
   display: flex;
   flex-flow: row nowrap;

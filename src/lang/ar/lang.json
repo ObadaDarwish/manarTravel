@@ -1,8 +1,8 @@
 {
   "header_html": {
-    "Home": "Home",
-    "Aboutus": "Aboutus",
-    "Contactus": "Contactus"
+    "Home": "الصفحة الرئيسية",
+    "Aboutus": "معلومات عنا",
+    "Contactus": "تواصل معنا"
   },
   "landing_html": {
     "let_us_oragnize": "دعنا ننظم <span>رحلتك</span> القادمة",
@@ -36,6 +36,80 @@
     "Open_Time": "وقت العمل",
     "Phone": "الهاتف",
     "Email": "البريد الإلكتروني"
+  },
+  "custom_programs_html": {
+    "Choose_Hotel": "اختر الفندق",
+    "Room_Type": "نوع الغرفة",
+    "Check_In_Out": "تاريخ الوصول والمغادرة",
+    "Calculate_your_trip": "حساب رحلتك",
+    "MAKKAH": "مكه",
+    "MADINAH": "المدينة",
+    "Calculate": "احسب",
+    "Total_Cost": "التكلفة الإجمالية",
+    "Price_Includes": "السعر يشمل",
+    "General_Conditions": "شروط عامة",
+    "Request_Program": "طلب البرنامج",
+    "Single": "فردي",
+    "Double": "تنائى",
+    "Triple": "ثلاثي",
+    "Quad": "رباعي",
+    "Date_Range_Picker": "اختيار مدة الإقامة"
+  },
+  "Manar_Programs_html": {
+    "Manar_Programs": "برامج المنار",
+    "Program":"برنامج",
+    "Departure":"معاد الرحيل:"
+  },
+  "program_profile_html": {
+    "program": "برنامج",
+    "Trip_duration": "مدة الرحلة",
+    "Days": "يوما",
+    "Departure": "وقت الرحيل",
+    "Arrival": "وقت العودة",
+    "Accommodation": "الاقامة",
+    "Hotel_Makkah": "فندق مكة",
+    "Hotel_Maddinah": "فندق المدينة",
+    "Single_Room": "غرفة فردية",
+    "Double_Room": "غرفة مزدوجة",
+    "Triple_Room": "غرفة ثلاثية",
+    "Quad Room": "غرفة رباعية",
+    "Child": "اطفال",
+    "Years": "سنة",
+    "Hotel Name": "اسم الفندق",
+    "Location": "المكان",
+    "From": "من",
+    "To": "الى",
+    "Makkah": "مكة",
+    "Maddinah": "المدينة",
+    "Mashaer": "المشاعر",
+    "Arafa": "عرفة",
+    "Menah": "منة",
+    "Includes": "البرنامج يشمل",
+    "General_Conditions": "اشتراطات عامة",
+    "Prices": "الاسعار",
+    "Single": "فردى",
+    "Double": "زوجى",
+    "Triple": "ثلاثى",
+    "Quad": "رباعى",
+    "Request_Program": "اطلب البرنامج"
+  },
+  "dialog": {
+    "Request_Program": "طلب البرنامج",
+    "Makkah_Hotel": "فندق مكة",
+    "Makkah_Nights": "عدد ليالى مكة",
+    "Room_Type": "نوع الغرفة",
+    "Maddinah_Hotel": "فندق المدينة",
+    "Madinah_Nights": "عدد ليالى المدينة",
+    "Full_Name": "الاسم بالكامل *",
+    "Email": "البريد الالكترونى *",
+    "mobile": "الهاتف *",
+    "Cancel": "الغاء"
+  },
+  "global_dialog": {
+    "Request_Program": "طلب البرنامج",
+    "Full_Name": "الاسم الكامل *",
+    "Email": "البريد الإلكتروني *",
+    "mobile": "التليفون المحمول *"
   }
 }
 

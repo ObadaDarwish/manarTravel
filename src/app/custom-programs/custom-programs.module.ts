@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {PorgramsComponent} from './porgrams.component';
+import {customPorgramsComponent} from './custom-programs.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ProgramsService} from './programs.service';
+import {customProgramsService} from './custom-programs.service';
 import {MakkahComponent} from './makkah/makkah.component';
 import {MaddinahComponent} from './madinah/maddinah.component';
 import {RouterModule} from '@angular/router';
@@ -29,9 +29,9 @@ import {PipesModule} from '../pipes/pipes.module';
     ModalModule.forRoot(),
     RatingModule.forRoot()
   ],
-  declarations: [PorgramsComponent, MakkahComponent, MaddinahComponent],
-  providers: [ProgramsService],
-  exports: [PorgramsComponent]
+  declarations: [customPorgramsComponent, MakkahComponent, MaddinahComponent],
+  providers: [customProgramsService],
+  exports: [customPorgramsComponent]
 })
-export class ProgramsModule {
+export class customProgramsModule {
 }

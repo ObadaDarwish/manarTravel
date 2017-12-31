@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ProgramsService} from '../programs.service';
+import {customProgramsService} from '../custom-programs.service';
 import {ActivatedRoute} from '@angular/router';
 import {AppSettings} from '../../api.settings';
 import {GlobalService} from '../../global-service.service';
@@ -10,7 +10,7 @@ import {GlobalService} from '../../global-service.service';
 })
 export class MaddinahComponent implements OnInit {
 
-  constructor(public globalService: GlobalService, private activeRouter: ActivatedRoute, public programService: ProgramsService) {
+  constructor(public globalService: GlobalService, private activeRouter: ActivatedRoute, public programService: customProgramsService) {
   }
 
   public max: number = 5;

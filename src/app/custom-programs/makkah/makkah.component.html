@@ -18,21 +18,21 @@
 
 
   <div class="input_filed">
-    <div class="Title"><p>Room Type</p></div>
+    <div class="Title"><p>{{globalService.language.custom_programs_html.Room_Type}}</p></div>
     <div class="btn-group">
-      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Single">Single</label>
-      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Double">Double</label>
-      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Triple">Triple</label>
-      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Quad">Quad</label>
+      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Single">{{globalService.language.custom_programs_html.Single}}</label>
+      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Double">{{globalService.language.custom_programs_html.Double}}</label>
+      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Triple">{{globalService.language.custom_programs_html.Triple}}</label>
+      <label class="btn btn-primary" [(ngModel)]="programService.roomType" btnRadio="Quad">{{globalService.language.custom_programs_html.Quad}}</label>
     </div>
   </div>
   <div class="input_filed">
-    <div class="Title"><p>Check IN & OUT</p></div>
+    <div class="Title"><p>{{globalService.language.custom_programs_html.Check_In_Out}}</p></div>
     <div class="schedule_wrapper">
       <input [minDate]="minDate" [bsConfig]="bsConfig" class="form-control" #drp="bsDaterangepicker" bsDaterangepicker
              [(ngModel)]="programService.MakkahbsRangeValue">
 
-      <button class="btn btn-primary" (click)="drp.toggle()">Date Range Picker</button>
+      <button class="btn btn-primary" (click)="drp.toggle()">{{globalService.language.custom_programs_html.Date_Range_Picker}}</button>
     </div>
 
   </div>

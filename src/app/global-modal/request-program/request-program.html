@@ -3,20 +3,20 @@
     <div class="contact_us">
       <form [formGroup]="request" (ngSubmit)="requestProgram(request.value , request.valid)">
         <div class="contact_us">
-          <div class="contact_us_title"><p>Request Program</p></div>
+          <div class="contact_us_title"><p>{{globalService.language.global_dialog.Request_Program}}</p></div>
           <div class="contact_us_form">
             <div class="row">
               <div class="col-lg-12">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label for="fullname">Full Name *</label>
+                    <label for="fullname">{{globalService.language.global_dialog.Full_Name}}</label>
                     <input type="text" formControlName="full_name" placeholder="Ex: Mark" class="form-control"
                            id="fullname">
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label for="email">Email *</label>
+                    <label for="email">{{globalService.language.global_dialog.Email}}</label>
                     <input type="email" formControlName="email" placeholder="Ex: example@hotmail.com"
                            class="form-control"
                            id="email">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label for="mobile">mobile *</label>
+                    <label for="mobile">{{globalService.language.global_dialog.mobile}}</label>
                     <input type="number" formControlName="mobile" placeholder="Ex: 01XXXXXXXXX" class="form-control"
                            id="mobile">
                   </div>
