@@ -1,4 +1,5 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -14,7 +15,7 @@
       <div class="carousel-caption">
         <div class="moto">
           <h1>Manar <span>TRAVEL</span></h1>
-          <p>Let us organize your next <span>Trip</span></p>
+          <p [innerHTML]="globalService.language.landing_html.let_us_oragnize"></p>
         </div>
       </div>
     </div>
@@ -24,8 +25,8 @@
       <img src="../../assets/imgs/makkah2.jpg" alt="Chicago" style="width:100%;">
       <div class="carousel-caption">
         <div class="moto">
-          <h1>Tight <span>SCHEDULE!!</span></h1>
-          <p>Don't waste your precious time searching for the cheapest hotel rooms <span>we've got it covered</span></p>
+          <h1 [innerHTML]="globalService.language.landing_html.tight_schedule"></h1>
+          <p [innerHTML]="globalService.language.landing_html.dont_waste_time"></p>
         </div>
       </div>
     </div>
@@ -35,8 +36,8 @@
       <img src="../../assets/imgs/makkahtop.jpg" alt="New york" style="width:100%;">
       <div class="carousel-caption">
         <div class="moto">
-          <h1>On <span>BUDGET!!</span></h1>
-          <p>Well don't worry we have the best <span>OFFERS</span> that you can get for your trips</p>
+          <h1 [innerHTML]="globalService.language.landing_html.on_budget"></h1>
+          <p [innerHTML]="globalService.language.landing_html.dont_worry"></p>
         </div>
       </div>
     </div>
@@ -54,33 +55,34 @@
 </div>
 
 <div class="landingContainer">
+
   <!--<div class="landingButtonWrapper">-->
   <!--<div class="CustomiseButton" pageScroll [pageScrollOffset]="-100" [pageScrollDuration]="600" href="#mainRoute" ><p>Customise program now</p></div>-->
   <!--</div>-->
   <div class="Title">
-    <p>Custom Program</p>
+    <p>{{globalService.language.landing_html.Custom_Program}}</p>
   </div>
   <div class="mainRoutes" id="mainRoute">
 
     <div class="Umrah" routerLink="/programs/umrah">
       <img src="../../assets/imgs/umrah.jpg" alt="">
-      <div class="routeTitle"><p>Umrah</p></div>
+      <div class="routeTitle"><p>{{globalService.language.landing_html.Umrah}}</p></div>
     </div>
     <div class="hajj" routerLink="/programs/hajj">
       <img src="../../assets/imgs/hajj.jpg" alt="">
-      <div class="routeTitle"><p>Hajj</p></div>
+      <div class="routeTitle"><p>{{globalService.language.landing_html.Hajj}}</p></div>
     </div>
     <div class="Ramadan" routerLink="/programs/ramadan">
       <img src="../../assets/imgs/ramdan.jpg" alt="">
-      <div class="routeTitle"><p>Ramadan</p></div>
+      <div class="routeTitle"><p>{{globalService.language.landing_html.Ramadan}}</p></div>
     </div>
 
   </div>
   <div *ngIf="!isgetAllProgramsLoading ;else loadPrograms">
     <div class="visitTitle">
-      <p>Manar Programs</p>
+      <p>{{globalService.language.landing_html.Manar_Programs}}</p>
     </div>
-    <div class="see_more"><p routerLink="/manar-programs">See More</p></div>
+    <div class="see_more"><p routerLink="/manar-programs">{{globalService.language.landing_html.See_More}}</p></div>
 
     <div class="visit">
 
@@ -91,7 +93,7 @@
           <div class="itemDescription"><p>{{program.programType.toUpperCase()}} Program</p>
             <p><i class="fa fa-suitcase"></i> Departure: {{program.departureDate | date:'fullDate'}}</p>
           </div>
-          <div class="knowMore"><p (click)="openProfile(program.programType,program.id)">know More</p></div>
+          <div class="knowMore"><p (click)="openProfile(program.programType,program.id)">{{globalService.language.landing_html.know_More}}</p></div>
         </div>
       </div>
     </div>
@@ -103,28 +105,28 @@
 
 
   <div class="valueTitle">
-    <p>Values</p>
+    <p>{{globalService.language.landing_html.Values}}</p>
   </div>
   <div class="values">
     <div class="first_row">
-      <div class="integrity">We believe that success without INTEGRITY is failure</div>
+      <div class="integrity">{{globalService.language.landing_html.We_believe}}</div>
       <p><i class="fa fa-3x fa-handshake-o" aria-hidden="true"></i></p>
     </div>
     <div class="second_row">
       <div class="left">
-        <div class="reliability">We don't care about the QUANTITY of trips we organize as much as we do on the QUALITY
+        <div class="reliability">{{globalService.language.landing_html.QUANTITY}}
         </div>
         <p><i class="fa fa-3x fa-thumbs-o-up" aria-hidden="true"></i></p>
       </div>
       <div class="right">
         <p><i class="fa fa-3x fa-usd" aria-hidden="true"></i></p>
-        <div class="reliability">Our prices are very RESEONABLE and within everybody's budget</div>
+        <div class="reliability">{{globalService.language.landing_html.prices_RESEONABLE}}</div>
 
       </div>
     </div>
     <div class="third_row">
       <p><i class="fa fa-3x fa-check-square-o" aria-hidden="true"></i></p>
-      <div class="reliability">You can RELY on us to have a good story to tell about your comfortable trip</div>
+      <div class="reliability">{{globalService.language.landing_html.RELY_on_us}}</div>
     </div>
   </div>
   <div class="mission">
@@ -132,26 +134,14 @@
     </div>
     <img src="../../assets/imgs/mission.png">
     <div class="mission_description">
-      <h1 style="color:#ffffff">Our Mission</h1>
-      <p>
-        &#34; Our mission is to remove all the barriers between countries and
-        unite the world by providing the ultimate
-        traveling experience. Regardless a program or a transportation chosen
-        we guarantee a premium satisfaction &#34;</p>
+      <h1 style="color:#ffffff">{{globalService.language.landing_html.Our_Mission}}</h1>
+      <p>{{globalService.language.landing_html.mission}}</p>
     </div>
   </div>
   <div class="aboutus" id="scrollAbout">
     <div class="aboutus_description">
-      <h1 style="color:#3bb8c5">About Us</h1>
-      <p ><b>Manar Travel</b>
-        was founded in 1990, we are a company of experience, trust and passion that have been in the traveling field
-        for more than 60 years . <br>
-        Our trips are customized based on your schedule and budget, whether you have a plan to your next destination
-        or haven't decided yet <b>Manar Travel</b> is here to guide you. <br>
-        <b>Manar Travel</b> is not only committed to providing you with an unforgettable and inspiring trip,
-        we’re also committed to ensuring your happiness and comfort throughout.
-        When you travel with us, you can feel confident knowing we have staff in every country
-        who are available to accommodate your wishes and needs</p>
+      <h1 style="color:#3bb8c5">{{globalService.language.landing_html.About_Us}}</h1>
+      <p [innerHTML]="globalService.language.landing_html.about_us_description"></p>
     </div>
     <div class="aboutus_overlay">
     </div>
@@ -161,34 +151,34 @@
     <div *ngIf="!isContactLoading ;else loadingContact">
       <form [formGroup]="contact_us_form" (ngSubmit)="contactUs(contact_us_form.value , contact_us_form.valid)">
         <div class="contact_us">
-          <div class="contact_us_title"><p>Contact us</p></div>
+          <div class="contact_us_title"><p>{{globalService.language.landing_html.Contact_us}}</p></div>
           <div class="contact_us_form">
             <div class="row">
               <div class="col-lg-8">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="firstname">First Name *</label>
+                    <label for="firstname">{{globalService.language.landing_html.First_Name}}</label>
                     <input formControlName="first_name" type="text" placeholder="Ex: Mark" class="form-control"
                            id="firstname">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="secondname">Last Name *</label>
+                    <label for="secondname">{{globalService.language.landing_html.Last_Name}}</label>
                     <input formControlName="last_name" type="text" placeholder="Ex: Thomson" class="form-control"
                            id="secondname">
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label for="message">Message *</label>
+                    <label for="message">{{globalService.language.landing_html.Message}}</label>
                     <textarea formControlName="message" class="form-control" placeholder="Your message"
                               id="message"></textarea>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="email">Email *</label>
+                    <label for="email">{{globalService.language.landing_html.Email}}</label>
                     <input formControlName="email" type="email" placeholder="Ex: example@hotmail.com"
                            class="form-control"
                            id="email">
@@ -196,7 +186,7 @@
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="mobile">mobile *</label>
+                    <label for="mobile">{{globalService.language.landing_html.mobile}}</label>
                     <input formControlName="mobile" type="number" placeholder="Ex: 01XXXXXXXXX" class="form-control"
                            id="mobile">
                   </div>
@@ -210,19 +200,19 @@
               <div class="col-lg-4">
                 <div class="details">
                   <div class="item">
-                    <h3>Address</h3>
+                    <h3>{{globalService.language.landing_html.Address}}</h3>
                     <p>Cross roads 7 & 82,Maadi, Cairo-Egypt</p>
                   </div>
                   <div class="item">
-                    <h3>Open Time</h3>
+                    <h3>{{globalService.language.landing_html.Open_Time}}</h3>
                     <p>9am => 5pm</p>
                   </div>
                   <div class="item">
-                    <h3>Phone</h3>
+                    <h3>{{globalService.language.landing_html.Phone}}</h3>
                     <p>01001518668</p>
                   </div>
                   <div class="item">
-                    <h3>Email</h3>
+                    <h3>{{globalService.language.landing_html.Email}}</h3>
                     <p>manar@travel.com</p>
                   </div>
                 </div>

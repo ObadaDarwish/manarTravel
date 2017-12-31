@@ -18,7 +18,8 @@ export class GlobalService {
   opacity: boolean = false;
   MadinahSelectedHotel: string;
   MakkahSelectedHotel: string;
-
+  language: any;
+  lang_selected: string = 'ar';
   constructor(private http: Http) {
   }
 
@@ -66,7 +67,7 @@ export class GlobalService {
     });
   }
 
-  postRequestManarProgram(value,type,id, date) {
+  postRequestManarProgram(value, type, id, date) {
     let body = JSON.stringify({
       full_name: value.full_name,
       email: value.email,

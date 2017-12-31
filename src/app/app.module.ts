@@ -13,13 +13,12 @@ import {RoutingModule} from  './app.routes';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import {PageScrollService}  from 'ng2-page-scroll';
 import {ProgramsModule} from './programs/programs.module';
-import { RouterModule } from '@angular/router';
 import {GlobalService} from './global-service.service';
 import {ProgramsService} from './programs/programs.service';
 import { GlobalModalComponent } from './global-modal/global-modal.component';
 import { TooltipModule,ButtonsModule,ModalModule,BsDatepickerModule,RatingModule} from 'ngx-bootstrap';
 import { requestProgram } from './global-modal/request-program/request-program';
-import {MatRadioModule,MatSlideToggleModule,MatDialogModule} from '@angular/material';
+import {MatRadioModule,MatSlideToggleModule,MatDialogModule,MatSelectModule} from '@angular/material';
 import { AgmCoreModule } from '@agm/core';
 import { ManarProgramModule } from './manar-program/manar-program.module';
 import { ProgramProfileComponent } from './program-profile/program-profile.component';
@@ -43,6 +42,7 @@ import { RequestProgramComponent } from './dialogs/request-program/request-progr
   ],
   entryComponents:[RequestProgramComponent],
   imports: [
+    MatSelectModule,
     MatDialogModule,
     PipesModule,
     LoadingIndicatorModule,
@@ -57,7 +57,6 @@ import { RequestProgramComponent } from './dialogs/request-program/request-progr
     MatSlideToggleModule,
     MatRadioModule,
     BrowserAnimationsModule,
-    RouterModule,
     CommonModule,
     BrowserModule,
     FormsModule,

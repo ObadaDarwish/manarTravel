@@ -11,6 +11,7 @@ import {MakkahComponent} from './programs/makkah/makkah.component';
 import {MaddinahComponent} from './programs/madinah/maddinah.component';
 import {ManarProgramComponent} from './manar-program/manar-program.component';
 import {ProgramProfileComponent} from './program-profile/program-profile.component';
+
 const MainRoute: Routes = [
   {path: '', component:LandingComponent},
   {path: 'programs/:id', component:PorgramsComponent},
