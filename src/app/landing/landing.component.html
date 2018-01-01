@@ -86,16 +86,15 @@
 
     <div class="visit">
 
-      <div class="item" *ngFor="let program of programs;let index=index">
-        <div *ngIf="index<5">
+      <div class="item" *ngFor="let program of programs |iteration:6;let index=index">
           <img [src]="globalService.imagePath+'/'+program.picture" alt="">
           <div class="itemTitle"><p>{{program.name}}</p></div>
           <div class="itemDescription"><p>{{program.programType.toUpperCase()}} Program</p>
             <p><i class="fa fa-suitcase"></i> Departure: {{program.departureDate | date:'fullDate'}}</p>
           </div>
           <div class="knowMore"><p (click)="openProfile(program.programType,program.id)">{{globalService.language.landing_html.know_More}}</p></div>
-        </div>
       </div>
+
     </div>
   </div>
   <ng-template #loadPrograms>
