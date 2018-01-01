@@ -5,8 +5,7 @@
       <div class="tab" routerLink="/"><p>{{globalService.language.header_html.Home}}</p></div>
       <div class="tab" routerLink="/" pageScroll href="#scrollAbout"><p>{{globalService.language.header_html.Aboutus}}</p></div>
       <div class="tab"  routerLink="/" pageScroll href="#scrollContact"><p>{{globalService.language.header_html.Contactus}}</p></div>
-      <mat-select  class="tab language_dropdown"  placeholder="Select language" [(value)]="globalService.lang_selected"
-      >
+      <mat-select  class="tab language_dropdown"  placeholder="Select language" [(value)]="globalService.lang_selected">
         <mat-option  value="ar" (click)="changeLanguage('ar')">
           <img style="width: 30px;height: 30px;margin-right: 25%;" src="../../assets/imgs/flags/egypt.svg" alt=""> العربية
         </mat-option>

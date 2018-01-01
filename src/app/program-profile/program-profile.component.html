@@ -18,6 +18,18 @@
             <div><p><i class="fa fa-suitcase"></i> {{globalService.language.program_profile_html.Arrival}}: {{ arrivalDate| date:'fullDate'}}</p></div>
           </div>
         </div>
+        <div class="route" *ngIf="tripRoute">
+          <div class="route_block" *ngFor="let route of tripRoute;let last=last">
+            <div class="route_circle">
+              <div class="circle"></div>
+              <div class="route_name">
+                {{route}}
+              </div>
+            </div>
+            <div class="route_arrow" *ngIf="!last"></div>
+          </div>
+          
+        </div>
       </div>
     </div>
     <div class="profile_body">

@@ -14,6 +14,7 @@ export class ProgramProfileComponent implements OnInit {
   arrivalDate: any;
   departureDate: any;
   isProfileLoading: boolean = false;
+  tripRoute: any;
 
   constructor(public globalService: GlobalService, private profileService: ProgramProfileService, private activeRoute: ActivatedRoute) {
     this.programType = this.activeRoute.snapshot.params['code'];
@@ -24,8 +25,8 @@ export class ProgramProfileComponent implements OnInit {
     this.isProfileLoading = true;
     if (this.programType == 'umrah') {
       this.profileService.getUmrahProgram(this.programId).subscribe(data=> {
-
         this.programProfile = data[0];
+        this.tripRoute = data[0].route.split(',');
         this.arrivalDate = new Date(this.programProfile.arrivalDate);
         this.departureDate = new Date(this.programProfile.departureDate);
         this.isProfileLoading = false;
