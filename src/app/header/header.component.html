@@ -1,18 +1,20 @@
 <div class="navBody" >
   <!--<div class="navContainer">-->
     <div class="navigation" [ngClass]="{changeOpacity: globalService.opacity}">
+      <div class="tab logo" routerLink="/"><img src="../../assets/imgs/manar_logo2.png" alt=""><p>Manar Travel</p></div>
       <div class="tab" routerLink="/"><p>{{globalService.language.header_html.Home}}</p></div>
       <div class="tab" routerLink="/" pageScroll href="#scrollAbout"><p>{{globalService.language.header_html.Aboutus}}</p></div>
       <div class="tab"  routerLink="/" pageScroll href="#scrollContact"><p>{{globalService.language.header_html.Contactus}}</p></div>
+      <mat-select  class="tab language_dropdown"  placeholder="Select language" [(value)]="globalService.lang_selected"
+      >
+        <mat-option  value="ar" (click)="changeLanguage('ar')">
+          <img style="width: 30px;height: 30px;margin-right: 25%;" src="../../assets/imgs/flags/egypt.svg" alt=""> العربية
+        </mat-option>
+        <mat-option value="en" (click)="changeLanguage('en')">
+          <img style="width: 30px;height: 30px;margin-right: 25%;" src="../../assets/imgs/flags/united-kingdom.svg" alt=""> English
+        </mat-option>
+      </mat-select>
     </div>
   <!--</div>-->
-  <mat-select class="tab language_dropdown"  placeholder="Select language" [(value)]="globalService.lang_selected"
-              >
-    <mat-option  value="ar" (click)="changeLanguage('ar')">
-      <img style="width: 30px;height: 30px" src="../../assets/imgs/flags/egypt.svg" alt=""> العربية
-    </mat-option>
-    <mat-option value="en" (click)="changeLanguage('en')">
-      <img style="width: 30px;height: 30px" src="../../assets/imgs/flags/united-kingdom.svg" alt=""> English
-    </mat-option>
-  </mat-select>
+
 </div>

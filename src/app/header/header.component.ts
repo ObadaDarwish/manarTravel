@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GlobalService}from '../global-service.service' ;
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

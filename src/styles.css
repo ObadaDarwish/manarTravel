@@ -60,9 +60,11 @@ body {
   width: 85px;
   height: 85px;
 }
-.cdk-overlay-pane{
-  min-width: 150px!important;
+
+.cdk-overlay-pane {
+  min-width: 150px !important;
 }
+
 .loadSVG {
   width: 100px;
   height: 100px;
@@ -85,13 +87,11 @@ body {
   justify-content: center;
 }
 
-
-
 .navigation {
-  border-radius: 0px 0px 11px 11px;
-  height: 60px;
+  /*border-radius: 0px 0px 11px 11px;*/
+  height: 65px;
   background: rgba(59, 184, 197, 0.7);
-  width: 75%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
@@ -101,29 +101,54 @@ body {
   display: flex;
   width: 33%;
   height: inherit;
-  text-align: center;
+  /*text-align: center;*/
   border-radius: inherit;
 }
-.navBody .language_dropdown{
-  width: 100px;
-  height: 59px;
+
+.navigation .tab.logo {
+  background-color: rgba(59, 184, 197, 0.7);
+  display: flex;
+  justify-content: center;
+}
+
+.navigation .tab.logo:hover {
+  background-color: rgba(59, 184, 197, 0.7);
+  cursor: default;
+}
+
+.navigation .tab.logo img {
+  width: 60px;
+  height: 60px
+}
+
+.navigation .tab.logo p {
+  width: 50%;
+}
+
+.navBody .language_dropdown {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(59, 184, 197, 0.7);
-  border-radius: 10px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: absolute;
-  left: 90%;
-  top: 0%;
-  padding: 1%;
 }
-.navBody .language_dropdown span{color: #fff !important; }
+.mat-select-arrow{
+  color: #ffffff;
+}
+.mat-select-content {
+  background: #4593a3;
+}
+.language_dropdown .mat-select-value{
+  width: 75% !important;
+}
+.navBody .language_dropdown span {
+  color: #fff !important;
+}
+
 .navigation .tab:hover {
   background: #25a4b1;
   cursor: pointer;
@@ -137,6 +162,8 @@ body {
   font-family: Georgia, sans-serif;
   font-size: 18px;
   margin: 0 !important;
+  display: flex;
+  justify-content: center;
 }
 
 .visit {
@@ -2136,55 +2163,69 @@ label {
   .schedule .input_filed {
     width: 100%;
   }
-  .btn-group{
+
+  .btn-group {
     margin-top: 5%;
   }
+
   .btn-group, .btn-group-vertical {
     display: inline-flex !important;
   }
-  .btn-group label{
+
+  .btn-group label {
     padding: 5%;
   }
-  .price .price_container{
+
+  .price .price_container {
     width: 100%;
   }
-  .info_block h4{
+
+  .info_block h4 {
     font-size: 12px !important;
   }
-  .info_block p{
+
+  .info_block p {
     font-size: 12px !important;
   }
-  .profileContainer .profileHeader{
+
+  .profileContainer .profileHeader {
     flex-flow: column;
     align-items: center;
-    padding-top:15% ;
+    padding-top: 15%;
   }
-  .profileContainer .profileHeader .img_container{
+
+  .profileContainer .profileHeader .img_container {
     width: 100%;
   }
-  .profileContainer .profileHeader .img_container img{
-    height:150px;
+
+  .profileContainer .profileHeader .img_container img {
+    height: 150px;
     width: 150px;
   }
-  .profileContainer .profileHeader .details_container{
+
+  .profileContainer .profileHeader .details_container {
     align-items: center;
     width: 100%;
   }
-  .profileContainer .profileHeader .details_container .date{
+
+  .profileContainer .profileHeader .details_container .date {
     flex-flow: column;
     align-items: center;
   }
 
-  .profileContainer .profileHeader .details_container .date .tripDuration{
+  .profileContainer .profileHeader .details_container .date .tripDuration {
     width: 100% !important;
     justify-content: center !important;
   }
-  .profileContainer .profileHeader .details_container .TripDate p{
+
+  .profileContainer .profileHeader .details_container .TripDate p {
     width: 100%;
   }
-  .profileContainer .profileHeader .details_container .date .TripDate{
+
+  .profileContainer .profileHeader .details_container .date .TripDate {
     width: 90% !important;
   }
+
   .Title p {
     color: #fff;
   }
