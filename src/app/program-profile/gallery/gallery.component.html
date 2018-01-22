@@ -1,0 +1,34 @@
+<div class="gallery_container">
+  <!--<div class="img_view_slider">-->
+  <!--<img src="../../../assets/imgs/madinamosque.jpg" alt="">-->
+  <!--</div>-->
+  <div class="container">
+  <div id="img_slider" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item" [ngClass]="{'active': profileService.is_active[index]}" *ngFor="let img of profileService.gallery;let index=index">
+        <img src="{{globalService.imagePath+'/'+img}}"  style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#img_slider" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#img_slider" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+  <div class="img_slider">
+    <div class="item" *ngFor="let img of profileService.gallery;let index=index"
+         (click)="selectIMG(index)"
+         data-target="#img_slider">
+      <img src="{{globalService.imagePath+'/'+img}}" alt="">
+    </div>
+  </div>
+</div>

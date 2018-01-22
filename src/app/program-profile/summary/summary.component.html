@@ -1,0 +1,130 @@
+<div class="profile_body">
+  <div class="Title right">
+    <p>{{globalService.language.program_profile_html.Accommodation}}</p>
+  </div>
+  <!--umrah accommodotion-->
+  <div class="AccommodationUmrah" *ngIf="programType=='umrah';else  hajjProgram">
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>{{globalService.language.program_profile_html.Hotel_Makkah}}</th>
+            <th>{{globalService.language.program_profile_html.Hotel_Maddinah}}</th>
+            <th *ngIf="programProfile?.single!=0">{{globalService.language.program_profile_html.Single_Room}}</th>
+            <th>{{globalService.language.program_profile_html.Double_Room}}</th>
+            <th>{{globalService.language.program_profile_html.Triple_Room}}</th>
+            <th>{{globalService.language.program_profile_html.Quad_Room}}</th>
+            <th>{{globalService.language.program_profile_html.Child}} <i class="fa fa-arrow-down"></i> 12 {{globalService.language.program_profile_html.Years}}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{programProfile?.MakkahHotel}}</td>
+            <td>{{programProfile?.madinahHotel}}</td>
+            <td *ngIf="programProfile?.single!=0">{{programProfile?.single}} EGP</td>
+            <td>{{programProfile?.double}} EGP</td>
+            <td>{{programProfile?.triple}} EGP</td>
+            <td>{{programProfile?.quad}} EGP</td>
+            <td>{{programProfile?.child}} EGP</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--hajj accommodation-->
+
+  <ng-template #hajjProgram>
+    <div class="Accommodationhajj">
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>{{globalService.language.program_profile_html.Hotel_Name}}</th>
+            <th>{{globalService.language.program_profile_html.Location}}</th>
+            <th>{{globalService.language.program_profile_html.From}}</th>
+            <th>{{globalService.language.program_profile_html.To}}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="tr_select">
+            <td>{{programProfile?.MakkahHotel}}</td>
+            <td>{{globalService.language.program_profile_html.Makkah}}</td>
+            <td>{{programProfile?.makkah_from1}}</td>
+            <td>{{programProfile?.makkah_to1}}</td>
+
+          </tr>
+          <tr class="tr_select">
+            <td>{{programProfile?.MakkahHotel}}</td>
+            <td>{{globalService.language.program_profile_html.Makkah}}</td>
+            <td>{{programProfile?.makkah_from2}}</td>
+            <td>{{programProfile?.makkah_to2}}</td>
+          </tr>
+          <tr class="tr_select">
+            <td>{{programProfile?.madinahHotel}}</td>
+            <td>{{globalService.language.program_profile_html.Maddinah}}</td>
+            <td>{{programProfile?.madinah_from}}</td>
+            <td>{{programProfile?.madinah_to}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="Title right">
+      <p>{{globalService.language.program_profile_html.Mashaer}}</p>
+    </div>
+    <div class="mashaer">
+      <div>
+        <h3>{{globalService.language.program_profile_html.Arafa}}</h3>
+        <div [innerHTML]="programProfile?.arafa"></div>
+      </div>
+      <div>
+        <h3>{{globalService.language.program_profile_html.Menah}}</h3>
+        <div [innerHTML]="programProfile?.mena"></div>
+      </div>
+
+    </div>
+  </ng-template>
+
+  <div class="horizontal_line"></div>
+  <div class="rules">
+    <div>
+      <h3>{{globalService.language.program_profile_html.Includes}}</h3>
+      <div [innerHTML]="programProfile?.includes"></div>
+    </div>
+    <div>
+      <h3>{{globalService.language.program_profile_html.General_Conditions}}</h3>
+      <div [innerHTML]="programProfile?.generalConditions"></div>
+    </div>
+
+  </div>
+  <div *ngIf="programType!='umrah'" class="hajjprice">
+    <div class="Title right">
+      <p>{{globalService.language.program_profile_html.Prices}}</p>
+    </div>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>{{globalService.language.program_profile_html.Single}}</th>
+          <th>{{globalService.language.program_profile_html.Double}}</th>
+          <th>{{globalService.language.program_profile_html.Triple}}</th>
+          <th>{{globalService.language.program_profile_html.Quad}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1500</td>
+          <td>200</td>
+          <td>600</td>
+          <td>48484</td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -27,6 +27,7 @@ export class LandingComponent implements OnInit {
       'mobile': ['', Validators.required],
       'message': ['', Validators.required],
     })
+    this.globalService.opacity = false;
   }
 
   @HostListener("window:scroll", [])

@@ -17,9 +17,11 @@ body {
 .mat-dialog-container {
   background-color: #288690;
 }
-.mat-option-text{
+
+.mat-option-text {
   color: #ffffff;
 }
+
 .space.sm {
   height: 20px;
 }
@@ -93,7 +95,8 @@ body {
 
 .navigation {
   /*border-radius: 0px 0px 11px 11px;*/
-  background: rgba(59, 184, 197, 0.7);
+  /*background: rgba(59, 184, 197, 0.7);*/
+  background: linear-gradient(#419eab, transparent);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -117,6 +120,7 @@ body {
 .navigation .tab.logo:hover {
   background-color: rgba(59, 184, 197, 0.7);
   cursor: default;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .navigation .tab.logo img {
@@ -139,22 +143,27 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.mat-select-arrow{
+
+.mat-select-arrow {
   color: #ffffff;
 }
-.language_dropdown .mat-select-trigger{
-  width:100%;
+
+.language_dropdown .mat-select-trigger {
+  width: 100%;
   height: inherit;
 }
+
 .mat-select-content {
   background: #4593a3;
 }
-.language_dropdown .mat-select-value{
+
+.language_dropdown .mat-select-value {
   width: 65% !important;
   vertical-align: middle;
   text-align: end;
   padding-right: 3%;
 }
+
 .navBody .language_dropdown span {
   color: #fff !important;
 }
@@ -243,9 +252,11 @@ body {
   display: flex;
   align-self: center;
   margin-bottom: 0 !important;
-  background: #288690;
-  padding: 2%;
-  padding-bottom: 0%;
+  background: #2e95a0;
+  border-radius: 0px 0px 10px 10px;
+  padding: 1%;
+  padding-right: 2%;
+  padding-left: 2%;
   color: #ffffff;
   font-size: 25px;
   font-weight: bold;
@@ -450,6 +461,10 @@ body {
 
 .fa-handshake-o, .fa-check-square-o, .fa-thumbs-o-up, .fa-usd, .fa-map-marker {
   color: #ffffff;
+}
+
+.fa-caret-right {
+  color: #2f8e98;
 }
 
 .integrity {
@@ -863,9 +878,13 @@ body {
 .profileContainer .profileHeader {
   width: 100%;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   margin-top: 10%;
-  margin-bottom: 1%;
+}
+
+.banner {
+  display: flex;
+  flex-flow: row;
 }
 
 .profileContainer .profileHeader .img_container {
@@ -879,6 +898,7 @@ body {
   display: flex;
   flex-flow: column;
 }
+
 .profileContainer .profileHeader .details_container .route {
   width: 100%;
   display: flex;
@@ -886,13 +906,13 @@ body {
   margin-bottom: 2%;
   margin-top: 2%;
 }
-.profileContainer .profileHeader .details_container .route .route_block
-{
+
+.profileContainer .profileHeader .details_container .route .route_block {
   display: flex;
   flex-flow: row;
 }
-.profileContainer .profileHeader .details_container .route .route_block .route_circle
-{
+
+.profileContainer .profileHeader .details_container .route .route_block .route_circle {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -900,26 +920,32 @@ body {
   height: 70px;
   width: 40px;
 }
-.profileContainer .profileHeader .details_container .route .route_block .route_arrow{
+
+.profileContainer .profileHeader .details_container .route .route_block .route_arrow {
   height: 3px;
   width: 80px;
   margin-top: 9px;
   margin-left: -10px;
   margin-right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #2f8e98;
 }
-.profileContainer .profileHeader .details_container .route .route_block .route_circle .circle
-{
+
+.profileContainer .profileHeader .details_container .route .route_block .route_circle .circle {
   width: 20px;
   height: 20px;
   background: #2f8e98;
   border-radius: 80px;
 }
-.route_name{
+
+.route_name {
   background: #2f8e98;
   padding: 15%;
   color: #fff;
 }
+
 .profileContainer .profileHeader .details_container h1 {
   color: #fff;
   font-family: Gorgia;
@@ -936,6 +962,39 @@ body {
   display: flex;
   flex-flow: row;
   width: 100%;
+}
+
+.profileContainer .profileHeader .program_routes {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row;
+  margin-top: 1%;
+  background: #347f86;
+}
+
+.profileContainer .profileHeader .program_routes .route_tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+}
+
+.profileContainer .profileHeader .program_routes .route_tab:hover {
+  cursor: pointer;
+  background: #398c94;
+}
+
+.profileContainer .profileHeader .program_routes .route_tab.active {
+  background: #398c94;
+}
+
+.profileContainer .profileHeader .program_routes .route_tab p {
+  color: #ffffff;
+  font-family: Georgia, sans-serif;
+  font-size: 18px;
+  margin: 0 !important;
 }
 
 .profileContainer .profileHeader .details_container .date .TripDate {
@@ -1235,6 +1294,11 @@ body {
   display: flex;
   position: relative;
   justify-content: center;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.mainRoutes .Ramadan img {
+  border-radius: 0px 40px 40px 0px;
 }
 
 .mainRoutes .routeTitle {
@@ -1265,6 +1329,11 @@ body {
   position: relative;
   margin-right: 2%;
   justify-content: center;
+  border-radius: 40px 0px 0px 40px;
+}
+
+.mainRoutes .Umrah img {
+  border-radius: 40px 0px 0px 40px;
 }
 
 .mainRoutes .Zyarat {
@@ -2037,6 +2106,63 @@ label {
   text-align: center;
 }
 
+/*==================================================  Gallery  ===========================================*/
+.gallery_container {
+  background: #ffffff;
+  display: flex;
+  flex-flow: column;
+}
+.gallery_container  .img_view_slider{
+  display: flex;
+  justify-content:center;
+  margin-top: 1%;
+}
+.gallery_container .img_view_slider img{
+  width: 90% ;
+  height: 450px;
+}
+#img_slider{
+  margin-top: 2%;
+}
+#img_slider .carousel-inner{
+  height: 500px !important;
+}
+#img_slider .carousel-inner .item img{
+  height: 500px !important;
+}
+.gallery_container .img_slider{
+  width: 100%;
+  background: #ffffff;
+  flex-flow: row wrap;
+  position: relative;
+  padding: 2%;
+  display: -webkit-inline-box;
+  flex-flow: nowrap;
+  justify-content: flex-start;
+  overflow-x: scroll;
+}
+
+.gallery_container .img_slider .item{
+  box-shadow: 0px 0px 5px 3px #1d5858;
+  margin-right: 2%;
+  width: 150px;
+  height: 75px;
+  background: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+}
+.gallery_container .img_slider .item img{
+  width: 150px;
+  height: 75px;
+}
+
+
+/*==================================================  Media  ===========================================*/
 @media screen and (max-width: 700px) {
   .navigation {
     width: 100%;
@@ -2288,10 +2414,16 @@ label {
   .lefSide {
     width: 100%;
   }
-  .route{
-    justify-content:center;
+
+  .route {
+    justify-content: center;
   }
+
   .navigation .tab {
     width: 33%;
+  }
+
+  .banner {
+    flex-flow: column;
   }
 }

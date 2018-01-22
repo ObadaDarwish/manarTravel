@@ -27,6 +27,8 @@ import {SimpleNotificationsModule  } from 'angular2-notifications/src/simple-not
 import {LoadingIndicatorModule} from './loading-indicator/loading-indicator.module';
 import { PipesModule } from './pipes/pipes.module';
 import { RequestProgramComponent } from './dialogs/request-program/request-program.component';
+import { SummaryComponent } from './program-profile/summary/summary.component';
+import { GalleryComponent } from './program-profile/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { RequestProgramComponent } from './dialogs/request-program/request-progr
     GlobalModalComponent,
     requestProgram,
     ProgramProfileComponent,
-    RequestProgramComponent
+    RequestProgramComponent,
+    SummaryComponent,
+    GalleryComponent
   ],
   entryComponents:[RequestProgramComponent],
   imports: [

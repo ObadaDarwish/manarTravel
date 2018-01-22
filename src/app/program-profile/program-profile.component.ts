@@ -19,6 +19,7 @@ export class ProgramProfileComponent implements OnInit {
   constructor(public globalService: GlobalService, private profileService: ProgramProfileService, private activeRoute: ActivatedRoute) {
     this.programType = this.activeRoute.snapshot.params['code'];
     this.programId = this.activeRoute.snapshot.params['id'];
+    this.globalService.opacity = false;
   }
 
   ngOnInit() {
@@ -26,7 +27,16 @@ export class ProgramProfileComponent implements OnInit {
     if (this.programType == 'umrah') {
       this.profileService.getUmrahProgram(this.programId).subscribe(data=> {
         this.programProfile = data[0];
-        this.tripRoute = data[0].route.split(',');
+        if (data[0].route) {
+          this.tripRoute = data[0].route.split(',');
+        }
+        if (data[0].gallery) {
+          this.profileService.gallery = JSON.parse(data[0].gallery);
+          this.profileService.gallery.forEach((value, index)=> {
+            this.profileService.is_active.push(false);
+          });
+          this.profileService.is_active[0] = true;
+        }
         this.arrivalDate = new Date(this.programProfile.arrivalDate);
         this.departureDate = new Date(this.programProfile.departureDate);
         this.isProfileLoading = false;
