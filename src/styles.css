@@ -4,7 +4,17 @@
 body {
   margin: 0;
 }
-
+.message_container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: #ffffff;
+  padding: 8%;
+}
+.message_container p{
+  font-size: 20px;
+  color: #2f8e98;
+}
 .modal-dialog {
   margin-top: 7%;
   background-color: #288690;
@@ -292,6 +302,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-flow: column;
   flex-flow: column;
+  border-radius: 10px;
 }
 
 .see_more {
@@ -325,6 +336,7 @@ body {
   width: inherit;
   height: 300px !important;
   position: relative;
+  border-radius: 10px;
 }
 
 .visit .item .itemTitle {
@@ -776,7 +788,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 55px;
+  align-items: center;
 }
 
 .programList .item .itemDate p {
@@ -788,7 +800,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 2%;
+  padding: 4%;
 }
 
 .knowMore p {
@@ -2155,6 +2167,9 @@ label {
   -webkit-box-direction: normal;
   -ms-flex-flow: column;
   flex-flow: column;
+}
+.gallery_container .img_slider .item img:hover{
+  cursor: pointer;
 }
 .gallery_container .img_slider .item img{
   width: 150px;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GlobalService} from  '../../global-service.service';
+import {ProgramProfileService} from '../program-profile.service';
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
@@ -7,7 +8,7 @@ import {GlobalService} from  '../../global-service.service';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor(public globalService:GlobalService) { }
+  constructor(public profileService:ProgramProfileService,public globalService:GlobalService) { }
 
   ngOnInit() {
   }

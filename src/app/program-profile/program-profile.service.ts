@@ -9,9 +9,14 @@ export class ProgramProfileService {
   constructor(private http: Http) {
   }
 
+  programType: any;
+  programId: any;
+  programProfile: any;
   gallery: any;
   is_active: Array<boolean> = [];
-
+  arrivalDate: any;
+  departureDate: any;
+  tripRoute: any;
 
   getUmrahProgram(code): Observable<any> {
 

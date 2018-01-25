@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ProgramProfileService} from '../program-profile.service';
 import {GlobalService} from '../../global-service.service';
 @Component({
@@ -16,9 +16,11 @@ export class GalleryComponent implements OnInit {
   }
 
   selectIMG(index) {
-    this.profileService.is_active.forEach((value, index)=> {
-      this.profileService.is_active[index] = false;
+    this.profileService.is_active.forEach((value, loopindex)=> {
+      this.profileService.is_active[loopindex] = false;
     });
     this.profileService.is_active[index] = true;
   }
+
+
 }

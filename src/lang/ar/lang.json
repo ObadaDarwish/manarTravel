@@ -91,7 +91,9 @@
     "Double": "زوجى",
     "Triple": "ثلاثى",
     "Quad": "رباعى",
-    "Request_Program": "اطلب البرنامج"
+    "Request_Program": "اطلب البرنامج",
+    "Summary":"ملخص",
+    "Gallery":"الصور"
   },
   "dialog": {
     "Request_Program": "طلب البرنامج",
@@ -110,6 +112,9 @@
     "Full_Name": "الاسم الكامل *",
     "Email": "البريد الإلكتروني *",
     "mobile": "التليفون المحمول *"
+  },
+  "gallery_html":{
+    "no_gallery":".لا يوجد صور بعد"
   }
 }
 

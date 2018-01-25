@@ -3,27 +3,27 @@
     <div class="profileHeader">
       <div class="banner">
         <div class="img_container">
-          <img src="{{globalService.imagePath+'/'+programProfile?.picture}}" alt="">
+          <img src="{{globalService.imagePath+'/'+profileService.programProfile?.picture}}" alt="">
         </div>
         <div class="details_container">
-          <h1>{{programProfile?.name}}</h1>
-          <p>{{programProfile?.programType}} {{globalService.language.program_profile_html.program}}</p>
+          <h1>{{profileService.programProfile?.name}}</h1>
+          <p>{{profileService.programProfile?.programType}} {{globalService.language.program_profile_html.program}}</p>
           <div class="horizontal_line programHeader"></div>
           <div class="date">
             <div class="tripDuration">
               <p><i class="fa fa-hourglass-half" aria-hidden="true"></i>
-                {{globalService.language.program_profile_html.Trip_duration}} : {{programProfile?.tripDuration}}
+                {{globalService.language.program_profile_html.Trip_duration}} : {{profileService.programProfile?.tripDuration}}
                 {{globalService.language.program_profile_html.Days}}</p>
             </div>
             <div class="TripDate">
               <div><p><i class="fa fa-suitcase"></i> {{globalService.language.program_profile_html.Departure}}:
-                {{departureDate | date:'fullDate'}}</p></div>
+                {{profileService.departureDate | date:'fullDate'}}</p></div>
               <div><p><i class="fa fa-suitcase"></i> {{globalService.language.program_profile_html.Arrival}}: {{
-                arrivalDate| date:'fullDate'}}</p></div>
+                profileService.arrivalDate| date:'fullDate'}}</p></div>
             </div>
           </div>
-          <div class="route" *ngIf="tripRoute">
-            <div class="route_block" *ngFor="let route of tripRoute;let last=last">
+          <div class="route" *ngIf="profileService.tripRoute">
+            <div class="route_block" *ngFor="let route of profileService.tripRoute;let last=last">
               <div class="route_circle">
                 <div class="circle"></div>
                 <div class="route_name">
@@ -41,10 +41,10 @@
       </div>
       <div class="program_routes">
         <div routerLink="summary" routerLinkActive="active" class="route_tab">
-          <p>Summary</p>
+          <p>{{globalService.language.program_profile_html.Summary}}</p>
         </div>
         <div routerLink="gallery" routerLinkActive="active" class="route_tab">
-          <p>Gallery</p>
+          <p>{{globalService.language.program_profile_html.Gallery}}</p>
         </div>
       </div>
     </div>

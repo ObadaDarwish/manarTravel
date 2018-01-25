@@ -91,7 +91,9 @@
     "Double": "Double",
     "Triple": "Triple",
     "Quad": "Quad",
-    "Request_Program": "Request Program"
+    "Request_Program": "Request Program",
+    "Summary":"Summary",
+    "Gallery":"Gallery"
   },
   "dialog":{
     "Request_Program": "Request Program",
@@ -110,5 +112,8 @@
     "Full_Name":"Full Name *",
     "Email":"Email *",
     "mobile":"mobile *"
+  },
+  "gallery_html":{
+    "no_gallery":"No Gallery has been posted yet."
   }
 }

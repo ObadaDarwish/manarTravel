@@ -3,7 +3,7 @@
     <p>{{globalService.language.program_profile_html.Accommodation}}</p>
   </div>
   <!--umrah accommodotion-->
-  <div class="AccommodationUmrah" *ngIf="programType=='umrah';else  hajjProgram">
+  <div class="AccommodationUmrah" *ngIf="profileService.programType=='umrah';else  hajjProgram">
     <div class="container">
       <div class="table-responsive">
         <table class="table table-striped">
@@ -11,22 +11,26 @@
           <tr>
             <th>{{globalService.language.program_profile_html.Hotel_Makkah}}</th>
             <th>{{globalService.language.program_profile_html.Hotel_Maddinah}}</th>
-            <th *ngIf="programProfile?.single!=0">{{globalService.language.program_profile_html.Single_Room}}</th>
+            <th *ngIf="profileService.programProfile?.single!=0">
+              {{globalService.language.program_profile_html.Single_Room}}
+            </th>
             <th>{{globalService.language.program_profile_html.Double_Room}}</th>
             <th>{{globalService.language.program_profile_html.Triple_Room}}</th>
             <th>{{globalService.language.program_profile_html.Quad_Room}}</th>
-            <th>{{globalService.language.program_profile_html.Child}} <i class="fa fa-arrow-down"></i> 12 {{globalService.language.program_profile_html.Years}}</th>
+            <th>{{globalService.language.program_profile_html.Child}} <i class="fa fa-arrow-down"></i> 12
+              {{globalService.language.program_profile_html.Years}}
+            </th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>{{programProfile?.MakkahHotel}}</td>
-            <td>{{programProfile?.madinahHotel}}</td>
-            <td *ngIf="programProfile?.single!=0">{{programProfile?.single}} EGP</td>
-            <td>{{programProfile?.double}} EGP</td>
-            <td>{{programProfile?.triple}} EGP</td>
-            <td>{{programProfile?.quad}} EGP</td>
-            <td>{{programProfile?.child}} EGP</td>
+            <td>{{profileService.programProfile?.MakkahHotel}}</td>
+            <td>{{profileService.programProfile?.madinahHotel}}</td>
+            <td *ngIf="profileService.programProfile?.single!=0">{{profileService.programProfile?.single}} EGP</td>
+            <td>{{profileService.programProfile?.double}} EGP</td>
+            <td>{{profileService.programProfile?.triple}} EGP</td>
+            <td>{{profileService.programProfile?.quad}} EGP</td>
+            <td>{{profileService.programProfile?.child}} EGP</td>
           </tr>
           </tbody>
         </table>
@@ -49,23 +53,23 @@
           </thead>
           <tbody>
           <tr class="tr_select">
-            <td>{{programProfile?.MakkahHotel}}</td>
+            <td>{{profileService.programProfile?.MakkahHotel}}</td>
             <td>{{globalService.language.program_profile_html.Makkah}}</td>
-            <td>{{programProfile?.makkah_from1}}</td>
-            <td>{{programProfile?.makkah_to1}}</td>
+            <td>{{profileService.programProfile?.makkah_from1}}</td>
+            <td>{{profileService.programProfile?.makkah_to1}}</td>
 
           </tr>
           <tr class="tr_select">
-            <td>{{programProfile?.MakkahHotel}}</td>
+            <td>{{profileService.programProfile?.MakkahHotel}}</td>
             <td>{{globalService.language.program_profile_html.Makkah}}</td>
-            <td>{{programProfile?.makkah_from2}}</td>
-            <td>{{programProfile?.makkah_to2}}</td>
+            <td>{{profileService.programProfile?.makkah_from2}}</td>
+            <td>{{profileService.programProfile?.makkah_to2}}</td>
           </tr>
           <tr class="tr_select">
-            <td>{{programProfile?.madinahHotel}}</td>
+            <td>{{profileService.programProfile?.madinahHotel}}</td>
             <td>{{globalService.language.program_profile_html.Maddinah}}</td>
-            <td>{{programProfile?.madinah_from}}</td>
-            <td>{{programProfile?.madinah_to}}</td>
+            <td>{{profileService.programProfile?.madinah_from}}</td>
+            <td>{{profileService.programProfile?.madinah_to}}</td>
           </tr>
           </tbody>
         </table>
@@ -79,11 +83,11 @@
     <div class="mashaer">
       <div>
         <h3>{{globalService.language.program_profile_html.Arafa}}</h3>
-        <div [innerHTML]="programProfile?.arafa"></div>
+        <div [innerHTML]="profileService.programProfile?.arafa"></div>
       </div>
       <div>
         <h3>{{globalService.language.program_profile_html.Menah}}</h3>
-        <div [innerHTML]="programProfile?.mena"></div>
+        <div [innerHTML]="profileService.programProfile?.mena"></div>
       </div>
 
     </div>
@@ -93,15 +97,15 @@
   <div class="rules">
     <div>
       <h3>{{globalService.language.program_profile_html.Includes}}</h3>
-      <div [innerHTML]="programProfile?.includes"></div>
+      <div [innerHTML]="profileService.programProfile?.includes"></div>
     </div>
     <div>
       <h3>{{globalService.language.program_profile_html.General_Conditions}}</h3>
-      <div [innerHTML]="programProfile?.generalConditions"></div>
+      <div [innerHTML]="profileService.programProfile?.generalConditions"></div>
     </div>
 
   </div>
-  <div *ngIf="programType!='umrah'" class="hajjprice">
+  <div *ngIf="profileService.programType!='umrah'" class="hajjprice">
     <div class="Title right">
       <p>{{globalService.language.program_profile_html.Prices}}</p>
     </div>
